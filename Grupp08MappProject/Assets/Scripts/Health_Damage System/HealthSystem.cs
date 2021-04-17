@@ -1,6 +1,4 @@
-using System.Collections;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,14 +6,14 @@ public class HealthSystem
 {
     public event EventHandler HealthChangedHandler; 
 
+    [SerializeField]
     private int healthPoints;
     private readonly int initialHealthPoints;
 
 
-    protected virtual void OnHealthChanged(EventArgs e)
+    public virtual void OnHealthChanged(EventArgs e)
     {
-        if (HealthChangedHandler != null)
-            HealthChangedHandler(this, e);
+        HealthChangedHandler?.Invoke(this, e);
     }
 
     public HealthSystem(int healthPoints)
@@ -26,7 +24,7 @@ public class HealthSystem
 
     public void DamageEntity(int damage)
     {
-        if (healthPoints - damage > 0)
+        if (healthPoints - damage >= 0)
         {
             healthPoints -= damage;
         }
@@ -35,10 +33,15 @@ public class HealthSystem
 
     public void HealEntity(int hp)
     {
-        if(!(healthPoints + hp > initialHealthPoints))
+        if(!(healthPoints + hp <= initialHealthPoints))
         {
             healthPoints += hp;
         }
         OnHealthChanged(EventArgs.Empty);
+    }
+
+    public int getHealthPoints()
+    {
+        return healthPoints;
     }
 }
