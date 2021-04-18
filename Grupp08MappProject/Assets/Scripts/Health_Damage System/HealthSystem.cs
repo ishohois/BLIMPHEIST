@@ -4,17 +4,10 @@ using UnityEngine;
 [System.Serializable]
 public class HealthSystem
 {
-    public event EventHandler HealthChangedHandler; 
 
     [SerializeField]
     private int healthPoints;
     private readonly int initialHealthPoints;
-
-
-    public virtual void OnHealthChanged(EventArgs e)
-    {
-        HealthChangedHandler?.Invoke(this, e);
-    }
 
     public HealthSystem(int healthPoints)
     {
@@ -28,7 +21,6 @@ public class HealthSystem
         {
             healthPoints -= damage;
         }
-        OnHealthChanged(EventArgs.Empty);
     }
 
     public void HealEntity(int hp)
@@ -37,7 +29,6 @@ public class HealthSystem
         {
             healthPoints += hp;
         }
-        OnHealthChanged(EventArgs.Empty);
     }
 
     public int getHealthPoints()

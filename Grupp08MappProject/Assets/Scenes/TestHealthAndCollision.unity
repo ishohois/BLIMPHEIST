@@ -449,7 +449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349c7ba26332a6741b93842a926e2fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
+  gracePeriod: 5
+  pingPongMultplier: 20
   hs:
     healthPoints: 0
   sr: {fileID: 975967070}
