@@ -140,7 +140,7 @@ public class Blimp_Movement : MonoBehaviour
 
     private void ReturnToStartingArea() {
 
-        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-5,0), ref velocityForReturning, smoothTime);
+        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-4,rb2.velocity.y), ref velocityForReturning, smoothTime);
 
     }
 
