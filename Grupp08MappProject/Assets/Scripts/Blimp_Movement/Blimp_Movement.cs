@@ -9,7 +9,9 @@ public class Blimp_Movement : MonoBehaviour
     public CapsuleCollider2D capsuleCollider2D;
     public Transform targetPoint;
 
-    [SerializeField] private Vector3 defaultPosition;
+    [SerializeField] private Vector3 defaultVelocity;
+    [SerializeField] private Vector3 velocityForReturning = new Vector3(-7,0);
+    private Vector3 velocityForFlying;
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float extraSpeed = 50f;
@@ -20,11 +22,11 @@ public class Blimp_Movement : MonoBehaviour
 
     [SerializeField] private bool flying;
     [SerializeField] private bool hasLeftArea;
-    [SerializeField] private bool goBackToStartingArea;
-    [SerializeField] private bool cameBack;
+    [SerializeField] private bool burstUsed = false;
+    public bool returnedToStartArea;
 
-    private Vector3 velocityForFlying;
-    [SerializeField] private Vector3 velocityForReturning = new Vector3(-2,0);
+    private float timer = 0f;
+    [SerializeField] private float timeBeforeReset = 0.5f;
 
 
     // Start is called before the first frame update
@@ -36,8 +38,8 @@ public class Blimp_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        defaultPosition.x = 0;
-        defaultPosition.y = transform.position.y;
+        defaultVelocity.x = 0;
+        defaultVelocity.y = transform.position.y;
 
         if (Input.GetKey(KeyCode.Space) == true) {
 
@@ -46,6 +48,17 @@ public class Blimp_Movement : MonoBehaviour
         else {
 
             flying = false;
+        }
+
+        if(burstUsed == true && hasLeftArea == true) {
+
+            timer += Time.deltaTime;
+
+            if(timer >= timeBeforeReset) {
+
+                ReturnToStartingArea();
+                burstUsed = false;
+            }
         }
     }
 
@@ -68,15 +81,12 @@ public class Blimp_Movement : MonoBehaviour
             
         }
 
-        //if (hasLeftArea == true) {
+        if (returnedToStartArea == true) {
 
-        //    ReturnToStartingArea();
-        //}
-        //else if(cameBack == true){
-
-        //    rb2.velocity = defaultPosition;
-        //    cameBack = false;
-        //}
+            rb2.velocity = defaultVelocity;
+            returnedToStartArea = false;
+        }
+        
     }
 
 
@@ -106,6 +116,7 @@ public class Blimp_Movement : MonoBehaviour
     private void Burst() {
 
         rb2.AddForce(transform.right * burstSpeed, ForceMode2D.Impulse);
+        burstUsed = true;
     }
 
     public void SetHasLeftAreaToTrue() {
@@ -121,7 +132,6 @@ public class Blimp_Movement : MonoBehaviour
     private void ReturnToStartingArea() {
 
         rb2.velocity = Vector3.SmoothDamp(rb2.velocity, startingArea.transform.position, ref velocityForReturning, smoothTime);
-        cameBack = true;
     }
 
 }

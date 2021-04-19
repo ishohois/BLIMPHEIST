@@ -345,14 +345,18 @@ MonoBehaviour:
   rb2: {fileID: 597922084}
   capsuleCollider2D: {fileID: 597922083}
   targetPoint: {fileID: 1782964169}
-  target: {x: 0, y: 0, z: 0}
+  defaultVelocity: {x: 0, y: 0, z: 0}
+  velocityForReturning: {x: -1, y: 0, z: 0}
   speed: 5
   extraSpeed: 100
   smoothTime: 0.05
   maxSpeed: 50
   burstSpeed: 5
-  flies: 0
-  isAreaLeft: 0
+  flying: 0
+  hasLeftArea: 0
+  burstUsed: 0
+  returnedToStartArea: 0
+  timeBeforeReset: 1
 --- !u!1 &932601562
 GameObject:
   m_ObjectHideFlags: 0
