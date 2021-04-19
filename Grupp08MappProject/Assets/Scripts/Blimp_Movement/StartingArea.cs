@@ -7,19 +7,20 @@ public class StartingArea : MonoBehaviour
     public Blimp_Movement blimp;
 
 
-    private void OnCollisionStay2D(Collision2D collision) {
+    //private void OnCollisionStay2D(Collision2D collision) {
         
-        if(collision.gameObject.CompareTag("Player") == true) {
+    //    if(collision.gameObject.CompareTag("Player") == true) {
 
-            blimp.SetHasLeftAreaToFalse();
-        }
-    }
+    //        blimp.SetHasLeftAreaToFalse();
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.gameObject.CompareTag("Player") == true) {
 
             blimp.returnedToStartArea = true;
+            blimp.SetHasLeftAreaToFalse();
         }
     }
 
@@ -27,6 +28,7 @@ public class StartingArea : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") == true) {
 
+            blimp.returnedToStartArea = false;
             blimp.SetHasLeftAreaToTrue();
         }
     }

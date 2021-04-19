@@ -21,25 +21,24 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float burstSpeed = 1f;
 
     [SerializeField] private bool flying;
-    [SerializeField] private bool hasLeftArea;
+    [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
-    public bool returnedToStartArea;
+    public bool returnedToStartArea = false;
+    public bool timerOut = false;
 
-    private float timer = 0f;
-    [SerializeField] private float timeBeforeReset = 0.5f;
+    [SerializeField] private float timer = 0f;
+    [SerializeField] private float timeBeforeReset = 5f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        hasLeftArea = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        defaultVelocity.x = 0;
-        defaultVelocity.y = transform.position.y;
 
         if (Input.GetKey(KeyCode.Space) == true) {
 
@@ -49,15 +48,24 @@ public class Blimp_Movement : MonoBehaviour
 
             flying = false;
         }
+        if (Input.GetKeyDown(KeyCode.D) == true) {
 
-        if(burstUsed == true && hasLeftArea == true) {
+            burstUsed = true;
+        }
+
+        if (hasLeftArea == true) {
 
             timer += Time.deltaTime;
 
-            if(timer >= timeBeforeReset) {
+            if (timer >= timeBeforeReset) {
+
+                timerOut = true;
+
+            }
+
+            if(timerOut == true) {
 
                 ReturnToStartingArea();
-                burstUsed = false;
             }
         }
     }
@@ -75,18 +83,17 @@ public class Blimp_Movement : MonoBehaviour
 
         CheckMaxAndLowestSpeed();
 
-        if (Input.GetKeyDown(KeyCode.D) == true) {
+        if(burstUsed) {
 
+            hasLeftArea = true;
             Burst();
-            
         }
 
-        if (returnedToStartArea == true) {
+        if (hasLeftArea == false) {
 
-            rb2.velocity = defaultVelocity;
-            returnedToStartArea = false;
+            rb2.velocity = new Vector2(0,rb2.velocity.y);
         }
-        
+
     }
 
 
@@ -127,11 +134,14 @@ public class Blimp_Movement : MonoBehaviour
     public void SetHasLeftAreaToFalse() {
 
         hasLeftArea = false;
+        timer = 0f;
+        timerOut = false;
     }
 
     private void ReturnToStartingArea() {
 
-        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, startingArea.transform.position, ref velocityForReturning, smoothTime);
+        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-5,0), ref velocityForReturning, smoothTime);
+
     }
 
 }
