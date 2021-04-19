@@ -82,10 +82,11 @@ public class Blimp_Movement : MonoBehaviour
 
         CheckMaxAndLowestSpeed();
 
-        if(burstUsed) {
+        if(burstUsed == true) {
 
             hasLeftArea = true;
             Burst();
+            burstUsed = false;
         }
 
         if (hasLeftArea == false) {
@@ -122,7 +123,6 @@ public class Blimp_Movement : MonoBehaviour
     private void Burst() {
 
         rb2.AddForce(transform.right * burstSpeed, ForceMode2D.Impulse);
-        burstUsed = true;
     }
 
     public void SetHasLeftAreaToTrue() {
