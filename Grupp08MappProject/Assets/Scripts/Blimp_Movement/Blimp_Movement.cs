@@ -7,7 +7,6 @@ public class Blimp_Movement : MonoBehaviour
     public GameObject startingArea;
     public Rigidbody2D rb2;
     public CapsuleCollider2D capsuleCollider2D;
-    public Transform targetPoint;
 
     [SerializeField] private Vector3 defaultVelocity;
     [SerializeField] private Vector3 velocityForReturning = new Vector3(-7,0);
