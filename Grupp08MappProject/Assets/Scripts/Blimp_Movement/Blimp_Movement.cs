@@ -8,8 +8,7 @@ public class Blimp_Movement : MonoBehaviour
     public Rigidbody2D rb2;
     public CapsuleCollider2D capsuleCollider2D;
 
-    [SerializeField] private Vector3 defaultVelocity;
-    [SerializeField] private Vector3 velocityForReturning = new Vector3(-7,0);
+    [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
 
     [SerializeField] private float speed = 5f;
@@ -38,6 +37,7 @@ public class Blimp_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        velocityForReturning.y = rb2.velocity.y;
 
         if (Input.GetKey(KeyCode.Space) == true) {
 
@@ -52,7 +52,7 @@ public class Blimp_Movement : MonoBehaviour
             burstUsed = true;
         }
 
-        if (hasLeftArea == true) {
+        if (burstUsed == true || hasLeftArea == true) {
 
             timer += Time.deltaTime;
 
@@ -122,7 +122,9 @@ public class Blimp_Movement : MonoBehaviour
 
     private void Burst() {
 
-        rb2.AddForce(transform.right * burstSpeed, ForceMode2D.Impulse);
+        rb2.velocity = new Vector2(0, rb2.velocity.y);
+        rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
+        ResetTimer();
     }
 
     public void SetHasLeftAreaToTrue() {
@@ -133,14 +135,19 @@ public class Blimp_Movement : MonoBehaviour
     public void SetHasLeftAreaToFalse() {
 
         hasLeftArea = false;
-        timer = 0f;
-        timerOut = false;
+        ResetTimer();
     }
 
     private void ReturnToStartingArea() {
 
         rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-5,0), ref velocityForReturning, smoothTime);
 
+    }
+
+    private void ResetTimer() {
+
+        timer = 0f;
+        timerOut = false;
     }
 
 }
