@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weight : MonoBehaviour, IPickable<bool>
+public class Weight : MonoBehaviour, IPickable
 {
     public PlayerState playerState;
     [SerializeField] private bool colliding = false;
@@ -19,7 +19,6 @@ public class Weight : MonoBehaviour, IPickable<bool>
 
     public void pickup(bool pickedUp) {
 
-        playerState.SetWeightPickedUpToTrue(pickedUp);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

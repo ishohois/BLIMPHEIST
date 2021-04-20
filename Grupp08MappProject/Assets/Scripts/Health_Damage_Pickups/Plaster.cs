@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plaster : MonoBehaviour, IPickable<int>
+public class Plaster : MonoBehaviour, IPickable
 {
 
     [SerializeField] private int amountHealth = 1;
 
-    public void pickup()
+    public int GetAmountHP()
     {
-        throw new System.NotImplementedException();
+        return amountHealth;
     }
-
 }

@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlayerPickupSystem : MonoBehaviour
 {
-    public PlayerState playerState;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IPickable pickable;
+        
         if ((pickable = collision.gameObject.GetComponent<IPickable>()) != null)
         {
-
+            Pickup(pickable);
         }
     }
+
+    public void Pickup(IPickable pickable)
+    {
+        
+    }
+
 }
