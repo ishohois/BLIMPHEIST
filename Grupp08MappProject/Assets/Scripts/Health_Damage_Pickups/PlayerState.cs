@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerState : MonoBehaviour, IDamageable<int>
 {
@@ -8,6 +9,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private bool weightPickedUp = false;
     [SerializeField] private float gracePeriod = 1f;
     [SerializeField] private float pingPongMultplier = 1f;
+    [SerializeField] private int noBurst = 1;
 
     private Material material;
     private float pingPongValue = 1f;
@@ -15,7 +17,9 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private float alphaValue;
     private bool hurt;
     private float counterGracePeriod;
-    private List<IPickable> items = new List<IPickable>();
+    private PlayerPickupSystem pps;
+    private int initialNoBurst;
+    private int maxNoBurst = 3;
 
     public HealthSystem hs;
     public SpriteRenderer sr;
@@ -27,6 +31,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         color = material.color;
         alphaValue = material.color.a;
         counterGracePeriod = gracePeriod;
+        initialNoBurst = noBurst;
     }
 
     // Update is called once per frame
@@ -48,10 +53,18 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
    
     }
 
-    public void addPickable(IPickable pickable)
+    public void AddBurst(int noBurst)
     {
-        items.Add(pickable);
+        if(this.noBurst + noBurst >= maxNoBurst)
+        {
+            this.noBurst = maxNoBurst;
+        }
+        else
+        {
+            this.noBurst += noBurst;
+        }
     }
+
 
     public void Damage(int damagePoints)
     {
@@ -60,5 +73,15 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             hs.DamageEntity(damagePoints);
             hurt = true;
         }
+    }
+
+    public void Heal(int healPoints)
+    {
+        hs.HealEntity(healPoints);
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player is dead");
     }
 }

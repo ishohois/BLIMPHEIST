@@ -25,7 +25,11 @@ public class HealthSystem
 
     public void HealEntity(int hp)
     {
-        if(!(healthPoints + hp <= initialHealthPoints))
+        if(healthPoints + hp >= initialHealthPoints)
+        {
+            healthPoints = initialHealthPoints;
+        }
+        else
         {
             healthPoints += hp;
         }
