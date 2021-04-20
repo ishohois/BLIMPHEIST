@@ -415,7 +415,6 @@ MonoBehaviour:
   startingArea: {fileID: 384458628}
   rb2: {fileID: 597922084}
   capsuleCollider2D: {fileID: 597922083}
-  defaultVelocity: {x: 0, y: 0, z: 0}
   velocityForReturning: {x: -1, y: 0, z: 0}
   speed: 5
   extraSpeed: 100
@@ -500,6 +499,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blimp: {fileID: 597922085}
+--- !u!1 &1444883143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444883146}
+  - component: {fileID: 1444883144}
+  - component: {fileID: 1444883145}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1444883144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444883143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26aaf8e89fd7d3f4ea732a9f12c69451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
+  scrollSpeed: -1.5
+--- !u!114 &1444883145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444883143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a0532fc144e004c9bb4007092bf364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclePoolSize: 10
+  obstaclePrefab: {fileID: 8450390998928807398, guid: df645bbf4649c4f4791a6f803bdbf131, type: 3}
+  spawnRate: 8
+  planetMin: -5
+  planetMax: 4
+  obstacleSpawn: {fileID: 0}
+--- !u!4 &1444883146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444883143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.345858, y: 0.803274, z: -1.9709947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782964168
 GameObject:
   m_ObjectHideFlags: 0
