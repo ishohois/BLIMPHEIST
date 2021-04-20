@@ -18,7 +18,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public HealthSystem hs;
     public SpriteRenderer sr;
 
-
     void Start()
     {
         hs = new HealthSystem(maxHealth);
