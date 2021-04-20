@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPickable
+public interface IPickable<T>
 {
 
-    public void pickup();
+    public void pickup(T value);
 
 }

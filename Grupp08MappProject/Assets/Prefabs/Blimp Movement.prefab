@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1737029096550053638}
   - component: {fileID: 1737029096550053633}
   - component: {fileID: 1737029096550053639}
+  - component: {fileID: 7091659805518331703}
   m_Layer: 0
   m_Name: Blimp
   m_TagString: Player
@@ -150,6 +151,26 @@ MonoBehaviour:
   timerOut: 0
   timer: 0
   timeBeforeReset: 0.35
+--- !u!114 &7091659805518331703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737029096550053634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349c7ba26332a6741b93842a926e2fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  weightPickedUp: 0
+  gracePeriod: 1
+  pingPongMultplier: 1
+  blimpMovement: {fileID: 1737029096550053639}
+  hs:
+    healthPoints: 0
+  sr: {fileID: 0}
 --- !u!1 &1737029096898820518
 GameObject:
   m_ObjectHideFlags: 0

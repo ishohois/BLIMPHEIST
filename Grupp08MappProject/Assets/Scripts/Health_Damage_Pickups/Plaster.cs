@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plaster : MonoBehaviour, IPickable
+public class Plaster : MonoBehaviour, IPickable<int>
 {
-    public void pickup()
+    public void pickup(int heal)
     {
         throw new System.NotImplementedException();
     }

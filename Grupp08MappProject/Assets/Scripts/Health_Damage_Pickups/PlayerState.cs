@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour, IDamageable<int>
 {
     [SerializeField] private int maxHealth = 3;
+    [SerializeField] private bool weightPickedUp = false;
     [SerializeField] private float gracePeriod = 1f;
     [SerializeField] private float pingPongMultplier = 1f;
 
@@ -15,6 +16,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private bool hurt;
     private float counterGracePeriod;
 
+    public Blimp_Movement blimpMovement;
     public HealthSystem hs;
     public SpriteRenderer sr;
 
@@ -43,6 +45,10 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             }
             material.color = color;
         }
+        if (weightPickedUp) {
+
+            blimpMovement.haveWeight = true;
+        }
     }
 
     public void Damage(int damagePoints)
@@ -52,5 +58,15 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             hs.DamageEntity(damagePoints);
             hurt = true;
         }
+    }
+
+    public void SetWeightPickedUpToTrue(bool pickedUp) {
+
+        weightPickedUp = pickedUp;
+    }
+
+    public void SetWeightPickedUpToFalse(bool notPickedUp) {
+
+        weightPickedUp = notPickedUp;
     }
 }

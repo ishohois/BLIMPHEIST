@@ -19,6 +19,7 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float burstSpeed = 1f;
 
     [SerializeField] private bool flying;
+    public bool haveWeight = false;
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     public bool returnedToStartArea = false;
@@ -73,10 +74,19 @@ public class Blimp_Movement : MonoBehaviour
     private void FixedUpdate() {
 
         Vector3 movement = Vector3.zero;
-        movement.y = speed * extraSpeed;
-
+        
         if (flying == true) {
 
+            if (haveWeight) {
+
+                rb2.mass = 2;
+                movement.y = speed * 70f;
+            }
+            else {
+
+                rb2.mass = 1;
+                movement.y = speed * extraSpeed;
+            }
             Move(movement);
         }
 
@@ -122,6 +132,7 @@ public class Blimp_Movement : MonoBehaviour
 
     private void Burst() {
 
+        rb2.mass = 1;
         rb2.velocity = new Vector2(0, rb2.velocity.y);
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
         ResetTimer();
