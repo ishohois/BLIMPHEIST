@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class Plaster : MonoBehaviour, IPickable
 {
+
+    [SerializeField] private int amountHealth = 1;
+
     public void pickup()
     {
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
