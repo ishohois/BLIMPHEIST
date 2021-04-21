@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface IPickable
 {
+    public void giveEffect(PlayerState player);
 }

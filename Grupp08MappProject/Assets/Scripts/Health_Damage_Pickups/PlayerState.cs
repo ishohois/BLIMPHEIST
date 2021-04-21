@@ -9,7 +9,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private bool weightPickedUp = false;
     [SerializeField] private float gracePeriod = 1f;
     [SerializeField] private float pingPongMultplier = 1f;
-    [SerializeField] private int noBurst = 1;
+    [SerializeField] private int startNoBurst = 1;
+    [SerializeField] private int startNoWeights = 1;
 
     private Material material;
     private float pingPongValue = 1f;
@@ -18,8 +19,10 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private bool hurt;
     private float counterGracePeriod;
     private PlayerPickupSystem pps;
-    private int initialNoBurst;
+    private int noBursts;
     private int maxNoBurst = 3;
+    private int maxWeight = 3;
+    private int noWeights;
 
     public HealthSystem hs;
     public SpriteRenderer sr;
@@ -31,7 +34,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         color = material.color;
         alphaValue = material.color.a;
         counterGracePeriod = gracePeriod;
-        initialNoBurst = noBurst;
+        noBursts = startNoBurst;
+        noWeights = startNoWeights;
     }
 
     // Update is called once per frame
@@ -55,16 +59,32 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public void AddBurst(int noBurst)
     {
-        if(this.noBurst + noBurst >= maxNoBurst)
+        if(noBursts + noBurst >= maxNoBurst)
         {
-            this.noBurst = maxNoBurst;
+            noBursts = maxNoBurst;
         }
         else
         {
-            this.noBurst += noBurst;
+            noBursts += noBurst;
         }
     }
 
+    public void AddWeight(int weight)
+    {
+        if (noWeights + weight >= maxWeight)
+        {
+            noWeights = maxWeight;
+        }
+        else
+        {
+            noWeights += weight;
+        }
+    }
+
+    public int GetWeight()
+    {
+        return noWeights;
+    }
 
     public void Damage(int damagePoints)
     {
@@ -84,4 +104,5 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         Debug.Log("Player is dead");
     }
+
 }

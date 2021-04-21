@@ -12,10 +12,15 @@ public class Plaster : MonoBehaviour, IPickable
         return amountHealth;
     }
 
+    public void giveEffect(PlayerState player)
+    {
+        player.Heal(amountHealth);
+    }
 
-    // logic for what happens to the pickup in the pickup script
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // logic for deactivating particle effects yada yada
         gameObject.SetActive(false);
     }
+
 }

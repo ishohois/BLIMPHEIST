@@ -11,14 +11,7 @@ public class Weight : MonoBehaviour, IPickable
     // Update is called once per frame
     void Update()
     {
-        if(colliding == true) {
-
-            pickup(true);
-        }
-    }
-
-    public void pickup(bool pickedUp) {
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -29,5 +22,8 @@ public class Weight : MonoBehaviour, IPickable
         }
     }
 
-        
+    public void giveEffect(PlayerState player)
+    {
+        throw new System.NotImplementedException();
+    }
 }
