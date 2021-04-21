@@ -11,7 +11,7 @@ public class PlayerPickupSystem : MonoBehaviour
         IPickable ipickable;
         if ((ipickable = collision.gameObject.GetComponent<IPickable>()) != null)
         {
-            ipickable.giveEffect(player);
+            ipickable.GiveEffect(player);
         }
     }
 }

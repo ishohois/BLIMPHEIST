@@ -22,7 +22,7 @@ public class Weight : MonoBehaviour, IPickable
         }
     }
 
-    public void giveEffect(PlayerState player)
+    public void GiveEffect(PlayerState player)
     {
         throw new System.NotImplementedException();
     }
