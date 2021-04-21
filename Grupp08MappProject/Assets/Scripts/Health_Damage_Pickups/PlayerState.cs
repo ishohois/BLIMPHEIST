@@ -19,7 +19,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private bool hurt;
     private float counterGracePeriod;
     private PlayerPickupSystem pps;
-    private int noBursts;
+    [SerializeField] private int noBursts;
     private int maxNoBurst = 3;
     private int maxWeight = 3;
     private int noWeights;
@@ -67,6 +67,21 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             noBursts += noBurst;
         }
+    }
+
+    public void UseBurst() {
+
+        noBursts -= 1;
+
+        if(noBursts < 0) {
+
+            noBursts = 0;
+        }
+    }
+
+    public int GetBursts() {
+
+        return noBursts;
     }
 
     public void AddWeight(int weight)

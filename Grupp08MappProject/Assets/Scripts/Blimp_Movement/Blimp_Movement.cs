@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Blimp_Movement : MonoBehaviour
 {
+    public PlayerState playerState;
     public GameObject startingArea;
     public Rigidbody2D rb2;
     public CapsuleCollider2D capsuleCollider2D;
@@ -19,10 +20,10 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float burstSpeed = 1f;
 
     [SerializeField] private bool flying;
-    public bool haveWeight = false;
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
-    public bool returnedToStartArea = false;
+    [SerializeField] private bool isBurstAvailable;
+    public bool haveWeight = false;
     public bool timerOut = false;
 
     [SerializeField] private float timer = 0f;
@@ -40,18 +41,20 @@ public class Blimp_Movement : MonoBehaviour
     {
         velocityForReturning.y = rb2.velocity.y;
 
-        if (Input.GetKey(KeyCode.Space) == true) {
+        if(playerState.GetBursts() > 0) {
 
-            flying = true;
+            isBurstAvailable = true;
         }
         else {
 
-            flying = false;
+            isBurstAvailable = false;
         }
-        if (Input.GetKeyDown(KeyCode.D) == true) {
+        if(playerState.GetBursts() <= 0 && hasLeftArea == false) {
 
-            burstUsed = true;
+            playerState.AddBurst(1);
         }
+
+        CheckInput();
 
         if (burstUsed == true || hasLeftArea == true) {
 
@@ -107,6 +110,27 @@ public class Blimp_Movement : MonoBehaviour
     }
 
 
+    private void CheckInput() {
+
+        if (Input.GetKey(KeyCode.Space) == true) {
+
+            flying = true;
+        }
+        else {
+
+            flying = false;
+        }
+        if (isBurstAvailable == true) {
+
+            if (Input.GetKeyDown(KeyCode.D) == true) {
+
+                burstUsed = true;
+            }
+        }
+        
+    }
+
+
     // Metoden för att blimpen inte flyger upp och ner som galen
     private void CheckMaxAndLowestSpeed() {
 
@@ -135,6 +159,7 @@ public class Blimp_Movement : MonoBehaviour
         rb2.mass = 1;
         rb2.velocity = new Vector2(0, rb2.velocity.y);
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
+        playerState.UseBurst();
         ResetTimer();
     }
 

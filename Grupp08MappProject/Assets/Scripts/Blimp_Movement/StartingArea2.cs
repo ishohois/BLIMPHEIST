@@ -12,7 +12,6 @@ public class StartingArea2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true) {
 
             blimp.SetHasLeftAreaToFalse();
-            blimp.returnedToStartArea = true;
         }
     }
 
@@ -21,7 +20,6 @@ public class StartingArea2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true) {
 
             blimp.SetHasLeftAreaToTrue();
-            blimp.returnedToStartArea = false;
         }
     }
 }
