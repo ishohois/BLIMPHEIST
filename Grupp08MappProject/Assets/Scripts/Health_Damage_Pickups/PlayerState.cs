@@ -12,6 +12,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private int startNoBurst = 1;
     [SerializeField] private int startNoWeights = 1;
 
+    public bool startBurstUsed;
     private Material material;
     private float pingPongValue = 1f;
     private Color color;
@@ -54,7 +55,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             }
             material.color = color;
         }
-   
     }
 
     public void AddBurst(int noBurst)
