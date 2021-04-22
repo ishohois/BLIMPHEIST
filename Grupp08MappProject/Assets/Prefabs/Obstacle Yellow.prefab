@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3572579481961313706}
   - component: {fileID: 2084222760873620702}
   - component: {fileID: 9074779279036377053}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
