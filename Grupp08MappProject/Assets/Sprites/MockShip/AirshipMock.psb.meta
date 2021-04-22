@@ -32,7 +32,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 512
+    spritePixelsToUnits: 768
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -282,22 +282,7 @@ ScriptedImporter:
     layerID: 2
     mosaicPosition: {x: 4, y: 4}
   characterData:
-    bones:
-    - name: bone_1
-      position: {x: 810.2242, y: 2039.216, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      length: 791.3166
-      parentId: -1
-    - name: bone_2
-      position: {x: 791.3166, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0.00450504, w: 0.99998987}
-      length: 777.3424
-      parentId: 0
-    - name: bone_3
-      position: {x: 1051.8208, y: 603.64166, z: 0}
-      rotation: {x: 0, y: 0, z: 0.06389167, w: 0.9979569}
-      length: 988.4622
-      parentId: -1
+    bones: []
     parts:
     - spritePosition:
         x: 1794

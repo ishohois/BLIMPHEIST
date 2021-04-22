@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8225382706948102819}
   - component: {fileID: 6454161508644718290}
   - component: {fileID: 351356561635609792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

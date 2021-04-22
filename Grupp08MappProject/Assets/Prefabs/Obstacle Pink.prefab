@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8485348599693364572}
   - component: {fileID: 7043042977363383220}
   - component: {fileID: 6248419710039654713}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle Pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}

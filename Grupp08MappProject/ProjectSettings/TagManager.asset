@@ -12,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - StartingAreaBlimp
+  - Player
+  - Enemy
+  - Pickup
+  - Obstacles
   - 
   - 
   - 
