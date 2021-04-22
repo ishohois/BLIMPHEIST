@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     public void ShowGameOverScreen(int timeAlive, int obstaclesAvoided)
     {
         gameObject.SetActive(true);
-        survivedTimeText.text = "Time survived: " + timeAlive.ToString() + " seconds"; //Kanske bör omvandla sekunder till minuter:sekunder om.
+        survivedTimeText.text = "Time survived: " + timeAlive.ToString() + " seconds"; //Kanske bor omvandla sekunder till minuter:sekunder.
         obstaclesAvoidedText.text = "Obstacles avoided: " + obstaclesAvoided.ToString();
     }
 
