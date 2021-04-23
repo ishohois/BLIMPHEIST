@@ -5,8 +5,8 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public float spawnRate = 4f;
-    public float planetMin = -1f;
-    public float planetMax = 3.5f;
+    public float planetMin = -5f;
+    public float planetMax = 4f;
 
     public GameObject[] obstacles;
     public GameObject[] pickup;
@@ -24,7 +24,6 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         timeSinceLatSpawned += Time.deltaTime;
-
 
 
         if (GameController.instance.gameOver == false && timeSinceLatSpawned >= spawnRate)

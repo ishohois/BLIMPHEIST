@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 29f3db49b4678964285263bfa7bcef66
+  - enabled: 1
+    path: Assets/Scenes/TestSpawners.unity
+    guid: 1aa12f9f413feb1419537834dd1c2299
   m_configObjects: {}
