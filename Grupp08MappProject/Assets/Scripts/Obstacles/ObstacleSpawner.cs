@@ -15,7 +15,8 @@ public class ObstacleSpawner : MonoBehaviour
     private GameObject currentObstacle;
     private GameObject currentPickup;
 
-    public AudioClip obstacleSpawn;
+    //public AudioClip obstacleSpawner;
+    public AudioSource obstacleSpawn;
 
 
     int counter = 0;
@@ -57,7 +58,8 @@ public class ObstacleSpawner : MonoBehaviour
 
             counter++;
 
-            GameController.instance.PlaySound(obstacleSpawn);
+            obstacleSpawn.Play();
+            //GameController.instance.PlaySound(obstacleSpawn);
         }
     }
 
