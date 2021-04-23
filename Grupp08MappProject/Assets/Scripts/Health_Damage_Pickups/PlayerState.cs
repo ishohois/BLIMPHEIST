@@ -11,6 +11,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private float pingPongMultplier = 1f;
     [SerializeField] private int startNoBurst = 1;
     [SerializeField] private int startNoWeights = 1;
+    [SerializeField] private int noBursts;
 
     public bool startBurstUsed;
     private Material material;
@@ -20,13 +21,17 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private bool hurt;
     private float counterGracePeriod;
     private PlayerPickupSystem pps;
-    [SerializeField] private int noBursts;
     private int maxNoBurst = 3;
     private int maxWeight = 3;
     private int noWeights;
 
     public HealthSystem hs;
     public SpriteRenderer sr;
+
+
+    public delegate void UpdateBurst(PlayerState player);
+    public static event UpdateBurst updateBurst;
+ 
 
     void Start()
     {
@@ -37,6 +42,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         counterGracePeriod = gracePeriod;
         noBursts = startNoBurst;
         noWeights = startNoWeights;
+
+        if(updateBurst != null)
+        {
+            updateBurst(this);
+        }
     }
 
     // Update is called once per frame
@@ -67,6 +77,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             noBursts += noBurst;
         }
+
+        if(updateBurst != null)
+        {
+            updateBurst(this);
+        }
     }
 
     public void UseBurst() {
@@ -76,6 +91,10 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         if(noBursts < 0) {
 
             noBursts = 0;
+        }
+        if(updateBurst != null)
+        {
+            updateBurst(this);
         }
     }
 
@@ -119,5 +138,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         Debug.Log("Player is dead");
     }
+
 
 }

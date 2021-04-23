@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -48,7 +46,7 @@ public class ObstacleSpawner : MonoBehaviour
 
                 float newPosition = GetNewSpawnPosition(spawnYPosition);
 
-                if(newPosition > -900f)
+                if (newPosition > -900f)
                     spawnPosition = new Vector2(spawnXPosition, newPosition);
                 RecursiveCounter = 0;
                 Instantiate(currentPickup, spawnPosition, Quaternion.identity);
@@ -58,7 +56,7 @@ public class ObstacleSpawner : MonoBehaviour
 
             counter++;
 
-            obstacleSpawn.Play();
+            //obstacleSpawn.Play();
             //GameController.instance.PlaySound(obstacleSpawn);
         }
     }
