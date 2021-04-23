@@ -23,7 +23,7 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
-    public bool haveWeight = false;
+    public bool hasWeight = false;
     public bool timerOut = false;
 
     [SerializeField] private float timer = 0f;
@@ -80,7 +80,7 @@ public class Blimp_Movement : MonoBehaviour
         
         if (flying == true) {
 
-            if (haveWeight) {
+            if (hasWeight) {
 
                 rb2.mass = 2;
                 movement.y = speed * 70f;
