@@ -56,12 +56,14 @@ public class ObstacleSpawner : MonoBehaviour
 
             counter++;
 
+            
             float target = -15.0f;
             float delta = target + spawnRate;
             delta *= Time.deltaTime;
             spawnRate += delta / 2;
+            
 
-            //obstacleSpawn.Play();
+            obstacleSpawn.Play();
             //GameController.instance.PlaySound(obstacleSpawn);
         }
     }

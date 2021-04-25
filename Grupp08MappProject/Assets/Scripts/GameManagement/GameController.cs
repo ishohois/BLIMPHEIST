@@ -26,11 +26,6 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        float target = -15.0f;
-        float delta = target + scrollSpeed;
-        delta *= Time.deltaTime;
-        scrollSpeed += delta / 9000;
-
         if (gameOver == true && Input.GetButtonDown("Fire1"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
