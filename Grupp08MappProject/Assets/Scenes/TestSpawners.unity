@@ -347,6 +347,56 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 56631615}
   settingsMenuPanel: {fileID: 823413144}
   pauseButton: {fileID: 596869993}
+--- !u!1 &56459051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56459053}
+  - component: {fileID: 56459052}
+  m_Layer: 0
+  m_Name: PickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &56459052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56459051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a0532fc144e004c9bb4007092bf364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 8
+  planetMin: -5
+  planetMax: 4
+  objectTypes:
+  - Plaster
+  - Burst
+  obstacleSpawn: {fileID: 0}
+--- !u!4 &56459053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56459051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.4016027, y: 2.649438, z: -41.794983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &56631615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &597002271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,6 +1968,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 904, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &965629057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965629059}
+  - component: {fileID: 965629058}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965629058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965629057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a0532fc144e004c9bb4007092bf364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 3
+  planetMin: -5
+  planetMax: 4
+  objectTypes:
+  - Enemy
+  - ObstacleOrange
+  - ObstaclePink
+  obstacleSpawn: {fileID: 0}
+--- !u!4 &965629059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965629057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.4016027, y: 2.649438, z: -41.794983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115167534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283396752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21a0532fc144e004c9bb4007092bf364, type: 3}
   m_Name: 
@@ -2154,12 +2255,19 @@ MonoBehaviour:
   spawnRate: 5
   planetMin: -5
   planetMax: 4
+<<<<<<< HEAD
+  objectTypes:
+  - Enemy
+  - ObstacleOrange
+  - ObstaclePink
+=======
   obstacles:
   - {fileID: 5068378421438734602, guid: a273450c2db46ae4e9bfe9776c4ed566, type: 3}
   - {fileID: 1016967788630550325, guid: b8b73cf5cef513647bd74e005c8b1021, type: 3}
   pickup:
   - {fileID: 2920785517315257453, guid: fbc0ce98f5d21c946987d9152d18a255, type: 3}
   - {fileID: 1691740253764875900, guid: 3ade23362808ed44ba1c189f6a5f41c3, type: 3}
+>>>>>>> daff5ea459c3ca212c2df0dc2f55a1e092ef78a8
   obstacleSpawn: {fileID: 1723997735}
 --- !u!114 &1283396754
 MonoBehaviour:
@@ -2773,6 +2881,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796906667}
   m_CullTransparentMesh: 1
+--- !u!1 &1914456409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914456410}
+  - component: {fileID: 1914456411}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914456410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914456409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.577708, y: 0.99074966, z: 12.808892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914456411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914456409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08aca3643a7ef44ab5973e66bf3aaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Enemy
+    prefab: {fileID: 5068378421438734602, guid: a273450c2db46ae4e9bfe9776c4ed566, type: 3}
+    size: 4
+  - tag: ObstacleOrange
+    prefab: {fileID: 8450390998928807398, guid: df645bbf4649c4f4791a6f803bdbf131, type: 3}
+    size: 2
+  - tag: ObstaclePink
+    prefab: {fileID: 9212464243674708843, guid: c7ee83662fd3d144bbfdaad564a4a8c7, type: 3}
+    size: 1
+  - tag: Plaster
+    prefab: {fileID: 2920785517315257453, guid: fbc0ce98f5d21c946987d9152d18a255, type: 3}
+    size: 3
+  - tag: Burst
+    prefab: {fileID: 1691740253764875900, guid: 3ade23362808ed44ba1c189f6a5f41c3, type: 3}
+    size: 4
 --- !u!1 &1922270797
 GameObject:
   m_ObjectHideFlags: 0
