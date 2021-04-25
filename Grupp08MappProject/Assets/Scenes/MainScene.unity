@@ -3143,13 +3143,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113618040}
     m_Modifications:
+    - target: {fileID: 462563564, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 958175257, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
       propertyPath: startingArea
       value: 
       objectReference: {fileID: 429462928}
     - target: {fileID: 958175258, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958175258, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958175259, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
+      propertyPath: startNoBurst
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 207547771110785038, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
       propertyPath: m_RootOrder
@@ -3198,6 +3210,10 @@ PrefabInstance:
     - target: {fileID: 4223186589892601482, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
       propertyPath: m_Name
       value: AirshipMock Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466227204678197952, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a6c54df5517c74790ef60dfbba82d1, type: 3}

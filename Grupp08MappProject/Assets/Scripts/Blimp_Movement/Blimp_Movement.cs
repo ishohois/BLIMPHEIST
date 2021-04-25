@@ -7,7 +7,6 @@ public class Blimp_Movement : MonoBehaviour
     public PlayerState playerState;
     public GameObject startingArea;
     public Rigidbody2D rb2;
-    public CapsuleCollider2D capsuleCollider2D;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -20,15 +19,16 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float burstSpeed = 1f;
 
     public bool flying;
-    public bool stoppedTouching;
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
     public bool hasWeight = false;
     public bool timerOut = false;
 
+    [SerializeField] private float timer2 = 0f;
     [SerializeField] private float timer = 0f;
     [SerializeField] private float timeBeforeReset = 5f;
+    [SerializeField] private float timerBeforeAddBurst = 0.3f;
 
 
     // Start is called before the first frame update
@@ -50,7 +50,17 @@ public class Blimp_Movement : MonoBehaviour
 
             isBurstAvailable = false;
         }
-        
+        if(hasLeftArea == false && playerState.GetBursts() == 0) {
+
+            timer2 += Time.deltaTime;
+
+            if(timer2 >= timerBeforeAddBurst) {
+
+                playerState.AddBurst(1);
+                timer2 = 0f;
+            }
+
+        }
 
         CheckInput();
 
