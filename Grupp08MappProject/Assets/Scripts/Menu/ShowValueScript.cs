@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ShowValueScript : MonoBehaviour
 {
-    Text percentageText;
+    private Text percentageText;
 
     private void Start()
     {
