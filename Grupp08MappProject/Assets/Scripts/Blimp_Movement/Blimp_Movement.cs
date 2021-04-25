@@ -19,7 +19,8 @@ public class Blimp_Movement : MonoBehaviour
 
     [SerializeField] private float burstSpeed = 1f;
 
-    [SerializeField] private bool flying;
+    public bool flying;
+    public bool stoppedTouching;
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
@@ -48,10 +49,6 @@ public class Blimp_Movement : MonoBehaviour
         else {
 
             isBurstAvailable = false;
-        }
-        if(playerState.GetBursts() <= 0 && hasLeftArea == false) {
-
-            playerState.AddBurst(1);
         }
 
         CheckInput();
@@ -99,7 +96,6 @@ public class Blimp_Movement : MonoBehaviour
 
             hasLeftArea = true;
             Burst();
-            burstUsed = false;
         }
 
         if (hasLeftArea == false) {
@@ -161,6 +157,7 @@ public class Blimp_Movement : MonoBehaviour
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
         playerState.UseBurst();
         ResetTimer();
+        burstUsed = false;
     }
 
     public void SetHasLeftAreaToTrue() {
