@@ -8,7 +8,9 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public bool gameOver = false;
-    public float scrollSpeed = -1.5f;
+    public float scrollSpeed; 
+
+    public float maxSpeed;
 
     void Awake()
     {
@@ -24,6 +26,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        float target = -15.0f;
+        float delta = target + scrollSpeed;
+        delta *= Time.deltaTime;
+        scrollSpeed += delta / 9000;
+
         if (gameOver == true && Input.GetButtonDown("Fire1"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

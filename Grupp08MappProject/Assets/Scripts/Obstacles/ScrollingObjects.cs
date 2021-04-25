@@ -5,16 +5,28 @@ using UnityEngine;
 public class ScrollingObjects : MonoBehaviour
 {
     private Rigidbody2D rd2d;
+    public float scrollSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
+
         rd2d = GetComponent<Rigidbody2D>();
-        rd2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
+        rd2d.velocity = new Vector2(scrollSpeed, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //transform.Translate(new Vector3(0, 1, 0) * GameController.instance.scrollSpeed * Time.deltaTime);
+        /*
+        if (transform.position.x > acceleratonCount)
+        {
+            acceleratonCount += maxSpeed;
+            GameController.instance.scrollSpeed = GameController.instance.scrollSpeed * acceleration;
+        }
+        */
+
         if (GameController.instance.gameOver == true)
         {
             rd2d.velocity = Vector2.zero;
