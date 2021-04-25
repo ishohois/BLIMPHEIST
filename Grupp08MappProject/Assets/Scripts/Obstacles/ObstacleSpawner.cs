@@ -71,7 +71,7 @@ public class ObstacleSpawner : MonoBehaviour
             spawnRate += delta / 2;
             
 
-            obstacleSpawn.Play();
+            //obstacleSpawn.Play();
             //GameController.instance.PlaySound(obstacleSpawn);
         }
     }
