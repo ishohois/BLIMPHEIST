@@ -8,7 +8,9 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public bool gameOver = false;
-    public float scrollSpeed = -1.5f;
+    public float scrollSpeed; 
+
+    public float maxSpeed;
 
     void Awake()
     {

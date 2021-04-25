@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public float spawnRate = 4f;
+    public float spawnRate;
     public float planetMin = -5f;
     public float planetMax = 4f;
 
@@ -56,7 +56,14 @@ public class ObstacleSpawner : MonoBehaviour
 
             counter++;
 
-            //obstacleSpawn.Play();
+            
+            float target = -15.0f;
+            float delta = target + spawnRate;
+            delta *= Time.deltaTime;
+            spawnRate += delta / 2;
+            
+
+            obstacleSpawn.Play();
             //GameController.instance.PlaySound(obstacleSpawn);
         }
     }
