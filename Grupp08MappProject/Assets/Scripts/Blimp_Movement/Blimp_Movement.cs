@@ -50,6 +50,7 @@ public class Blimp_Movement : MonoBehaviour
 
             isBurstAvailable = false;
         }
+        
 
         CheckInput();
 
