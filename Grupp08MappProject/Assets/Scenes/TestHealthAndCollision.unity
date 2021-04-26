@@ -1331,6 +1331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hang glider
       objectReference: {fileID: 0}
+    - target: {fileID: 5014134621589680549, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
 --- !u!1001 &5068378421016838633
@@ -1407,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282832, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282833, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_RootOrder
@@ -1415,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282833, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.56
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282833, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_LocalPosition.y
