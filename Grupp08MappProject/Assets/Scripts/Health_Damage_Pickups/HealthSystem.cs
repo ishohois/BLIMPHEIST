@@ -9,10 +9,17 @@ public class HealthSystem
     private int healthPoints;
     private readonly int initialHealthPoints;
 
+    public delegate void UpdateHealth(HealthSystem health);
+    public static event UpdateHealth updateHealth;
+
     public HealthSystem(int healthPoints)
     {
         this.healthPoints = healthPoints;
         initialHealthPoints = healthPoints;
+        if(updateHealth != null)
+        {
+            updateHealth(this);
+        }
     }
 
     public void DamageEntity(int damage)
@@ -20,6 +27,10 @@ public class HealthSystem
         if (healthPoints - damage >= 0)
         {
             healthPoints -= damage;
+        }
+        if (updateHealth != null)
+        {
+            updateHealth(this);
         }
     }
 
@@ -33,9 +44,13 @@ public class HealthSystem
         {
             healthPoints += hp;
         }
+        if (updateHealth != null)
+        {
+            updateHealth(this);
+        }
     }
 
-    public int getHealthPoints()
+    public int GetHealthPoints()
     {
         return healthPoints;
     }
