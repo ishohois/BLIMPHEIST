@@ -94,7 +94,7 @@ public class Enemy_HangGlider : MonoBehaviour
     private void Fly() {
 
         if (isGrounded && !(rb.velocity.y > 3f)) {
-            rb.AddForce(new Vector2(horizontalSpeed * horizontalFactor, Random.Range(2f, 5f)), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(horizontalSpeed * horizontalFactor, Random.Range(2f, 5f)), ForceMode2D.Force);
         }
 
     }
