@@ -44,7 +44,7 @@ public class Blimp_Movement : MonoBehaviour
     void Update()
     {
         velocityForReturning.y = rb2.velocity.y;
-        CheckTouchInput();
+        //CheckTouchInput();
 
         if (playerState.GetBursts() > 0)
         {
@@ -69,7 +69,7 @@ public class Blimp_Movement : MonoBehaviour
             }
 
         }
-        //CheckInput();
+        CheckInput();
 
         if (burstUsed == true || hasLeftArea == true)
         {
