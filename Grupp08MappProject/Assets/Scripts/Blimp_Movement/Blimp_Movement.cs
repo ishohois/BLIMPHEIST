@@ -44,6 +44,7 @@ public class Blimp_Movement : MonoBehaviour
     void Update()
     {
         velocityForReturning.y = rb2.velocity.y;
+        CheckTouchInput();
 
         if (playerState.GetBursts() > 0)
         {
@@ -68,8 +69,7 @@ public class Blimp_Movement : MonoBehaviour
             }
 
         }
-
-        CheckInput();
+        //CheckInput();
 
         if (burstUsed == true || hasLeftArea == true)
         {
@@ -106,12 +106,9 @@ public class Blimp_Movement : MonoBehaviour
                 rb2.mass = 2;
                 movement.y = speed * 70f;
             }
-            else
-            {
 
-                rb2.mass = 1;
-                movement.y = speed * extraSpeed;
-            }
+            rb2.mass = 1;
+            movement.y = speed * extraSpeed;
             Move(movement);
         }
 
@@ -119,14 +116,12 @@ public class Blimp_Movement : MonoBehaviour
 
         if (burstUsed == true)
         {
-
             hasLeftArea = true;
             Burst();
         }
 
         if (hasLeftArea == false)
         {
-
             rb2.velocity = new Vector2(0, rb2.velocity.y);
         }
 
@@ -143,22 +138,35 @@ public class Blimp_Movement : MonoBehaviour
 
     private void CheckTouchInput()
     {
-
-        int fingerCount = Input.touchCount;
-
-        if (fingerCount > 0)
+        if (Input.touchCount > 0)
         {
-            foreach (Touch touch in Input.touches)
+
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
             {
-                if (touch.phase == TouchPhase.Began)
-                {
+                case TouchPhase.Began:
+                    Debug.Log("Touch began");
                     flying = true;
-                }
-                if (touch.phase == TouchPhase.Ended)
-                {
+                    break;
+                case TouchPhase.Moved:
+                    Debug.Log("Touch moved");
+                    flying = true;
+                    break;
+                case TouchPhase.Stationary:
+                    Debug.Log("Touch stationary");
+                    flying = true;
+                    break;
+                case TouchPhase.Ended:
+                    Debug.Log("Touch ended");
                     flying = false;
-                }
+                    break;
+                case TouchPhase.Canceled:
+                    Debug.Log("Touch canceled");
+                    flying = false;
+                    break;
             }
+            Debug.Log(flying);
         }
     }
 

@@ -3861,6 +3861,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7407320706243711916, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
+      propertyPath: weightPickedUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
+      propertyPath: hasWeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
       propertyPath: burstButton
       value: 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UIUpdater : MonoBehaviour
+public class UIBurstUpdater : MonoBehaviour
 {
     public GameObject[] bursts;
 
