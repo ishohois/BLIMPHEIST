@@ -22,7 +22,7 @@ public class AudioSettings : MonoBehaviour
         backgroundFloat = PlayerPrefs.GetFloat(BackgroundPref);
         soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref);
 
-        backgroundAudio.volume = backgroundFloat;
+        backgroundAudio.volume = backgroundFloat; //Instead of getting the value from the slider we get it from the prefs
 
         for (int i = 0; i < soundEffectsAudio.Length; i++)
         {
