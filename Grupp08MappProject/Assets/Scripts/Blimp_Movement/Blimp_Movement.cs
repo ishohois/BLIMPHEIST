@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Blimp_Movement : MonoBehaviour
 {
     public PlayerState playerState;
     public GameObject startingArea;
     public Rigidbody2D rb2;
+    public Button burstButton;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -35,6 +37,7 @@ public class Blimp_Movement : MonoBehaviour
     void Start()
     {
         hasLeftArea = true;
+        burstButton.onClick.AddListener(OnBurstClick);
     }
 
     // Update is called once per frame
@@ -116,6 +119,19 @@ public class Blimp_Movement : MonoBehaviour
 
     }
 
+    private void OnBurstClick()
+    {
+        if (isBurstAvailable == true)
+        {
+            burstUsed = true;
+        }
+    }
+
+
+    private void CheckTouchInput()
+    {
+        
+    }
 
     private void CheckInput() {
 
