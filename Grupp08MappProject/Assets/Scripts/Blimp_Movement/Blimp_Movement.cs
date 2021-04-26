@@ -45,19 +45,23 @@ public class Blimp_Movement : MonoBehaviour
     {
         velocityForReturning.y = rb2.velocity.y;
 
-        if(playerState.GetBursts() > 0) {
+        if (playerState.GetBursts() > 0)
+        {
 
             isBurstAvailable = true;
         }
-        else {
+        else
+        {
 
             isBurstAvailable = false;
         }
-        if(hasLeftArea == false && playerState.GetBursts() == 0) {
+        if (hasLeftArea == false && playerState.GetBursts() == 0)
+        {
 
             timer2 += Time.deltaTime;
 
-            if(timer2 >= timerBeforeAddBurst) {
+            if (timer2 >= timerBeforeAddBurst)
+            {
 
                 playerState.AddBurst(1);
                 timer2 = 0f;
@@ -67,17 +71,20 @@ public class Blimp_Movement : MonoBehaviour
 
         CheckInput();
 
-        if (burstUsed == true || hasLeftArea == true) {
+        if (burstUsed == true || hasLeftArea == true)
+        {
 
             timer += Time.deltaTime;
 
-            if (timer >= timeBeforeReset) {
+            if (timer >= timeBeforeReset)
+            {
 
                 timerOut = true;
 
             }
 
-            if(timerOut == true) {
+            if (timerOut == true)
+            {
 
                 ReturnToStartingArea();
             }
@@ -85,18 +92,22 @@ public class Blimp_Movement : MonoBehaviour
     }
 
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
 
         Vector3 movement = Vector3.zero;
-        
-        if (flying == true) {
 
-            if (hasWeight) {
+        if (flying == true)
+        {
+
+            if (hasWeight)
+            {
 
                 rb2.mass = 2;
                 movement.y = speed * 70f;
             }
-            else {
+            else
+            {
 
                 rb2.mass = 1;
                 movement.y = speed * extraSpeed;
@@ -106,15 +117,17 @@ public class Blimp_Movement : MonoBehaviour
 
         CheckMaxAndLowestSpeed();
 
-        if(burstUsed == true) {
+        if (burstUsed == true)
+        {
 
             hasLeftArea = true;
             Burst();
         }
 
-        if (hasLeftArea == false) {
+        if (hasLeftArea == false)
+        {
 
-            rb2.velocity = new Vector2(0,rb2.velocity.y);
+            rb2.velocity = new Vector2(0, rb2.velocity.y);
         }
 
     }
@@ -130,40 +143,64 @@ public class Blimp_Movement : MonoBehaviour
 
     private void CheckTouchInput()
     {
-        
+
+        int fingerCount = Input.touchCount;
+
+        if (fingerCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    flying = true;
+                }
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    flying = false;
+                }
+            }
+        }
     }
 
-    private void CheckInput() {
+    private void CheckInput()
+    {
 
-        if (Input.GetKey(KeyCode.Space) == true) {
+        if (Input.GetKey(KeyCode.Space) == true)
+        {
 
             flying = true;
         }
-        else {
+        else
+        {
 
             flying = false;
         }
-        if (isBurstAvailable == true) {
+        if (isBurstAvailable == true)
+        {
 
-            if (Input.GetKeyDown(KeyCode.D) == true) {
+            if (Input.GetKeyDown(KeyCode.D) == true)
+            {
 
                 burstUsed = true;
             }
         }
-        
+
     }
 
 
     // Metoden för att blimpen inte flyger upp och ner som galen
-    private void CheckMaxAndLowestSpeed() {
+    private void CheckMaxAndLowestSpeed()
+    {
 
-        if (rb2.velocity.y <= -5) {
+        if (rb2.velocity.y <= -5)
+        {
 
             Vector2 vectorDown = new Vector2(rb2.velocity.x, -3.5f);
 
             rb2.velocity = vectorDown;
         }
-        else if (rb2.velocity.y >= 7) {
+        else if (rb2.velocity.y >= 7)
+        {
 
             Vector2 vectorUp = new Vector2(rb2.velocity.x, 7f);
 
@@ -172,12 +209,14 @@ public class Blimp_Movement : MonoBehaviour
     }
 
 
-    private void Move(Vector3 moving) {
+    private void Move(Vector3 moving)
+    {
 
         rb2.velocity = Vector3.SmoothDamp(rb2.velocity, moving, ref velocityForFlying, smoothTime, maxSpeed);
     }
 
-    private void Burst() {
+    private void Burst()
+    {
 
         rb2.mass = 1;
         rb2.velocity = new Vector2(0, rb2.velocity.y);
@@ -187,24 +226,28 @@ public class Blimp_Movement : MonoBehaviour
         burstUsed = false;
     }
 
-    public void SetHasLeftAreaToTrue() {
+    public void SetHasLeftAreaToTrue()
+    {
 
         hasLeftArea = true;
     }
 
-    public void SetHasLeftAreaToFalse() {
+    public void SetHasLeftAreaToFalse()
+    {
 
         hasLeftArea = false;
         ResetTimer();
     }
 
-    private void ReturnToStartingArea() {
+    private void ReturnToStartingArea()
+    {
 
-        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-4,rb2.velocity.y), ref velocityForReturning, smoothTime);
+        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-4, rb2.velocity.y), ref velocityForReturning, smoothTime);
 
     }
 
-    private void ResetTimer() {
+    private void ResetTimer()
+    {
 
         timer = 0f;
         timerOut = false;
