@@ -13,7 +13,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private int startNoWeights = 1;
     [SerializeField] private int noBursts;
 
-    public bool startBurstUsed;
     private Material material;
     private float pingPongValue = 1f;
     private Color color;
@@ -25,6 +24,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private int maxWeight = 3;
     private int noWeights;
 
+    public bool startBurstUsed;
     public HealthSystem hs;
     public SpriteRenderer sr;
 
