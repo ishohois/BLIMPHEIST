@@ -18,15 +18,7 @@ public class ScrollingObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(new Vector3(0, 1, 0) * GameController.instance.scrollSpeed * Time.deltaTime);
-        /*
-        if (transform.position.x > acceleratonCount)
-        {
-            acceleratonCount += maxSpeed;
-            GameController.instance.scrollSpeed = GameController.instance.scrollSpeed * acceleration;
-        }
-        */
-
+        
         if (GameController.instance.gameOver == true)
         {
             rd2d.velocity = Vector2.zero;

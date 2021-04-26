@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuPanel;
     public GameObject settingsMenuPanel;
     public Button pauseButton;
+    public Button burstButton;
 
     public void Resume()
     {
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         pauseButton.gameObject.SetActive(true);
+        burstButton.gameObject.SetActive(true);
     }
 
     public void Pause()
@@ -27,6 +29,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
             GameIsPaused = true;
             pauseButton.gameObject.SetActive(false);
+            burstButton.gameObject.SetActive(false);
             settingsMenuPanel.SetActive(false);
         }
     }
@@ -36,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         if(settingsMenuPanel != null)
         {
             pauseMenuPanel.SetActive(false);
+            burstButton.gameObject.SetActive(false);
             settingsMenuPanel.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;

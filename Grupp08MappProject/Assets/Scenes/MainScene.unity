@@ -491,6 +491,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 2104978853}
   settingsMenuPanel: {fileID: 1632350491}
   pauseButton: {fileID: 1185163454}
+  burstButton: {fileID: 661562425}
 --- !u!114 &119688869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &123402033
 MonoBehaviour:
@@ -924,7 +925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &251440520
 MonoBehaviour:
@@ -1166,7 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &309874017
 MonoBehaviour:
@@ -1410,6 +1411,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 2104978853}
   settingsMenuPanel: {fileID: 1632350491}
   pauseButton: {fileID: 1185163454}
+  burstButton: {fileID: 661562425}
 --- !u!114 &396665237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,7 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &631090724
 MonoBehaviour:
@@ -2667,6 +2669,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 2104978853}
   settingsMenuPanel: {fileID: 1632350491}
   pauseButton: {fileID: 1185163454}
+  burstButton: {fileID: 661562425}
 --- !u!114 &1185163454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,7 +2880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
 --- !u!114 &1378425249
 MonoBehaviour:
@@ -3062,7 +3065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &1510258570
 MonoBehaviour:
@@ -3157,7 +3160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &1558745903
 MonoBehaviour:
@@ -3252,7 +3255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &1560927566
 MonoBehaviour:
@@ -3390,6 +3393,7 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 2104978853}
   settingsMenuPanel: {fileID: 1632350491}
   pauseButton: {fileID: 1185163454}
+  burstButton: {fileID: 661562425}
 --- !u!114 &1635911294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,7 +3689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &1764451857
 MonoBehaviour:
@@ -4460,7 +4464,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1180, y: -708}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104978855
 MonoBehaviour:
