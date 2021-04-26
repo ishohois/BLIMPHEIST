@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
+    public GameOver gameOverScreen;
     //Destroy() Method
     //void OnTriggerEnter2D(Collider2D collision)
     //{
@@ -28,6 +29,7 @@ public class DeathZone : MonoBehaviour
             collision.gameObject.SetActive(false);
             //Animation goes here
             Debug.Log("Player has died.");
+            gameOverScreen.ShowGameOverScreen();
         }
     }
 }

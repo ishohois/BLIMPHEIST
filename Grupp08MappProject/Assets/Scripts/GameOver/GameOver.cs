@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -14,20 +14,21 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ShowGameOverScreen(int timeAlive, int obstaclesAvoided)
+    public void ShowGameOverScreen() //int timeAlive, int obstaclesAvoided
     {
+        Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
-        survivedTimeText.text = "Time survived: " + timeAlive.ToString() + " seconds"; //Kanske bor omvandla sekunder till minuter:sekunder.
-        obstaclesAvoidedText.text = "Obstacles avoided: " + obstaclesAvoided.ToString();
+        survivedTimeText.text = "Time survived: "; //+ timeAlive.ToString() + " seconds"; //Kanske bor omvandla sekunder till minuter:sekunder.
+        obstaclesAvoidedText.text = "Obstacles avoided: "; //+ obstaclesAvoided.ToString();
     }
 
-    //public void RestartGame()
-    //{
-    //    Scenemanager.LoadScene("INSERT GAME SCENE HERE");
-    //}
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 
-    //public void QuitGame()
-    //{
-    //    Scenemanager.LoadScene("INSERT MENU SCENE HERE");
-    //}
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
