@@ -26,6 +26,7 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private bool isBurstAvailable;
     public bool hasWeight = false;
     public bool timerOut = false;
+    public bool touchActivated;
 
     [SerializeField] private float timer2 = 0f;
     [SerializeField] private float timer = 0f;
@@ -44,7 +45,16 @@ public class Blimp_Movement : MonoBehaviour
     void Update()
     {
         velocityForReturning.y = rb2.velocity.y;
-        //CheckTouchInput();
+
+        if (touchActivated) {
+
+            CheckTouchInput();
+
+        }
+        else {
+
+            CheckInput();
+        }
 
         if (playerState.GetBursts() > 0)
         {
@@ -69,8 +79,7 @@ public class Blimp_Movement : MonoBehaviour
             }
 
         }
-        CheckInput();
-
+        
         if (burstUsed == true || hasLeftArea == true)
         {
 
