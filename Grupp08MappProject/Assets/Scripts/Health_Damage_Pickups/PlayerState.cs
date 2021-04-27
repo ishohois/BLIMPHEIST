@@ -27,6 +27,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public bool startBurstUsed;
     public HealthSystem hs;
     public SpriteRenderer sr;
+    public GameOver gameover;
 
 
     public delegate void UpdateBurst(PlayerState player);
@@ -64,6 +65,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
                 hurt = false;
             }
             material.color = color;
+        }
+
+        if(hs.GetHealthPoints() <= 0)
+        {
+            Die();
         }
     }
 
@@ -136,7 +142,10 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public void Die()
     {
-        Debug.Log("Player is dead");
+        int death = 3;
+        hs.DamageEntity(death);
+        sr.enabled = false;
+        gameover.ShowGameOverScreen();
     }
 
 

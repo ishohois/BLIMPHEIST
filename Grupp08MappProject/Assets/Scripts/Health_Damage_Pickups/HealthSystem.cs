@@ -28,6 +28,11 @@ public class HealthSystem
         {
             healthPoints -= damage;
         }
+        else
+        {
+            healthPoints = 0;
+        }
+
         if (updateHealth != null)
         {
             updateHealth(this);

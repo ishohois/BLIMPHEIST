@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Pool
-    {
-        public string tag;
-        public GameObject prefab;
-        public int size;
-
-    }
-
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
-
     public static PoolManager Instance;
+
+    public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
     #region
     private void Awake()
@@ -28,9 +18,9 @@ public class PoolManager : MonoBehaviour
     }
     #endregion
 
-    private void Start()
+    public void SetUpPools(WaveConfig waveConfig)
     {
-        foreach (Pool pool in pools)
+        foreach (var pool in waveConfig.ListOfPools)
         {
             if (!poolDictionary.ContainsKey(pool.tag))
             {
@@ -41,6 +31,34 @@ public class PoolManager : MonoBehaviour
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
                 poolDictionary[pool.tag].Enqueue(obj);
+            }
+        }
+    }
+
+    public void ChangePools(WaveConfig waveConfig)
+    {
+        foreach (var pool in waveConfig.ListOfPools)
+        {
+
+            if (poolDictionary.ContainsKey(pool.tag) && poolDictionary[pool.tag].Count != pool.size)
+            {
+                for (int i = 0; i < pool.size; i++)
+                {
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    poolDictionary[pool.tag].Enqueue(obj);
+                }
+            }
+
+            if (!poolDictionary.ContainsKey(pool.tag))
+            {
+                poolDictionary.Add(pool.tag, new Queue<GameObject>());
+                for (int i = 0; i < pool.size; i++)
+                {
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    poolDictionary[pool.tag].Enqueue(obj);
+                }
             }
         }
     }
@@ -60,14 +78,6 @@ public class PoolManager : MonoBehaviour
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
-    }
-
-
-
-    public class PoolObject
-    {
-        GameObject gameObject;
-
     }
 
 }

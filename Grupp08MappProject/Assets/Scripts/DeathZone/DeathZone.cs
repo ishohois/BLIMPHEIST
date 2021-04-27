@@ -26,9 +26,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.CompareTag("Player") == true)
         {
-            collision.gameObject.SetActive(false);
-            //Animation goes here
-            Debug.Log("Player has died.");
+            collision.GetComponent<PlayerState>().Die();
             gameOverScreen.ShowGameOverScreen();
         }
     }

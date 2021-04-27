@@ -14,8 +14,8 @@ public class UIHealthUpdater : MonoBehaviour
 
     private void OnDisable()
     {
-        HealthSystem.updateHealth += DecreaseHealth;
-        HealthSystem.updateHealth += IncreaseHealth;
+        HealthSystem.updateHealth -= DecreaseHealth;
+        HealthSystem.updateHealth -= IncreaseHealth;
     }
 
     private void DecreaseHealth(HealthSystem health)
