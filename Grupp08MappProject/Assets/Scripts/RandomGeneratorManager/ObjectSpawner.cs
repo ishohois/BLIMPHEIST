@@ -84,7 +84,12 @@ public class ObjectSpawner : MonoBehaviour
             }
         }
 
-        if (PreventOverlappingPosition())
+        // Clouds Check
+        if(poolTag == "Cloud" && PreventOverlappingPosition()) {
+
+            PoolManager.Instance.SpawnFromPool(poolTag, new Vector2(GetRandomPos().x, yMax), Quaternion.identity);
+        }
+        else if (PreventOverlappingPosition())
         {
             PoolManager.Instance.SpawnFromPool(poolTag, transform.position, Quaternion.identity);
         }
@@ -107,5 +112,5 @@ public class ObjectSpawner : MonoBehaviour
         Debug.Log("Spawning should take between " + timeMin + " s and " + timeMax + " s");
     }
 
-
+    
 }
