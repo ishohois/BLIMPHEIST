@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
 {
     public Text survivedTimeText;
     public Text obstaclesAvoidedText;
+    public GameController gameController;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class GameOver : MonoBehaviour
     {
         Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
-        survivedTimeText.text = "Time survived: "; //+ timeAlive.ToString() + " seconds"; //Kanske bor omvandla sekunder till minuter:sekunder.
+        survivedTimeText.text = "Time survived: " + gameController.EndTimer();
         obstaclesAvoidedText.text = "Obstacles avoided: "; //+ obstaclesAvoided.ToString();
     }
 
