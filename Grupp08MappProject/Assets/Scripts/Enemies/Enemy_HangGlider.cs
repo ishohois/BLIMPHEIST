@@ -11,7 +11,13 @@ public class Enemy_HangGlider : MonoBehaviour
     private bool hitLWall;
     private bool hitRWall;
 
-    [SerializeField] private float groundedDistance = 1f;
+    [SerializeField] private float minAirForce = 3f;
+    [SerializeField] private float maxAirForce = 5f;
+
+    [SerializeField] private float groundedMin = 1f;
+    [SerializeField] private float groundedMax = 3f;
+
+    [SerializeField] private float groundedDistance;
     [SerializeField] private float airbornDistance = 1f;
     [SerializeField] private float hitWallDistance = 1f;
     [SerializeField] private float horizontalFactor = 1f;
@@ -25,7 +31,7 @@ public class Enemy_HangGlider : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-
+        groundedDistance = Random.Range(groundedMin, groundedMax);
     }
 
     // Update is called once per frame
@@ -83,8 +89,8 @@ public class Enemy_HangGlider : MonoBehaviour
 
         Fly();
 
-
         modifyPhysics();
+
     }
 
     private void takeOff() {
@@ -94,7 +100,7 @@ public class Enemy_HangGlider : MonoBehaviour
     private void Fly() {
 
         if (isGrounded && !(rb.velocity.y > 3f)) {
-            rb.AddForce(new Vector2(horizontalSpeed * horizontalFactor, Random.Range(2f, 5f)), ForceMode2D.Force);
+            rb.AddForce(new Vector2(horizontalSpeed * horizontalFactor, Random.Range(minAirForce, maxAirForce)), ForceMode2D.Force);
         }
 
     }

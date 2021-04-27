@@ -635,6 +635,7 @@ MonoBehaviour:
   hs:
     healthPoints: 0
   sr: {fileID: 975967070}
+  gameover: {fileID: 0}
 --- !u!70 &975967073
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1444,6 +1445,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5014134621589680544, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+      propertyPath: groundedMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014134621589680544, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+      propertyPath: groundedMin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014134621589680544, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+      propertyPath: maxAirForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014134621589680544, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+      propertyPath: minAirForce
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5014134621589680545, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -1576,7 +1593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282832, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7393077367999282833, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
       propertyPath: m_RootOrder

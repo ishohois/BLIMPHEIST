@@ -42,7 +42,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5550467325177464477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -138,6 +138,7 @@ MonoBehaviour:
   playerState: {fileID: 7407320706243711916}
   startingArea: {fileID: 7383915022190158176}
   rb2: {fileID: 6226630746208504185}
+  burstButton: {fileID: 0}
   velocityForReturning: {x: -1, y: 0, z: 0}
   speed: 5
   extraSpeed: 100
@@ -150,6 +151,7 @@ MonoBehaviour:
   isBurstAvailable: 0
   hasWeight: 0
   timerOut: 0
+  touchActivated: 0
   timer2: 0
   timer: 0
   timeBeforeReset: 0.35
@@ -177,6 +179,7 @@ MonoBehaviour:
   hs:
     healthPoints: 0
   sr: {fileID: 3533231158163365590}
+  gameover: {fileID: 0}
 --- !u!1 &7383915022190158176
 GameObject:
   m_ObjectHideFlags: 0
