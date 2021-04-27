@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Vulture : MonoBehaviour
 {
-    public PlayerState playerState;
+    private PlayerState playerState;
 
     [SerializeField] private bool colliding;
     [SerializeField] private float timer = 0f;
@@ -13,30 +13,37 @@ public class Enemy_Vulture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (colliding) {
+        if (colliding)
+        {
 
             timer += Time.deltaTime;
 
-            if(timer >= timeBeforeReset) {
+            if (timer >= timeBeforeReset)
+            {
 
-                playerState.UseBurst();
+                if (playerState != null)
+                {
+                    playerState.UseBurst();
+                }
                 timer = 0f;
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision) {
-
-        if (collision.gameObject.CompareTag("Player") == true) {
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
+            playerState = collision.GetComponent<PlayerState>();
             colliding = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
+    private void OnTriggerExit2D(Collider2D collision)
+    {
 
-        if (collision.gameObject.CompareTag("Player") == true) {
-
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
             colliding = false;
             timer = 0f;
         }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy_Cloud : MonoBehaviour
 {
-
-    public PlayerState playerState;
     public GameObject lightning;
 
     [SerializeField] private bool hit = false;
@@ -43,7 +41,7 @@ public class Enemy_Cloud : MonoBehaviour
         
         if(hit == true && collision.gameObject.CompareTag("Player") == true) {
 
-            playerState.UseBurst();
+            collision.gameObject.GetComponent<PlayerState>().UseBurst();
         }
     }
 }
