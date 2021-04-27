@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
         {
             backgroundFloat = PlayerPrefs.GetFloat(BackgroundPref); //Pulls the value from the Playerpref
             backgroundSlider.value = backgroundFloat; //Sets the slider to the value we pulled/saved
+
             soundEffectsFloat = PlayerPrefs.GetFloat(SoundEffectsPref); //Pulls the value from the Playerpref
             soundEffectsSlider.value = soundEffectsFloat; //Sets the slider to the value we pulled/saved
         }
@@ -41,8 +42,9 @@ public class AudioManager : MonoBehaviour
 
     public void SaveSoundSettings() //Saves the sound settings so when we exit the game or scene the values stay consistent throughout the whole game
     {
-        PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value); //Saves the value through scenes and play sessions using the sliders value
+        Debug.Log("save");
         PlayerPrefs.SetFloat(SoundEffectsPref, soundEffectsSlider.value); //Saves the value through scenes and play sessions using the sliders value
+        PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value); //Saves the value through scenes and play sessions using the sliders value
     }
 
     private void OnApplicationFocus(bool inFocus) //When you minimise/pause the game we loose focus of the application. So when a player exits the game we still want to save the values

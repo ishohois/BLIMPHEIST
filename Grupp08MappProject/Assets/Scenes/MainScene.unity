@@ -912,6 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 345904183}
 --- !u!114 &251440519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 678687385}
 --- !u!114 &309874016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,18 +1334,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1851463645}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SaveSoundSettings
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 251440518}
         m_TargetAssemblyTypeName: ShowValueScript, Assembly-CSharp
         m_MethodName: textUpdate
@@ -1459,6 +1449,18 @@ MonoBehaviour:
       - m_Target: {fileID: 396665236}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1851463645}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SaveSoundSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1956,18 +1958,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1851463645}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: UpdateSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1851463645}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SaveSoundSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3575,6 +3565,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 309874015}
+        m_TargetAssemblyTypeName: ShowValueScript, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 251440518}
+        m_TargetAssemblyTypeName: ShowValueScript, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1635911295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4694,6 +4708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2836558236302394919, guid: e870b050e2068804ab63522bcb6e6ff6, type: 3}
+      propertyPath: obstacleSpawn
+      value: 
+      objectReference: {fileID: 243987555}
     - target: {fileID: 5037611076159225081, guid: e870b050e2068804ab63522bcb6e6ff6, type: 3}
       propertyPath: m_RootOrder
       value: 8
