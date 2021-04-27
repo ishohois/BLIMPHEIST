@@ -13,11 +13,11 @@ public class ScrollingObjects : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
 
-        rd2d.velocity = new Vector2(scrollSpeed, 0);
-    }
+    //    rd2d.velocity = new Vector2(scrollSpeed, 0);
+    //}
 
     private void OnDisable()
     {
