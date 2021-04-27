@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
-  m_Name: New Wave Config 1
+  m_Name: Wave2
   m_EditorClassIdentifier: 
-  minRandomTime: 0
-  maxRandomTime: 0
-  listOfPools: []
-  hasNewPools: 0
+  minRandomTime: 2
+  maxRandomTime: 4
+  listOfPools:
+  - tag: Cloud
+    prefab: {fileID: 7393077367999282832, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
+    size: 10
+  hasNewPools: 1

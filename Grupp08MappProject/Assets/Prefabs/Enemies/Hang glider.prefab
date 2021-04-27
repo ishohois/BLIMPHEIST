@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5014134621589680558}
   - component: {fileID: 5014134621589680544}
   - component: {fileID: 5014134621589680559}
-  m_Layer: 0
+  - component: {fileID: 1158678136717368620}
+  m_Layer: 8
   m_Name: Hang glider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1158678136717368620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014134621589680549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dd211b88a8a1443ab1f77081005fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -2

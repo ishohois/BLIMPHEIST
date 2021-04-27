@@ -17,6 +17,7 @@ public class ObjectSpawner : MonoBehaviour
     private float timeMin = 5f;
     private float timeCounter;
 
+    [SerializeField] private bool run = true;
 
     private void Start()
     {
@@ -26,11 +27,12 @@ public class ObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (run)
         {
             AppearRandomOnScreen();
             timeCounter = Random.Range(timeMin, timeMax);
             Debug.Log(timeCounter);
+            run = false;
         }
 
         if (timeCounter != 0)

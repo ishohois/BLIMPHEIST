@@ -19,9 +19,9 @@ public class ScrollingObjects : MonoBehaviour
     void Update()
     {
         
-        if (GameController.instance.gameOver == true)
-        {
-            rd2d.velocity = Vector2.zero;
-        }
+        //if (GameController.instance.gameOver == true)
+        //{
+        //    rd2d.velocity = Vector2.zero;
+        //}
     }
 }

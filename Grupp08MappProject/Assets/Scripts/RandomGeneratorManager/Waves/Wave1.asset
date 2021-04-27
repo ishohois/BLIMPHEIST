@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
-  m_Name: New Wave Config
+  m_Name: Wave1
   m_EditorClassIdentifier: 
-  minRandomTime: 0
-  maxRandomTime: 0
-  listOfPools: []
-  hasNewPools: 0
+  minRandomTime: 3
+  maxRandomTime: 6
+  listOfPools:
+  - tag: HangGlider
+    prefab: {fileID: 5014134621589680549, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+    size: 4
+  - tag: Vulture
+    prefab: {fileID: 4905280242483441489, guid: 468471569d1948e41b8e6adb6f1ca6f1, type: 3}
+    size: 6
+  hasNewPools: 1

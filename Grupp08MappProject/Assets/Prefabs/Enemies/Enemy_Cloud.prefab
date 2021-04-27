@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7393077367999282836}
   - component: {fileID: 7983545813534271731}
   - component: {fileID: 7407296704600722385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7393077368951981697}
   - component: {fileID: 7393077368951981698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}

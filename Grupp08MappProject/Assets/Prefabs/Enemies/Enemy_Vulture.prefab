@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4905280242483441500}
   - component: {fileID: 4905280242483441491}
   - component: {fileID: 4905280242483441501}
-  m_Layer: 0
+  - component: {fileID: 463861795811041285}
+  m_Layer: 8
   m_Name: Enemy_Vulture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,3 +139,16 @@ MonoBehaviour:
   colliding: 0
   timer: 0
   timeBeforeReset: 0.5
+--- !u!114 &463861795811041285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905280242483441489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dd211b88a8a1443ab1f77081005fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -2
