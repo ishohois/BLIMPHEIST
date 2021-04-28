@@ -5,13 +5,13 @@ using UnityEngine;
 public class BackgroundScrolling : MonoBehaviour
 {
     public float scrollingSpeed;
-    public MeshRenderer renderer;
+    public MeshRenderer meshRenderer;
     // Start is called before the first frame update
 
 
     // Update is called once per frame
     void Update()
     {
-        renderer.material.mainTextureOffset += new Vector2(scrollingSpeed * Time.deltaTime, 0f);
+        meshRenderer.material.mainTextureOffset += new Vector2(scrollingSpeed * Time.deltaTime, 0f);
     }
 }

@@ -2054,8 +2054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df9940be9a3c744ba3d229537f64ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollingSpeed: 0.2
-  renderer: {fileID: 670359000}
+  scrollingSpeed: 0.15
+  meshRenderer: {fileID: 670359000}
 --- !u!1 &678687383
 GameObject:
   m_ObjectHideFlags: 0
