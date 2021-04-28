@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectDeactivator : MonoBehaviour
 {
+    public int objectCounter; 
     /*
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,5 +26,11 @@ public class ObjectDeactivator : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.gameObject.SetActive(false);
+        objectCounter++;
+    }
+
+    public int GetObjectCounter()
+    {
+        return objectCounter;
     }
 }

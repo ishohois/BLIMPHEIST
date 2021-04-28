@@ -6,22 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public Text survivedTimeText;
-    public Text obstaclesAvoidedText;
-    public GameController gameController;
+    [SerializeField] private Text survivedTimeText;
+    [SerializeField] private Text obstaclesAvoidedText;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Timer timer;
+    [SerializeField] private ObjectDeactivator objectDeactivator;
+    public int score;
+    [SerializeField] private Text highScoreText;
+    public int currentHighScore;
+    public string highScoreKey = "HighScore";
 
     void Start()
     {
+        if (PlayerPrefs.HasKey(highScoreKey))
+        {
+            currentHighScore = PlayerPrefs.GetInt(highScoreKey);
+        }
         gameObject.SetActive(false);
     }
 
-    public void ShowGameOverScreen() //int timeAlive, int obstaclesAvoided
+    public void ShowGameOverScreen()
     {
         Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
-        survivedTimeText.text = "Time survived: " + gameController.EndTimer();
-        obstaclesAvoidedText.text = "Obstacles avoided: "; //+ obstaclesAvoided.ToString();
+        survivedTimeText.text = "Time survived: " + timer.EndTimer();
+        obstaclesAvoidedText.text = "Obstacles avoided: " + objectDeactivator.GetObjectCounter();
+        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter();
+        scoreText.text = "Score: " + score;
         Time.timeScale = 0f; //Stops time
+        if (currentHighScore < score)
+        {
+            PlayerPrefs.SetInt(highScoreKey, score);
+            PlayerPrefs.Save();
+            currentHighScore = score;
+        }
+        highScoreText.text = "HighScore: " + currentHighScore;
     }
 
     public void RestartGame()
