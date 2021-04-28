@@ -32,7 +32,9 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
- 
+
+    public AudioSource hitSound; //Sound when you get hit
+
 
     void Start()
     {
@@ -130,6 +132,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         if (!hurt)
         {
+            hitSound.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;
         }

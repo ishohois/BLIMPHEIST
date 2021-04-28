@@ -16,6 +16,8 @@ public class GameOver : MonoBehaviour
     public int currentHighScore;
     public string highScoreKey = "HighScore";
 
+    public AudioSource deathSound; //Det ljud som spelas när man dör
+
     void Start()
     {
         if (PlayerPrefs.HasKey(highScoreKey))
@@ -27,6 +29,8 @@ public class GameOver : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
+        deathSound.Play();
+
         Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
         survivedTimeText.text = "Time survived: " + timer.EndTimer();

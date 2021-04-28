@@ -33,6 +33,9 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float timeBeforeReset = 5f;
     [SerializeField] private float timerBeforeAddBurst = 0.3f;
 
+    public AudioSource jumpsound; //Det ljud som spelas när man hoppar
+    public AudioSource Burstsound; //Det ljud som spelas när man använder burst
+
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +118,7 @@ public class Blimp_Movement : MonoBehaviour
                 rb2.mass = 2;
                 movement.y = speed * 70f;
             }
+        
 
             rb2.mass = 1;
             movement.y = speed * extraSpeed;
@@ -185,6 +189,12 @@ public class Blimp_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) == true)
         {
 
+            if(!jumpsound.isPlaying) //used to make sure the audio doesn't play over itself
+            {
+                jumpsound.Play(); //Spela ljud när man hoppar
+            }
+            
+
             flying = true;
         }
         else
@@ -197,6 +207,7 @@ public class Blimp_Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.D) == true)
             {
+                Burstsound.Play(); //Spela ljud när man använder burst
 
                 burstUsed = true;
             }
