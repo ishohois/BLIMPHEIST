@@ -11,7 +11,7 @@ public class BG_Scroller : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(GameController.instance.scrollSpeedBG, 0);
+        //rb2d.velocity = new Vector2(GameController.instance.scrollSpeedBG, 0);
 
     }
 

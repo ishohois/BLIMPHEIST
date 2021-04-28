@@ -21,11 +21,13 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(true);
         survivedTimeText.text = "Time survived: " + gameController.EndTimer();
         obstaclesAvoidedText.text = "Obstacles avoided: "; //+ obstaclesAvoided.ToString();
+        Time.timeScale = 0f; //Stops time
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1f; //Start time again
     }
 
     public void QuitGame()
