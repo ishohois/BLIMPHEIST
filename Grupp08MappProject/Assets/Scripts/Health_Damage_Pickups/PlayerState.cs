@@ -67,7 +67,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             material.color = color;
         }
 
-        if(hs.GetHealthPoints() <= 0)
+        if(hs.GetHealthPoints() <= 0 && sr.enabled == true)
         {
             Die();
         }
