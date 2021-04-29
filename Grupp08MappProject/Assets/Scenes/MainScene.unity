@@ -2174,7 +2174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670358999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.48, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0}
   m_LocalScale: {x: 20.575, y: 11.098264, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2354,6 +2354,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &707431207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707431208}
+  - component: {fileID: 707431209}
+  m_Layer: 0
+  m_Name: PickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707431208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707431207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.81, y: -0.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1617313983}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &707431209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707431207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcdff7e5027bde4cbeb5e2abed7f216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yMin: 0
+  yMax: 0
+  yPadding: 0.05
+  colliders: []
+  layer:
+    serializedVersion: 2
+    m_Bits: 768
+  spawnRadius: 1
+  run: 1
 --- !u!1 &707721011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,7 +3036,7 @@ GameObject:
   - component: {fileID: 936786194}
   - component: {fileID: 936786195}
   m_Layer: 0
-  m_Name: ObjectSpawner
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3018,11 +3070,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yMin: 0
   yMax: 0
-  yPadding: 0.1
+  yPadding: 0.05
   colliders: []
   layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   spawnRadius: 1
   run: 1
 --- !u!1 &941976260
@@ -4232,6 +4284,7 @@ Transform:
   m_Children:
   - {fileID: 297135610}
   - {fileID: 936786194}
+  - {fileID: 707431208}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4251,12 +4304,18 @@ MonoBehaviour:
   - 60
   - 120
   - 240
-  configs:
+  enemyConfigs:
   - {fileID: 11400000, guid: 5b5b5251e07645d4e80008cb13b733a3, type: 2}
   - {fileID: 11400000, guid: b66e0cc471aefcf46b37f37b60f07d7b, type: 2}
   - {fileID: 11400000, guid: 7f52cf5eb47330344904583f36ab166b, type: 2}
   - {fileID: 11400000, guid: b54466ebadbd45841b13a175d51d3f5c, type: 2}
-  spawner: {fileID: 936786195}
+  enemySpawner: {fileID: 936786195}
+  pickupConfigs:
+  - {fileID: 11400000, guid: 70ca16bb8c295f843b1e317f89c06fbd, type: 2}
+  - {fileID: 11400000, guid: 6e5a0b04e5f55bc4d80704030e9f1da2, type: 2}
+  - {fileID: 11400000, guid: a344bafe38ba38245b6e5456ca9e2c23, type: 2}
+  - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
+  pickupSpawner: {fileID: 707431209}
 --- !u!1 &1632350491
 GameObject:
   m_ObjectHideFlags: 0

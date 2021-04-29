@@ -31,7 +31,6 @@ public class ObjectSpawner : MonoBehaviour
         {
             AppearRandomOnScreen();
             timeCounter = Random.Range(timeMin, timeMax);
-            Debug.Log(timeCounter);
             run = false;
         }
 
@@ -42,7 +41,6 @@ public class ObjectSpawner : MonoBehaviour
             {
                 AppearRandomOnScreen();
                 timeCounter = Random.Range(timeMin, timeMax);
-                Debug.Log(timeCounter);
             }
         }
     }

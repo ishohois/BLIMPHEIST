@@ -9,16 +9,23 @@ public class RandomGeneratorManager : MonoBehaviour
     private int index;
     private bool run = true;
 
-    public WaveConfig[] configs;
-    public ObjectSpawner spawner;
+    [Header("EnemySpawner")]
+    public WaveConfig[] enemyConfigs;
+    public ObjectSpawner enemySpawner;
+
+    [Header("PickupSpawner")]
+    public WaveConfig[] pickupConfigs;
+    public ObjectSpawner pickupSpawner;
 
     void Start()
     {
-        if (configs != null)
+        if (enemyConfigs != null)
         {
-            PoolManager.Instance.SetUpPools(configs[0]);
+            PoolManager.Instance.SetUpPools(enemyConfigs[0]);
+            PoolManager.Instance.SetUpPools(pickupConfigs[0]);
             timeCounter = timeStamps[0];
-            spawner.SetUpWaves(configs[0]);
+            enemySpawner.SetUpWaves(enemyConfigs[0]);
+            pickupSpawner.SetUpWaves(pickupConfigs[0]);
         }
     }
 
@@ -33,16 +40,19 @@ public class RandomGeneratorManager : MonoBehaviour
                 Debug.Log("Wave " + index + 1);
                 if (index <= timeStamps.Length - 1)
                 {
-                    timeCounter = timeStamps[index++];
+                    timeCounter = timeStamps[index];
                     Debug.Log("index is : " + index);
                 }
                 else { run = false; }
 
                 if (index != 0)
                 {
-                    PoolManager.Instance.ChangePools(configs[index]);
-                    spawner.SetUpWaves(configs[index]);
+                    PoolManager.Instance.ChangePools(enemyConfigs[index]);
+                    enemySpawner.SetUpWaves(enemyConfigs[index]);
+                    pickupSpawner.SetUpWaves(pickupConfigs[index]);
                 }
+                index++;
+                Debug.Log(index);
             }
         }
     }
