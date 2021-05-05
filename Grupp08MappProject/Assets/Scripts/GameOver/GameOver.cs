@@ -56,5 +56,6 @@ public class GameOver : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f; //Start time again
     }
 }

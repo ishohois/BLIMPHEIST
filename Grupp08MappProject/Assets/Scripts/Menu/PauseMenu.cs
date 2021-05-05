@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; //time start
         GameIsPaused = false;
         pauseButton.gameObject.SetActive(true);
         burstButton.gameObject.SetActive(true);
@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
         if(pauseMenuPanel != null)
         {
             pauseMenuPanel.SetActive(true);
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; //time stop
             GameIsPaused = true;
             pauseButton.gameObject.SetActive(false);
             burstButton.gameObject.SetActive(false);
@@ -41,10 +41,22 @@ public class PauseMenu : MonoBehaviour
             pauseMenuPanel.SetActive(false);
             burstButton.gameObject.SetActive(false);
             settingsMenuPanel.SetActive(true);
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; //time stop
             GameIsPaused = true;
             pauseButton.gameObject.SetActive(false);
         }
 
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1f; //Start time again
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f; //Start time again
     }
 }
