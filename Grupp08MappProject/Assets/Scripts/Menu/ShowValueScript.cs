@@ -5,32 +5,66 @@ using UnityEngine.UI;
 
 public class ShowValueScript : MonoBehaviour
 {
-    private Text percentageText;
-    [SerializeField] Slider slider;
+    private static readonly string BGProcentPref = "BGProcentPref";
+    private static readonly string SFXProcentPref = "SFXProcentPref";
+
+    //public Text BGpercentageText;
+    //public Text SFXpercentageText;
+    public Text procentText;
+    //[SerializeField] Slider slider;
+    public Slider backgroundSlider, soundEffectsSlider; //Sliders för volymen
 
     private void Start()
     {
-        percentageText = GetComponent<Text>();
+        //BGpercentageText = GetComponent<Text>();
+        //SFXpercentageText = GetComponent<Text>();
+        procentText = GetComponent<Text>();
+        backgroundSlider.value = PlayerPrefs.GetFloat("BGProcentPref");
+        soundEffectsSlider.value = PlayerPrefs.GetFloat("SFXProcentPref");
         //percentageText.text = Mathf.RoundToInt(int.Parse(percentageText.text) * 100) + "%";
+    }
+
+    private void Update()
+    {
+        PlayerPrefs.SetFloat(BGProcentPref, backgroundSlider.value);
+        PlayerPrefs.SetFloat(SFXProcentPref, soundEffectsSlider.value);
     }
 
     public void textUpdate(float value)
     {
-        if(value!=null && percentageText != null)
+        if(value!=null && procentText != null )
         {
-            percentageText.text = Mathf.RoundToInt(value * 100) + "%";
+            //BGpercentageText.text = Mathf.RoundToInt(value * 100) + "%";
+            //SFXpercentageText.text = Mathf.RoundToInt(value * 100) + "%";
+            procentText.text = Mathf.RoundToInt(value * 100) + "%";
         }
         else
         {
             Debug.Log(value + "  null");
 
         }
+        //PlayerPrefs.SetFloat("ProcentPref", slider.value);
     }
 
     public void OpenMenu()
     {
-        Debug.Log(slider.value);
-        textUpdate(slider.value);
+        Debug.Log(soundEffectsSlider.value);
+        Debug.Log(backgroundSlider.value);
 
+        textUpdate(soundEffectsSlider.value);
+        textUpdate(backgroundSlider.value);
+
+        PlayerPrefs.SetFloat(BGProcentPref, backgroundSlider.value);
+        PlayerPrefs.SetFloat(SFXProcentPref, soundEffectsSlider.value);
+    }
+
+    private void OnApplicationFocus(bool inFocus) //When you minimise/pause the game we loose focus of the application. So when a player exits the game we still want to save the values
+    {
+        if (!inFocus)
+        {
+            //OpenMenu();
+            PlayerPrefs.SetFloat(BGProcentPref, backgroundSlider.value);
+            PlayerPrefs.SetFloat(SFXProcentPref, soundEffectsSlider.value);
+        }
     }
 }
