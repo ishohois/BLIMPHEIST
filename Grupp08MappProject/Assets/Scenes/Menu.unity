@@ -1079,7 +1079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 807365084}
+  procentText: {fileID: 635726762}
+  backgroundSlider: {fileID: 807365084}
+  soundEffectsSlider: {fileID: 33778260}
 --- !u!1 &654535277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 33778260}
+  procentText: {fileID: 1844207704}
+  backgroundSlider: {fileID: 807365084}
+  soundEffectsSlider: {fileID: 33778260}
 --- !u!1 &1861440819
 GameObject:
   m_ObjectHideFlags: 0
