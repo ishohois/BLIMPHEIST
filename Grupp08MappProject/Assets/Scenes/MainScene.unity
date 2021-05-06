@@ -994,7 +994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 345904183}
+  procentText: {fileID: 251440520}
+  backgroundSlider: {fileID: 678687385}
+  soundEffectsSlider: {fileID: 345904183}
 --- !u!114 &251440519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,7 +1315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565cca027797bbd40b9de7fe4cf2c479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 678687385}
+  procentText: {fileID: 309874017}
+  backgroundSlider: {fileID: 678687385}
+  soundEffectsSlider: {fileID: 345904183}
 --- !u!114 &309874016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,7 +1546,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 162}
-  m_SizeDelta: {x: 178.1, y: 95}
+  m_SizeDelta: {x: 171, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396665236
 MonoBehaviour:
@@ -2337,11 +2341,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 64
+    m_FontSize: 33
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 120
+    m_MaxSize: 57
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -4843,30 +4847,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1635911293}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LoadMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 309874015}
-        m_TargetAssemblyTypeName: ShowValueScript, Assembly-CSharp
-        m_MethodName: OpenMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 251440518}
-        m_TargetAssemblyTypeName: ShowValueScript, Assembly-CSharp
-        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
