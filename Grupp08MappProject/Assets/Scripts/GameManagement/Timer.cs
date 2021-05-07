@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
         if (timerActive == true) 
         {
             currentTime = currentTime + Time.deltaTime;
-            Debug.Log("Timer running");
+            //Debug.Log("Timer running");
         }
     }
 

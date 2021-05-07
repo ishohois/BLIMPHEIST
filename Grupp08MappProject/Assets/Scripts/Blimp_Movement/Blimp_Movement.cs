@@ -9,6 +9,7 @@ public class Blimp_Movement : MonoBehaviour
     public GameObject startingArea;
     public Rigidbody2D rb2;
     public Button burstButton;
+    public ParticleSystem steam;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -100,6 +101,19 @@ public class Blimp_Movement : MonoBehaviour
 
                 ReturnToStartingArea();
             }
+        }
+
+        //Steam control
+        var emission = steam.emission;
+        if (flying == true && emission.enabled == false)
+        {
+            emission.enabled = true;
+            //Debug.Log("Steam on");
+        }
+        else if (flying == false && emission.enabled == true)
+        {
+            emission.enabled = false;
+            //Debug.Log("Steam off");
         }
     }
 
@@ -280,5 +294,5 @@ public class Blimp_Movement : MonoBehaviour
         timer = 0f;
         timerOut = false;
     }
-
+    
 }
