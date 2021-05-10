@@ -36,6 +36,7 @@ public class Blimp_Movement : MonoBehaviour
 
     public AudioSource jumpsound; //Det ljud som spelas när man hoppar
     public AudioSource Burstsound; //Det ljud som spelas när man använder burst
+    public AudioSource flyingSound;
 
 
     // Start is called before the first frame update
@@ -114,6 +115,16 @@ public class Blimp_Movement : MonoBehaviour
         {
             emission.enabled = false;
             //Debug.Log("Steam off");
+        }
+
+        //FlyingSound control
+        if (flying == true && flyingSound.mute == true)
+        {
+            flyingSound.mute = false;
+        }
+        else if (flying == false && flyingSound.mute == false)
+        {
+            flyingSound.mute = true;
         }
     }
 
@@ -203,10 +214,10 @@ public class Blimp_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) == true)
         {
 
-            if(!jumpsound.isPlaying) //used to make sure the audio doesn't play over itself
-            {
-                jumpsound.Play(); //Spela ljud när man hoppar
-            }
+            //if(!jumpsound.isPlaying) //used to make sure the audio doesn't play over itself
+            //{
+            //    jumpsound.Play(); //Spela ljud när man hoppar
+            //}
             
 
             flying = true;
