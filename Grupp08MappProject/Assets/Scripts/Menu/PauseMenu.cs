@@ -17,6 +17,11 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f; //time start
         GameIsPaused = false;
+        //AudioListener.pause = false;
+
+        GameObject blimpObject = GameObject.Find("Blimp");
+        blimpObject.GetComponent<Blimp_Movement>().enabled = true; //Enable Blimp_Moement script when game resumes so player can move again (and flyingsound plays again)
+
         pauseButton.gameObject.SetActive(true);
         burstButton.gameObject.SetActive(true);
     }
@@ -28,6 +33,11 @@ public class PauseMenu : MonoBehaviour
             pauseMenuPanel.SetActive(true);
             Time.timeScale = 0f; //time stop
             GameIsPaused = true;
+            //AudioListener.pause = true;
+
+            GameObject blimpObject = GameObject.Find("Blimp");
+            blimpObject.GetComponent<Blimp_Movement>().enabled = false; //Disable Blimp_Movement script so flyingSound doesn't play when game is paused
+
             pauseButton.gameObject.SetActive(false);
             burstButton.gameObject.SetActive(false);
             settingsMenuPanel.SetActive(false);
