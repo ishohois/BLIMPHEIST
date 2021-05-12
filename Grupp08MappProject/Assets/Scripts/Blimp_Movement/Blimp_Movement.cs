@@ -10,6 +10,7 @@ public class Blimp_Movement : MonoBehaviour
     public Rigidbody2D rb2;
     public Button burstButton;
     public ParticleSystem steam;
+    public Animator anim;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -25,7 +26,6 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
-    public bool hasWeight = false;
     public bool timerOut = false;
     public bool touchActivated;
 
@@ -103,6 +103,8 @@ public class Blimp_Movement : MonoBehaviour
             }
         }
 
+        CheckForAnimations();
+
         //Steam control
         var emission = steam.emission;
         if (flying == true && emission.enabled == false)
@@ -135,16 +137,7 @@ public class Blimp_Movement : MonoBehaviour
         Vector3 movement = Vector3.zero;
 
         if (flying == true)
-        {
-
-            if (hasWeight)
-            {
-
-                rb2.mass = 2;
-                movement.y = speed * 70f;
-            }
-        
-
+        {     
             rb2.mass = 1;
             movement.y = speed * extraSpeed;
             Move(movement);
@@ -265,6 +258,17 @@ public class Blimp_Movement : MonoBehaviour
         }
     }
 
+    private void CheckForAnimations() {
+
+        if (flying) {
+
+            anim.SetBool("Flying", true);
+        }
+        else {
+
+            anim.SetBool("Flying", false);
+        }
+    }
 
     private void Move(Vector3 moving)
     {
