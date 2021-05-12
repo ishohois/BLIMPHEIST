@@ -29,6 +29,7 @@ public class GameOver : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
+        deathSound.pitch = Random.Range(0.6f, 0.9f);
         deathSound.Play();
 
         Debug.Log("Showing GameOver screen");

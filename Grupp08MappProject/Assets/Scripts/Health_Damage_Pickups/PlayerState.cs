@@ -35,7 +35,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public AudioSource hitSound; //Sound when you get hit
 
-
     void Start()
     {
         hs = new HealthSystem(maxHealth);
@@ -132,6 +131,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         if (!hurt)
         {
+            hitSound.pitch = UnityEngine.Random.Range(0.6f, 0.9f);
             hitSound.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;

@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.125
+  orthographic size: 4.392857
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2130,7 +2130,7 @@ GameObject:
   - component: {fileID: 438215847}
   - component: {fileID: 438215848}
   m_Layer: 0
-  m_Name: Audio Source- Jump Sound
+  m_Name: Audio Source- Flying Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2160,7 +2160,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0a02b2c5d4443a04f9b2057a9e10d663, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7abb75c8a10d94e48b926d55a1b5f638, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.785
   m_Pitch: 1
@@ -5197,7 +5197,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 37dbf93c24e6ffd46809f596ca282d21, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd7a5dfc9351c684f9c665d87b2285e5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.785
   m_Pitch: 1
@@ -6397,7 +6397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1851463645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6606,9 +6606,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1486798267}
     - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
+      propertyPath: burstSound
+      value: 
+      objectReference: {fileID: 1486798267}
+    - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
       propertyPath: burstButton
       value: 
       objectReference: {fileID: 661562425}
+    - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
+      propertyPath: flyingSound
+      value: 
+      objectReference: {fileID: 438215848}
     - target: {fileID: 7535826133968247364, guid: 69e6906b4ea98b54194fe6c2a41614b9, type: 3}
       propertyPath: touchActivated
       value: 0
