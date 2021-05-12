@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.4002523
+  orthographic size: 5.74
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 11c498ed507ae8b4aa3d3992b885ecff, type: 3}
+  m_Texture: {fileID: 2800000, guid: d43e5c90961ba84499ba511326775417, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 395a219cbee7cfc4cbe485f02f0494de, type: 3}
+  m_Texture: {fileID: 2800000, guid: 36bf61ed7b9e00041b4ee3dbb604037c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6962225b30b1e84f8c9e25fb05fcb3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d43e5c90961ba84499ba511326775417, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3232,7 +3232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 395a219cbee7cfc4cbe485f02f0494de, type: 3}
+  m_Texture: {fileID: 2800000, guid: 36bf61ed7b9e00041b4ee3dbb604037c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3844,7 +3844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 11c498ed507ae8b4aa3d3992b885ecff, type: 3}
+  m_Texture: {fileID: 2800000, guid: d43e5c90961ba84499ba511326775417, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7113,7 +7113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 11c498ed507ae8b4aa3d3992b885ecff, type: 3}
+  m_Texture: {fileID: 2800000, guid: d43e5c90961ba84499ba511326775417, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7185,7 +7185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 395a219cbee7cfc4cbe485f02f0494de, type: 3}
+  m_Texture: {fileID: 2800000, guid: 36bf61ed7b9e00041b4ee3dbb604037c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7990,6 +7990,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3821827971555887547, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020778501498237072, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734365422419772235, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734365422419772235, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6053606
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611528, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: burstSound
       value: 
@@ -8062,6 +8110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blimp(WithAnimation)
       objectReference: {fileID: 0}
+    - target: {fileID: 8439514609062621276, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5de17f4be891054aa0396bb22811a9c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
 --- !u!1001 &5474624761037473022
