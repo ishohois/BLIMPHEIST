@@ -25,7 +25,6 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
-    public bool hasWeight = false;
     public bool timerOut = false;
     public bool touchActivated;
 
@@ -137,16 +136,7 @@ public class Blimp_Movement : MonoBehaviour
         Vector3 movement = Vector3.zero;
 
         if (flying == true)
-        {
-
-            if (hasWeight)
-            {
-
-                rb2.mass = 2;
-                movement.y = speed * 70f;
-            }
-        
-
+        {   
             rb2.mass = 1;
             movement.y = speed * extraSpeed;
             Move(movement);
@@ -269,6 +259,14 @@ public class Blimp_Movement : MonoBehaviour
 
     private void CheckAnimations() {
 
+        if (hasLeftArea == false) {
+
+            anim.SetBool("HasLeftArea", false);
+        }
+        else {
+
+            anim.SetBool("HasLeftArea", true);
+        }
         if (flying) {
 
             anim.SetBool("Flying", true);
@@ -292,6 +290,7 @@ public class Blimp_Movement : MonoBehaviour
         rb2.velocity = new Vector2(0, rb2.velocity.y);
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
         playerState.UseBurst();
+        anim.SetTrigger("UseBurst");
         ResetTimer();
         burstUsed = false;
     }
