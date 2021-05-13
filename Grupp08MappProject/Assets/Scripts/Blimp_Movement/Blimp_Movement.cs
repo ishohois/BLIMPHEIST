@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Blimp_Movement : MonoBehaviour
 {
     public PlayerState playerState;
-    public GameObject startingArea;
     public Rigidbody2D rb2;
     public Button burstButton;
     public ParticleSystem steam;
+    public Animator anim;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -83,7 +83,9 @@ public class Blimp_Movement : MonoBehaviour
             }
 
         }
-        
+
+        CheckAnimations();
+
         if (burstUsed == true || hasLeftArea == true)
         {
 
@@ -265,6 +267,17 @@ public class Blimp_Movement : MonoBehaviour
         }
     }
 
+    private void CheckAnimations() {
+
+        if (flying) {
+
+            anim.SetBool("Flying", true);
+        }
+        else {
+
+            anim.SetBool("Flying", false);
+        }
+    }
 
     private void Move(Vector3 moving)
     {
