@@ -8138,6 +8138,10 @@ PrefabInstance:
       propertyPath: flyingSound
       value: 
       objectReference: {fileID: 438215848}
+    - target: {fileID: 5202988557933611528, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: returningSpeed
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: gameover
       value: 
@@ -8152,7 +8156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611764, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_LinearDrag
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5202988558046658036, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: startPoint

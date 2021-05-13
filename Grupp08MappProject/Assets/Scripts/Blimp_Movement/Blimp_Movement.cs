@@ -19,6 +19,7 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private float maxSpeed = 20f;
     [SerializeField] private float burstSpeed = 1f;
+    [SerializeField] private float returningSpeed;
 
     public bool flying;
     [SerializeField] private bool hasLeftArea = true;
@@ -307,7 +308,7 @@ public class Blimp_Movement : MonoBehaviour
     private void ReturnToStartingArea()
     {
 
-        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-4, rb2.velocity.y), ref velocityForReturning, smoothTime);
+        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(returningSpeed, rb2.velocity.y), ref velocityForReturning, smoothTime);
 
     }
 
