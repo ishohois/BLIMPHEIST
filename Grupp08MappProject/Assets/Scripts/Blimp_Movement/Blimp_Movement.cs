@@ -18,7 +18,6 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float extraSpeed = 50f;
     [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private float maxSpeed = 20f;
-
     [SerializeField] private float burstSpeed = 1f;
 
     public bool flying;
@@ -92,14 +91,11 @@ public class Blimp_Movement : MonoBehaviour
 
             if (timer >= timeBeforeReset)
             {
-
                 timerOut = true;
-
             }
 
             if (timerOut == true)
             {
-
                 ReturnToStartingArea();
             }
         }
@@ -137,7 +133,6 @@ public class Blimp_Movement : MonoBehaviour
 
         if (flying == true)
         {   
-            rb2.mass = 1;
             movement.y = speed * extraSpeed;
             Move(movement);
         }
@@ -285,8 +280,6 @@ public class Blimp_Movement : MonoBehaviour
 
     private void Burst()
     {
-
-        rb2.mass = 1;
         rb2.velocity = new Vector2(0, rb2.velocity.y);
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
         playerState.UseBurst();
