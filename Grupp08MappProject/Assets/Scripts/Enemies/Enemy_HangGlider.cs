@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_HangGlider : MonoBehaviour
-{
+public class Enemy_HangGlider : MonoBehaviour {
     private Rigidbody2D rb;
 
     private bool isGrounded;
@@ -111,6 +110,16 @@ public class Enemy_HangGlider : MonoBehaviour
         }
         else {
             rb.gravityScale = 0.5f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+
+        Blimp_Movement player = other.gameObject.GetComponent<Blimp_Movement>();
+
+        if (player != null && player.canAttack == true) {
+
+            Debug.Log(player);
         }
     }
 }

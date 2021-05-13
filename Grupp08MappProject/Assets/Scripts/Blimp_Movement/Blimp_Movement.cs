@@ -26,6 +26,7 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private bool isBurstAvailable;
     public bool timerOut = false;
     public bool touchActivated;
+    public bool canAttack = false;
 
     [SerializeField] private float timer2 = 0f;
     [SerializeField] private float timer = 0f;
@@ -96,6 +97,7 @@ public class Blimp_Movement : MonoBehaviour
 
             if (timerOut == true)
             {
+                canAttack = false;
                 ReturnToStartingArea();
             }
         }
@@ -141,6 +143,7 @@ public class Blimp_Movement : MonoBehaviour
 
         if (burstUsed == true)
         {
+            canAttack = true;
             hasLeftArea = true;
             Burst();
         }
