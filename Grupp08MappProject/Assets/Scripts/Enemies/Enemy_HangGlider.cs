@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_HangGlider : MonoBehaviour {
+public class Enemy_HangGlider : MonoBehaviour, IKillable {
     private Rigidbody2D rb;
+    public ObjectDeactivator objectDeactivator;
 
     private bool isGrounded;
     private bool isAirborn;
@@ -31,6 +32,7 @@ public class Enemy_HangGlider : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         groundedDistance = Random.Range(groundedMin, groundedMax);
+        objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
     // Update is called once per frame
@@ -113,13 +115,17 @@ public class Enemy_HangGlider : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    public void KillMe() {
 
-        Blimp_Movement player = other.gameObject.GetComponent<Blimp_Movement>();
+        foreach (Transform child in transform) {
 
-        if (player != null && player.canAttack == true) {
-
-            Debug.Log(player); // "Kill" this game object here
+            child.gameObject.SetActive(false);
         }
+
+        // Död pariklar
+        // Död ljudeffekt
+        // Inaktivera grejer efter ovanstående har spelat klart
+
+        //objectDeactivator.IncrementObjectCounter();
     }
 }
