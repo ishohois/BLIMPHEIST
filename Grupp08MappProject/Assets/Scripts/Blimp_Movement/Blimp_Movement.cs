@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Blimp_Movement : MonoBehaviour
 {
     public PlayerState playerState;
-    public GameObject startingArea;
     public Rigidbody2D rb2;
     public Button burstButton;
     public ParticleSystem steam;
+    public Animator anim;
 
     [SerializeField] private Vector3 velocityForReturning;
     private Vector3 velocityForFlying;
@@ -18,16 +18,16 @@ public class Blimp_Movement : MonoBehaviour
     [SerializeField] private float extraSpeed = 50f;
     [SerializeField] private float smoothTime = 0.05f;
     [SerializeField] private float maxSpeed = 20f;
-
     [SerializeField] private float burstSpeed = 1f;
+    [SerializeField] private float returningSpeed;
 
     public bool flying;
     [SerializeField] private bool hasLeftArea = true;
     [SerializeField] private bool burstUsed = false;
     [SerializeField] private bool isBurstAvailable;
-    public bool hasWeight = false;
     public bool timerOut = false;
     public bool touchActivated;
+    public bool canAttack = false;
 
     [SerializeField] private float timer2 = 0f;
     [SerializeField] private float timer = 0f;
@@ -83,7 +83,9 @@ public class Blimp_Movement : MonoBehaviour
             }
 
         }
-        
+
+        CheckAnimations();
+
         if (burstUsed == true || hasLeftArea == true)
         {
 
@@ -91,14 +93,12 @@ public class Blimp_Movement : MonoBehaviour
 
             if (timer >= timeBeforeReset)
             {
-
                 timerOut = true;
-
             }
 
             if (timerOut == true)
             {
-
+                canAttack = false;
                 ReturnToStartingArea();
             }
         }
@@ -135,17 +135,7 @@ public class Blimp_Movement : MonoBehaviour
         Vector3 movement = Vector3.zero;
 
         if (flying == true)
-        {
-
-            if (hasWeight)
-            {
-
-                rb2.mass = 2;
-                movement.y = speed * 70f;
-            }
-        
-
-            rb2.mass = 1;
+        {   
             movement.y = speed * extraSpeed;
             Move(movement);
         }
@@ -154,6 +144,7 @@ public class Blimp_Movement : MonoBehaviour
 
         if (burstUsed == true)
         {
+            canAttack = true;
             hasLeftArea = true;
             Burst();
         }
@@ -265,6 +256,25 @@ public class Blimp_Movement : MonoBehaviour
         }
     }
 
+    private void CheckAnimations() {
+
+        if (hasLeftArea == false) {
+
+            anim.SetBool("HasLeftArea", false);
+        }
+        else {
+
+            anim.SetBool("HasLeftArea", true);
+        }
+        if (flying) {
+
+            anim.SetBool("Flying", true);
+        }
+        else {
+
+            anim.SetBool("Flying", false);
+        }
+    }
 
     private void Move(Vector3 moving)
     {
@@ -274,11 +284,10 @@ public class Blimp_Movement : MonoBehaviour
 
     private void Burst()
     {
-
-        rb2.mass = 1;
         rb2.velocity = new Vector2(0, rb2.velocity.y);
         rb2.AddForce(new Vector2(2 * burstSpeed, 0), ForceMode2D.Impulse);
         playerState.UseBurst();
+        anim.SetTrigger("UseBurst");
         ResetTimer();
         burstUsed = false;
     }
@@ -299,7 +308,7 @@ public class Blimp_Movement : MonoBehaviour
     private void ReturnToStartingArea()
     {
 
-        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(-4, rb2.velocity.y), ref velocityForReturning, smoothTime);
+        rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(returningSpeed, rb2.velocity.y), ref velocityForReturning, smoothTime);
 
     }
 
