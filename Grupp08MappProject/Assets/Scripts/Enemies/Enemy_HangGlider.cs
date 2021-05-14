@@ -117,10 +117,11 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     public void KillMe() {
 
-        foreach (Transform child in transform) {
+        // LOGIK FÖR OM HANG GLIDER HAR SPRITES SOM CHILD OBJECT 
+        //foreach (Transform child in transform) {
 
-            child.gameObject.SetActive(false);
-        }
+        //    child.gameObject.SetActive(false);
+        //}
 
         // Död pariklar
         // Död ljudeffekt
