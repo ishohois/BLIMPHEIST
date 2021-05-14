@@ -160,7 +160,7 @@ public class Blimp_Movement : MonoBehaviour
     {
         if (isBurstAvailable == true)
         {
-            burstSound.pitch = Random.Range(0.8f, 1.0f);
+            burstSound.pitch = Random.Range(0.9f, 1.0f);
             burstSound.Play(); //Spela ljud när man använder burst
 
             burstUsed = true;
@@ -226,7 +226,7 @@ public class Blimp_Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.D) == true)
             {
-                burstSound.pitch = Random.Range(0.8f, 1.0f);
+                burstSound.pitch = Random.Range(0.9f, 1.0f);
                 burstSound.Play(); //Spela ljud när man använder burst
 
                 burstUsed = true;

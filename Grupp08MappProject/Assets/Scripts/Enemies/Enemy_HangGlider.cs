@@ -119,7 +119,7 @@ public class Enemy_HangGlider : MonoBehaviour {
 
         if (player != null && player.canAttack == true) {
 
-            Debug.Log(player);
+            Debug.Log(player); // "Kill" this game object here
         }
     }
 }
