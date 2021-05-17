@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.766985
+  orthographic size: 5.761579
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -387,6 +387,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneWidth: 20.5
+--- !u!198 &98713357 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: -5462883387935033942, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+  m_PrefabInstance: {fileID: 1349109604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105421423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,6 +4964,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.1
   meshRenderer: {fileID: 1252545943}
+--- !u!1001 &1349109604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5202988556857452940}
+    m_Modifications:
+    - target: {fileID: 5132647953676193269, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_Name
+      value: BlimpHurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591960012961341375, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11d1142768bb4394995ad28b2ad142b7, type: 3}
 --- !u!1 &1360300344
 GameObject:
   m_ObjectHideFlags: 0
@@ -7903,6 +7965,10 @@ PrefabInstance:
       propertyPath: hitSound
       value: 
       objectReference: {fileID: 1900816147}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: hurtEffect
+      value: 
+      objectReference: {fileID: 98713357}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: lowHealthEffect
       value: 

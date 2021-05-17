@@ -29,6 +29,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public SpriteRenderer sr;
     public GameOver gameover;
     [SerializeField] ParticleSystem lowHealthEffect;
+    [SerializeField] ParticleSystem hurtEffect;
 
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
@@ -144,6 +145,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             hitSound.pitch = UnityEngine.Random.Range(0.6f, 0.9f);
             hitSound.Play();
+            hurtEffect.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;
         }
