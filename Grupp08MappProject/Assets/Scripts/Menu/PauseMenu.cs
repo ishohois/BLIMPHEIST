@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         //AudioListener.pause = false;
 
-        GameObject blimpObject = GameObject.Find("Blimp");
+        GameObject blimpObject = GameObject.Find("Blimp(NewAnimation)"); //Måste vara exakt det namnet som har Blimp_Movement scriptets
         blimpObject.GetComponent<Blimp_Movement>().enabled = true; //Enable Blimp_Moement script when game resumes so player can move again (and flyingsound plays again)
 
         pauseButton.gameObject.SetActive(true);
@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour
             GameIsPaused = true;
             //AudioListener.pause = true;
 
-            GameObject blimpObject = GameObject.Find("Blimp");
+            GameObject blimpObject = GameObject.Find("Blimp(NewAnimation)"); //Måste vara exakt det namnet som har Blimp_Movement scriptet
             blimpObject.GetComponent<Blimp_Movement>().enabled = false; //Disable Blimp_Movement script so flyingSound doesn't play when game is paused
 
             pauseButton.gameObject.SetActive(false);
