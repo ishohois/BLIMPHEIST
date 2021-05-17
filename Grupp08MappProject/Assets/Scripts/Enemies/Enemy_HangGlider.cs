@@ -28,6 +28,9 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
     //[SerializeField] private LayerMask rightWall;
     //[SerializeField] private LayerMask leftWall;
 
+    public Animator animator;
+    public float yVel;
+
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +40,9 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     // Update is called once per frame
     void Update() {
+        yVel = rb.velocity.y;
+
+        animator.SetFloat("yVel", yVel);
     }
 
     private void OnDrawGizmos() {

@@ -15,7 +15,7 @@ MonoBehaviour:
   minRandomTime: 3
   maxRandomTime: 5
   listOfPools:
-  - tag: Cloud
-    prefab: {fileID: 7393077367999282832, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
+  - tag: Bird
+    prefab: {fileID: 8343561313432366525, guid: b5ba8fe9d43e0e64bbdcabaf11e92d47, type: 3}
     size: 5
   hasNewPools: 1
