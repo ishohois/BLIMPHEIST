@@ -28,7 +28,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public HealthSystem hs;
     public SpriteRenderer sr;
     public GameOver gameover;
-
+    [SerializeField] ParticleSystem lowHealthEffect;
+    [SerializeField] ParticleSystem hurtEffect;
 
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
@@ -71,6 +72,17 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         if(hs.GetHealthPoints() <= 0 && sr.enabled == true)
         {
             Die();
+        }
+
+        //Low Health Smoke Effect
+        var emission = lowHealthEffect.emission;
+        if (hs.GetHealthPoints() == 1 && emission.enabled == false)
+        {
+            emission.enabled = true;
+        }
+        else if (hs.GetHealthPoints() > 1 && emission.enabled == true)
+        {
+            emission.enabled = false;
         }
     }
 
@@ -133,6 +145,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             hitSound.pitch = UnityEngine.Random.Range(0.6f, 0.9f);
             hitSound.Play();
+            hurtEffect.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;
         }
