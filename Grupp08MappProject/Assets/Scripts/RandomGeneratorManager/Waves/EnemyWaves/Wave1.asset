@@ -16,7 +16,7 @@ MonoBehaviour:
   maxRandomTime: 6
   listOfPools:
   - tag: HangGlider
-    prefab: {fileID: 5014134621589680549, guid: 7089dcf3c23a8dd428dc2c857a14cea8, type: 3}
+    prefab: {fileID: 6262497213409356395, guid: 511132915903bd84c841e06c2d48cb49, type: 3}
     size: 4
   - tag: Vulture
     prefab: {fileID: 4905280242483441489, guid: 468471569d1948e41b8e6adb6f1ca6f1, type: 3}
