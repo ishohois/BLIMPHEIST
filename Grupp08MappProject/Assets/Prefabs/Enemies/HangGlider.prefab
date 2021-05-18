@@ -887,6 +887,7 @@ GameObject:
   - component: {fileID: 5088765096414332718}
   - component: {fileID: 5088765096414332719}
   - component: {fileID: 5088765096414332716}
+  - component: {fileID: -6138617525041950008}
   m_Layer: 8
   m_Name: HangGlider
   m_TagString: Untagged
@@ -1027,6 +1028,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -1
+--- !u!114 &-6138617525041950008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6262497213409356395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af892091fcf971e48abe30b396ca96f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealer: 1
 --- !u!1 &6971433454365385556
 GameObject:
   m_ObjectHideFlags: 0

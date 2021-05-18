@@ -1074,6 +1074,7 @@ GameObject:
   - component: {fileID: 8889230868057828815}
   - component: {fileID: -3458287563152586189}
   - component: {fileID: -1853505415987544752}
+  - component: {fileID: 7093237136227033102}
   m_Layer: 0
   m_Name: Enemy_Bird
   m_TagString: Untagged
@@ -1181,7 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dd211b88a8a1443ab1f77081005fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0
+  scrollSpeed: -2
 --- !u!114 &8889230868057828815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5967,3 +5968,16 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &7093237136227033102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343561313432366525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af892091fcf971e48abe30b396ca96f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealer: 1

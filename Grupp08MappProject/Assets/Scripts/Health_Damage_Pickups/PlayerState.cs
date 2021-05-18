@@ -13,20 +13,16 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] private int startNoWeights = 1;
     [SerializeField] private int noBursts;
 
-    private Material material;
     private float pingPongValue = 1f;
     private Color color;
-    private float alphaValue;
+    private float alphaValue = 1f;
     private bool hurt;
     private float counterGracePeriod;
-    private PlayerPickupSystem pps;
     private int maxNoBurst = 3;
-    private int maxWeight = 3;
-    private int noWeights;
 
+    public Material material;
     public bool startBurstUsed;
     public HealthSystem hs;
-    public SpriteRenderer sr;
     public GameOver gameover;
     [SerializeField] ParticleSystem lowHealthEffect;
     [SerializeField] ParticleSystem hurtEffect;
@@ -39,23 +35,22 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     void Start()
     {
         hs = new HealthSystem(maxHealth);
-        material = sr.material;
         color = material.color;
-        alphaValue = material.color.a;
         counterGracePeriod = gracePeriod;
         noBursts = startNoBurst;
-        noWeights = startNoWeights;
 
         if(updateBurst != null)
         {
             updateBurst(this);
         }
+
+        material.SetColor("_Color", new Color(1, 1, 1, 1));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hurt)
+        if (hurt && hs.GetHealthPoints() != 0)
         {
             counterGracePeriod -= Time.deltaTime;
             color.a = Mathf.Clamp(Mathf.PingPong(Time.time * pingPongMultplier, pingPongValue), 0, pingPongValue);
@@ -66,12 +61,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
                 color.a = alphaValue;
                 hurt = false;
             }
-            material.color = color;
-        }
-
-        if(hs.GetHealthPoints() <= 0 && sr.enabled == true)
-        {
-            Die();
+            material.SetColor("_Color", color);
         }
 
         //Low Health Smoke Effect
@@ -122,23 +112,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         return noBursts;
     }
 
-    public void AddWeight(int weight)
-    {
-        if (noWeights + weight >= maxWeight)
-        {
-            noWeights = maxWeight;
-        }
-        else
-        {
-            noWeights += weight;
-        }
-    }
-
-    public int GetWeight()
-    {
-        return noWeights;
-    }
-
     public void Damage(int damagePoints)
     {
         if (!hurt)
@@ -158,11 +131,9 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public void Die()
     {
-        int death = 3;
-        hs.DamageEntity(death);
-        sr.enabled = false;
+        material.SetColor("_Color", new Color(1, 1, 1, 0));
+        hs.Die();
         gameover.ShowGameOverScreen();
     }
-
 
 }

@@ -59,4 +59,9 @@ public class HealthSystem
     {
         return healthPoints;
     }
+
+    public void Die()
+    {
+        healthPoints = 0;
+    }
 }

@@ -14,6 +14,13 @@ public class EnemyAttack : MonoBehaviour
         if (player != null)
         {
             player.Damage(damageDealer);
+
+            PlayerState playerState;
+
+            if((playerState = collision.gameObject.GetComponent<PlayerState>()) != null && playerState.hs.GetHealthPoints() <= 0)
+            {
+                playerState.Die();
+            }
         }
     }
 }

@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.8333335
+  orthographic size: 5.766919
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7813,6 +7813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 84.592
       objectReference: {fileID: 0}
+    - target: {fileID: 2842415338012097244, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     - target: {fileID: 2849830711801810850, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.31371686
@@ -7837,6 +7841,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 88.795
       objectReference: {fileID: 0}
+    - target: {fileID: 3074383130854314757, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     - target: {fileID: 3821827971555887547, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -7909,6 +7917,18 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
+    - target: {fileID: 4164793582548879877, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
+    - target: {fileID: 4523372516188675819, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523372516188675819, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     - target: {fileID: 4734365422419772235, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
@@ -7917,6 +7937,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.6053606
       objectReference: {fileID: 0}
+    - target: {fileID: 4777091227408776398, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     - target: {fileID: 4908807382850883034, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35870084
@@ -7970,6 +7994,10 @@ PrefabInstance:
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: gameover
       value: 
       objectReference: {fileID: 708885}
@@ -7978,13 +8006,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1900816147}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: hurtEffect
       value: 
       objectReference: {fileID: 98713357}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: gracePeriod
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: lowHealthEffect
       value: 
       objectReference: {fileID: 740843504}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: pingPongMultplier
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611764, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -8045,6 +8085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blimp(WithAnimation)
       objectReference: {fileID: 0}
+    - target: {fileID: 6395595541845393226, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     - target: {fileID: 6987685710191383102, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.333
@@ -8121,6 +8165,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5de17f4be891054aa0396bb22811a9c, type: 2}
+    - target: {fileID: 8889879540354050148, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
 --- !u!4 &5202988556857452940 stripped
