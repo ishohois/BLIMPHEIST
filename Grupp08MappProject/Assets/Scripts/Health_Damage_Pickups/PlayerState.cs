@@ -31,6 +31,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public static event UpdateBurst updateBurst;
 
     public AudioSource hitSound; //Sound when you get hit
+    public AudioSource healSound; //Det ljud som spelas när man tar upp heal
 
     void Start()
     {
@@ -127,6 +128,9 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public void Heal(int healPoints)
     {
         hs.HealEntity(healPoints);
+
+        healSound.pitch = UnityEngine.Random.Range(0.8f,1.0f);
+        healSound.Play();
     }
 
     public void Die()
