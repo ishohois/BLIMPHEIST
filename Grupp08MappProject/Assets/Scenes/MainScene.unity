@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.761579
+  orthographic size: 4.392857
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5569,7 +5569,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ca552e1eef17204ebc3c396f6058bde, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e66d2656c8018c468b98b9cf25e3d3d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.785
   m_Pitch: 1
@@ -6637,7 +6637,7 @@ GameObject:
   - component: {fileID: 1851463646}
   - component: {fileID: 1851463645}
   m_Layer: 0
-  m_Name: SFX TestSound Settings Menu
+  m_Name: SFX Sound Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
