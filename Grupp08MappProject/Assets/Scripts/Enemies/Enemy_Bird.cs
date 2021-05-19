@@ -13,7 +13,9 @@ public class Enemy_Bird : MonoBehaviour, IKillable
 
     public void KillMe() {
 
-        foreach(Transform child in transform) {
+        gameObject.GetComponent<BoxCollider2D>().enabled = false; // PROBLEM
+
+        foreach (Transform child in transform) {
 
             child.gameObject.SetActive(false);
         }
