@@ -6,18 +6,13 @@ public class Enemy_Bird : MonoBehaviour, IKillable
 {
     public ObjectDeactivator objectDeactivator;
     public bool isDead = false;
-    public bool inactivateSprites;
-    [SerializeField] private float timer = 0f;
-    [SerializeField] private float timeBeforeReset = 1f;
 
     private void Start() {
-        inactivateSprites = false;
+
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
     private void Awake() {
-
-        inactivateSprites = false;
 
         foreach (Transform child in transform) {
 
@@ -25,48 +20,30 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         }
     }
 
-    private void Update() {
+    IEnumerator WaitingCoroutine() {
 
-        if (inactivateSprites) {
-
-            foreach (Transform child in transform) {
-
-                if (child.GetComponent<ParticleSystem>() != null) {
-
-                    child.GetComponent<ParticleSystem>().Play();
-
-                    timer += Time.time;
-                    if (timer >= timeBeforeReset) {
-
-                        isDead = true;
-                        timer = 0f;
-                    }
-                }
-                else {
-
-                    child.gameObject.SetActive(false);
-                }
-            }
-        }
-        
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.transform.position = objectDeactivator.transform.position;
     }
 
     public void KillMe() {
 
-        inactivateSprites = true;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         gameObject.GetComponent<ParticleSystem>().Stop();
 
-        if (isDead) {
+        foreach (Transform child in transform) {
 
-            gameObject.transform.position = objectDeactivator.transform.position;
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            if (child.GetComponent<ParticleSystem>()) {
 
+                child.GetComponent<ParticleSystem>().Play();
+
+                StartCoroutine(WaitingCoroutine());
+            }
+            else {
+
+                child.gameObject.SetActive(false);
+            }
         }
-
-        // Död partiklar
-        // Död ljudeffekt
-        // Inaktivera grejer efter ovanstående har spelat klart
-
     }
 }

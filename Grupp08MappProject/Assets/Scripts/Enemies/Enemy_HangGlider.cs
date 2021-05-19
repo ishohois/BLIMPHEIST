@@ -34,6 +34,14 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
+    private void Awake() {
+
+        foreach (Transform child in transform) {
+
+            child.gameObject.SetActive(true);
+        }
+    }
+
     // Update is called once per frame
     void Update() {
         yVel = rb.velocity.y;
@@ -70,10 +78,6 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     }
 
-    private void takeOff() {
-
-    }
-
     private void Fly() {
 
         if (isGrounded && !(rb.velocity.y > 3f)) {
@@ -91,19 +95,30 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         }
     }
 
+    IEnumerator WaitingCoroutine() {
+
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.transform.position = objectDeactivator.transform.position;
+    }
+
     public void KillMe() {
 
-        //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //gameObject.GetComponent<ParticleSystem>().Stop();
 
-        //foreach (Transform child in transform) {
+        foreach (Transform child in transform) {
 
-        //    child.gameObject.SetActive(false);
-        //}
+            if (child.GetComponent<ParticleSystem>()) {
 
-        gameObject.transform.position = objectDeactivator.transform.position;
-        //objectDeactivator.IncrementObjectCounter();
+                child.GetComponent<ParticleSystem>().Play();
 
+                StartCoroutine(WaitingCoroutine());
+            }
+            else {
 
-
+                child.gameObject.SetActive(false);
+            }
+        }
     }
 }
