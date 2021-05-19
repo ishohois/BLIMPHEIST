@@ -93,13 +93,17 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     public void KillMe() {
 
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
-        foreach (Transform child in transform) {
+        //foreach (Transform child in transform) {
 
-            child.gameObject.SetActive(false);
-        }
+        //    child.gameObject.SetActive(false);
+        //}
 
+        gameObject.transform.position = objectDeactivator.transform.position;
         //objectDeactivator.IncrementObjectCounter();
+
+
+
     }
 }
