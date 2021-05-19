@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7305255922040662174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cog1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2162133642479487525}
   - component: {fileID: 6201247948403427205}
   - component: {fileID: 1093738305259108058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Huvud + N\xE4b"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4666761775029626903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cog2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615905362374283379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7257134877436828010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopBeek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6033016740918534370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MiddleFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 8988775982365157957}
   - component: {fileID: 4588664158209005464}
   - component: {fileID: 1754245011428175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Top N\xE4b"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 1781450508749500169}
   - component: {fileID: 2459411365179757836}
   - component: {fileID: 3659570590804318528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kugghjul 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554894722066257804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerNeckBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 4064733744391133511}
   - component: {fileID: 629648314563008463}
   - component: {fileID: 992345199010136323}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2218246333180171120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadLowerBeek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9198384980550035016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7302460356414033746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerFeather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605266163198246545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RootNeckBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 6567889504201034930}
   - component: {fileID: 1129453926880705926}
   - component: {fileID: 3975531535807000803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kugghjul 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 4202331815156901327}
   - component: {fileID: 4532343142962568692}
   - component: {fileID: 2462968981969790656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Kropp + F\xF6tter"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4156456013875317704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BodyBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 749360796649348583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopLegBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604526285802842161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerLegBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3164106301873831896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MiddleNeckBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: -3458287563152586189}
   - component: {fileID: -1853505415987544752}
   - component: {fileID: 7093237136227033102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
