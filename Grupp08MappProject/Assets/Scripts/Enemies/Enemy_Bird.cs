@@ -37,13 +37,13 @@ public class Enemy_Bird : MonoBehaviour, IKillable
             if (child.GetComponent<ParticleSystem>()) {
 
                 child.GetComponent<ParticleSystem>().Play();
-
-                StartCoroutine(WaitingCoroutine());
             }
             else {
 
                 child.gameObject.SetActive(false);
             }
         }
+
+        StartCoroutine(WaitingCoroutine());
     }
 }

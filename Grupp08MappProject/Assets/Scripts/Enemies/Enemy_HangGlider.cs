@@ -112,13 +112,13 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
             if (child.GetComponent<ParticleSystem>()) {
 
                 child.GetComponent<ParticleSystem>().Play();
-
-                StartCoroutine(WaitingCoroutine());
             }
             else {
 
                 child.gameObject.SetActive(false);
             }
         }
+
+        StartCoroutine(WaitingCoroutine());
     }
 }
