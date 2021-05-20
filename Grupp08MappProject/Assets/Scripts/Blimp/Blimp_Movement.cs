@@ -8,7 +8,8 @@ public class Blimp_Movement : MonoBehaviour
     public PlayerState playerState;
     public Rigidbody2D rb2;
     public Button burstButton;
-    public ParticleSystem steam;
+    public ParticleSystem steam; //Particle system  when jumping
+    public ParticleSystem fire; //Particle system when using burst
     public Animator anim;
 
     [SerializeField] private Vector3 velocityForReturning;
@@ -160,6 +161,10 @@ public class Blimp_Movement : MonoBehaviour
     {
         if (isBurstAvailable == true)
         {
+            fire.Stop();
+            fire.Clear(); //needed for dubble/tripple burst
+            fire.Play(); //Plays fire burst particle effect
+
             burstSound.pitch = Random.Range(0.9f, 1.0f); //1.0f, 1.1f Låter också ok
             burstSound.Play(); //Spela ljud när man använder burst
 
@@ -223,9 +228,12 @@ public class Blimp_Movement : MonoBehaviour
         }
         if (isBurstAvailable == true)
         {
-
             if (Input.GetKeyDown(KeyCode.D) == true)
             {
+                fire.Stop();
+                fire.Clear(); //needed for dubble/tripple burst
+                fire.Play(); //Plays fire burst particle effect
+                
                 burstSound.pitch = Random.Range(0.9f, 1.0f); //1.0f, 1.1f Låter också ok
                 burstSound.Play(); //Spela ljud när man använder burst
 

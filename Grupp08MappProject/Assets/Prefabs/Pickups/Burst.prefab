@@ -111,8 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1961a7cbd93ad4c87222e007402811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivationTime: 1
+  deactivationTime: 1.696
   burstsPerTake: 1
+  audio: {fileID: 0}
 --- !u!50 &4948277645119844735
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +152,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
