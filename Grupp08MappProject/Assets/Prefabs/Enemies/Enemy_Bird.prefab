@@ -1196,11 +1196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5134d6fc7b5f524a848d9896c9a920c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 1
   objectDeactivator: {fileID: 0}
   isDead: 0
-  inactivateSprites: 0
-  timer: 0
-  timeBeforeReset: 4.7
 --- !u!199 &-3458287563152586189
 ParticleSystemRenderer:
   serializedVersion: 6
