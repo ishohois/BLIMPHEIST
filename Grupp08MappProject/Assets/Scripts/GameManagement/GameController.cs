@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public bool gameOver = false;
-    public float scrollSpeed;                   //Is this still used?
+    public float scrollSpeed; 
 
     public float maxSpeed;
 
