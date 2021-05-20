@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Bird : MonoBehaviour, IKillable
+public class Enemy_VultureBody : MonoBehaviour, IKillable
 {
+
     [SerializeField] private float timer = 1f;
     public ObjectDeactivator objectDeactivator;
 

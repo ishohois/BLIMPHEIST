@@ -16,6 +16,6 @@ MonoBehaviour:
   maxRandomTime: 5
   listOfPools:
   - tag: Vulture
-    prefab: {fileID: 4905280242483441489, guid: 468471569d1948e41b8e6adb6f1ca6f1, type: 3}
+    prefab: {fileID: 7315143111843369930, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
     size: 5
   hasNewPools: 1
