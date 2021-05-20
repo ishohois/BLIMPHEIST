@@ -11,8 +11,8 @@ using UnityEngine.UI;
 public class UIScoreCounter : MonoBehaviour
 {
 
-    [SerializeField] private Text survivedTimeText;
-    [SerializeField] private Text obstaclesAvoidedText;
+    // [SerializeField] private Text survivedTimeText;
+    // [SerializeField] private Text obstaclesAvoidedText;
     [SerializeField] private Text scoreText;
     [SerializeField] private Timer timer;
     [SerializeField] private ObjectDeactivator objectDeactivator;
@@ -24,6 +24,7 @@ public class UIScoreCounter : MonoBehaviour
 
     //Scorecounter as shown top right
     void ActiveScore() {
+
 
         score = timer.GetTimeInSeconds()* objectDeactivator.GetObjectCounter();
 
