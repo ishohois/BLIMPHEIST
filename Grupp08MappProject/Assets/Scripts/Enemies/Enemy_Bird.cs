@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy_Bird : MonoBehaviour, IKillable
 {
+    [SerializeField] private float timer = 1f;
     public ObjectDeactivator objectDeactivator;
     public bool isDead = false;
 
@@ -22,7 +23,7 @@ public class Enemy_Bird : MonoBehaviour, IKillable
 
     IEnumerator WaitingCoroutine() {
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timer);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.transform.position = objectDeactivator.transform.position;
     }

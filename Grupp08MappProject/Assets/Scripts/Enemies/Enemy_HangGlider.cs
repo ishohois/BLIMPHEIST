@@ -23,6 +23,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask airLayer;
+    [SerializeField] private float timer = 1f;
 
     public Animator animator;
     public float yVel;
@@ -97,7 +98,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     IEnumerator WaitingCoroutine() {
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timer);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.transform.position = objectDeactivator.transform.position;
     }
