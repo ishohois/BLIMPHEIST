@@ -32,7 +32,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public AudioSource hitSound; //Sound when you get hit
     public AudioSource healSound; //Det ljud som spelas när man tar upp heal
-    public AudioSource gracePeriodSound; //Varningssignal under grace period
 
     void Start()
     {
@@ -120,10 +119,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             hitSound.pitch = UnityEngine.Random.Range(0.6f, 0.9f);
             hitSound.Play();
-
-            if (hs.GetHealthPoints() > 1) {
-                gracePeriodSound.Play();
-            }
             hurtEffect.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;

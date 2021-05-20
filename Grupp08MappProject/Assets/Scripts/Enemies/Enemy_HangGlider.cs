@@ -8,6 +8,8 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     private bool isGrounded;
     private bool isAirborn;
+    private bool hitLWall;
+    private bool hitRWall;
 
     [SerializeField] private float minAirForce = 3f;
     [SerializeField] private float maxAirForce = 5f;
@@ -23,7 +25,8 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask airLayer;
-    [SerializeField] private float timer = 1f;
+    //[SerializeField] private LayerMask rightWall;
+    //[SerializeField] private LayerMask leftWall;
 
     public Animator animator;
     public float yVel;
@@ -33,14 +36,6 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         rb = GetComponent<Rigidbody2D>();
         groundedDistance = Random.Range(groundedMin, groundedMax);
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
-    }
-
-    private void OnEnable() {
-
-        foreach (Transform child in transform) {
-
-            child.gameObject.SetActive(true);
-        }
     }
 
     // Update is called once per frame
@@ -59,6 +54,11 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         // air
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + airbornDistance, transform.position.z));
 
+        //// left wall
+        //Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - hitWallDistance, transform.position.y, transform.position.z));
+
+        //// right wall
+        //Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + hitWallDistance, transform.position.y, transform.position.z));
     }
 
     private void FixedUpdate() {
@@ -66,6 +66,27 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
 
 
         isAirborn = Physics2D.Raycast(transform.position, Vector2.up, airbornDistance, airLayer);
+
+
+        //hitLWall = Physics2D.Raycast(transform.position, Vector2.left, hitWallDistance, leftWall);
+
+
+        //hitRWall = Physics2D.Raycast(transform.position, Vector2.right, hitWallDistance, rightWall);
+
+
+        //if (hitRWall) {
+        //    horizontalFactor = -1f;
+        //    if ((rb.velocity.x != 0f)) {
+        //        rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0f, 0.05f), rb.velocity.y);
+        //    }
+
+        //}
+        //if (hitLWall) {
+        //    horizontalFactor = 1f;
+        //    if ((rb.velocity.x != 0f)) {
+        //        rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0f, 0.05f), rb.velocity.y);
+        //    }
+        //}
 
         if (isAirborn) {
             if ((rb.velocity.y != 0f)) {
@@ -76,6 +97,10 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         Fly();
 
         modifyPhysics();
+
+    }
+
+    private void takeOff() {
 
     }
 
@@ -96,31 +121,18 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         }
     }
 
-    IEnumerator WaitingCoroutine() {
-
-        yield return new WaitForSeconds(timer);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        gameObject.transform.position = objectDeactivator.transform.position;
-    }
-
     public void KillMe() {
 
-        //Död Ljudeffekter + Partikeleffekter
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        //gameObject.GetComponent<ParticleSystem>().Stop();
+        // LOGIK FÖR OM HANG GLIDER HAR SPRITES SOM CHILD OBJECT 
+        //foreach (Transform child in transform) {
 
-        foreach (Transform child in transform) {
+        //    child.gameObject.SetActive(false);
+        //}
 
-            if (child.GetComponent<ParticleSystem>()) {
+        // Död pariklar
+        // Död ljudeffekt
+        // Inaktivera grejer efter ovanstående har spelat klart
 
-                child.GetComponent<ParticleSystem>().Play();
-            }
-            else {
-
-                child.gameObject.SetActive(false);
-            }
-        }
-
-        StartCoroutine(WaitingCoroutine());
+        //objectDeactivator.IncrementObjectCounter();
     }
 }

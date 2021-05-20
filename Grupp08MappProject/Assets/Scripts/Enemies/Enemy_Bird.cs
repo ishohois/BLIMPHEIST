@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy_Bird : MonoBehaviour, IKillable
 {
-    [SerializeField] private float timer = 1f;
     public ObjectDeactivator objectDeactivator;
 
     private void Start() {
@@ -12,39 +11,17 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
-    private void OnEnable() {
-
-        foreach (Transform child in transform) {
-
-            child.gameObject.SetActive(true);
-        }
-    }
-
-    IEnumerator WaitingCoroutine() {
-
-        yield return new WaitForSeconds(timer);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        gameObject.transform.position = objectDeactivator.transform.position;
-    }
-
     public void KillMe() {
 
-        //Död Ljudeffekter + Partikeleffekter
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        gameObject.GetComponent<ParticleSystem>().Stop();
+        foreach(Transform child in transform) {
 
-        foreach (Transform child in transform) {
-
-            if (child.GetComponent<ParticleSystem>()) {
-
-                child.GetComponent<ParticleSystem>().Play();
-            }
-            else {
-
-                child.gameObject.SetActive(false);
-            }
+            child.gameObject.SetActive(false);
         }
 
-        StartCoroutine(WaitingCoroutine());
+        // Död partiklar
+        // Död ljudeffekt
+        // Inaktivera grejer efter ovanstående har spelat klart
+
+        //objectDeactivator.IncrementObjectCounter();
     }
 }
