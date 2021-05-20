@@ -35,7 +35,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
-    private void Awake() {
+    private void OnEnable() {
 
         foreach (Transform child in transform) {
 

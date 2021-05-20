@@ -13,7 +13,7 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
 
-    private void Awake() {
+    private void OnEnable() {
 
         foreach (Transform child in transform) {
 
