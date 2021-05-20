@@ -23,7 +23,7 @@ public class UIScoreCounter : MonoBehaviour
 
 
     //Scorecounter as shown top right
-    void ActiveScore {
+    void ActiveScore() {
 
         score = timer.GetTimeInSeconds()* objectDeactivator.GetObjectCounter();
 

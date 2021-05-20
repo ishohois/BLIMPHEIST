@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private Text survivedTimeText;
-    [SerializeField] private Text obstaclesAvoidedText;
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Timer timer;
-    [SerializeField] private ObjectDeactivator objectDeactivator;
+    [SerializeField] private Text survivedTimeText; //Text som visas i GameOver
+    [SerializeField] private Text obstaclesAvoidedText; //Text som visas i GameOver
+    [SerializeField] private Text scoreText; //Text som visas i GameOver
+    [SerializeField] private Timer timer; //Timer-objekt från Game-Hirearkin (har en timer som startas när scenen spelas)
+    [SerializeField] private ObjectDeactivator objectDeactivator; //Object-Deactivator från Game-Hireakin (har en counter för inaktiverade/undvikna fiender)
     public int score;
     [SerializeField] private Text highScoreText;
     public int currentHighScore;
@@ -36,7 +36,7 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(true);
         survivedTimeText.text = "Time survived: " + timer.EndTimer();
         obstaclesAvoidedText.text = "Obstacles avoided: " + objectDeactivator.GetObjectCounter();
-        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter();
+        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter(); //GetTimeInSeconds ger alla sekunder som räknats sedan scenen startats (ex. 94 sekunder); multipliceras sedan med objectDeactivators counter.
         scoreText.text = "Score: " + score;
         Time.timeScale = 0f; //Stops time
         if (currentHighScore < score)
