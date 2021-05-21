@@ -18,17 +18,14 @@ public class UIScoreCounter : MonoBehaviour
     [SerializeField] private ObjectDeactivator objectDeactivator;
     public int score;
 
-    //public static int scoreValue = 0;
-    //Text score;
-
-
     //Scorecounter as shown top right
     void ActiveScore() {
 
 
         score = timer.GetTimeInSeconds()* objectDeactivator.GetObjectCounter();
+        scoreText.text = "" + score;
 
-}
+    }
 
 
     /* Start is called before the first frame update
