@@ -15,7 +15,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable {
     [SerializeField] private float groundedMin = 1f;
     [SerializeField] private float groundedMax = 3f;
 
-    [SerializeField] private float groundedDistance;
+    public float groundedDistance;
     [SerializeField] private float airbornDistance = 1f;
     [SerializeField] private float hitWallDistance = 1f;
     [SerializeField] private float horizontalFactor = 1f;
