@@ -17,28 +17,25 @@ public class UIScoreCounter : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private ObjectDeactivator objectDeactivator;
     public int score;
-
-    //Scorecounter as shown top right
-    void ActiveScore() {
+   
 
 
-        score = timer.GetTimeInSeconds()* objectDeactivator.GetObjectCounter();
+
+    // Start is called before the first frame update
+    void Start() {
+        //score = GetComponent<text>;
+
+    }
+
+
+
+    // Update is called once per frame
+    void Update() {
+        // score.text = scoreValue; 
+
+        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter();
         scoreText.text = "" + score;
 
     }
-
-
-    /* Start is called before the first frame update
-    void Start()
-    {
-        //score = GetComponent<text>;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       // score.text = scoreValue; 
-    }
-    */
+    
 }
