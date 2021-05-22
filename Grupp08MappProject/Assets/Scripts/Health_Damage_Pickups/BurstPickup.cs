@@ -9,7 +9,7 @@ public class BurstPickup : Pickup
 
     private void Start() {
 
-        audio = GameObject.Find("Audio Source- Burst PickUp Sound").GetComponent<AudioSource>();
+        audio = GameObject.Find("Audio Source- BurstPickUp Sound").GetComponent<AudioSource>();
     }
 
     public override void GiveEffect(PlayerState player)

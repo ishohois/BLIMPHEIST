@@ -134,8 +134,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         hs.HealEntity(healPoints);
 
-        healSound.pitch = UnityEngine.Random.Range(0.8f,1.0f);
-        healSound.Play();
+        //healSound.pitch = UnityEngine.Random.Range(0.8f,1.0f);
+        //healSound.Play();
     }
 
     public void Die()
