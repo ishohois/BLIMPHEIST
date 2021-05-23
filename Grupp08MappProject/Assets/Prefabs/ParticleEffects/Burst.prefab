@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737819786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0035142899, y: 2.8047504, z: -0.05}
+  m_LocalPosition: {x: 0.0035142899, y: 2.8047504, z: 0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6019390752049355181}
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.27
+      scalar: 1.46
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.06
+      scalar: 2.65
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.54
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 112.6
+      scalar: 113.85
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1303,8 +1303,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
-        key1: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+        key0: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0.08627451}
+        key1: {r: 0.764151, g: 0.764151, b: 0.764151, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1320,7 +1320,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 9252
+        atime1: 65535
         atime2: 65535
         atime3: 65535
         atime4: 0
@@ -1329,7 +1329,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4920,7 +4920,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.27
+      scalar: 1.46
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4973,7 +4973,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.06
+      scalar: 2.65
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5405,7 +5405,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 58
+    maxNumParticles: 69
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5670,7 +5670,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 112.6
+      scalar: 113.85
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6108,24 +6108,24 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.8275918, b: 0, a: 0}
-        key1: {r: 1, g: 0.26311335, b: 0, a: 1}
-        key2: {r: 0.028571248, g: 0.007517487, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 0.8688402, b: 0.23113209, a: 0}
+        key1: {r: 1, g: 0.47487974, b: 0.28773582, a: 1}
+        key2: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
+        key3: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 7132
-        ctime1: 18311
-        ctime2: 45489
+        ctime0: 6746
+        ctime1: 21010
+        ctime2: 55512
         ctime3: 65535
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 10987
+        atime1: 13107
         atime2: 65535
         atime3: 0
         atime4: 0
