@@ -1239,6 +1239,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4687293669643914968, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6108977897009794685, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1294,6 +1298,10 @@ PrefabInstance:
     - target: {fileID: 7315143111843369930, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
       propertyPath: m_Name
       value: Vulture Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108011286507227620, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
