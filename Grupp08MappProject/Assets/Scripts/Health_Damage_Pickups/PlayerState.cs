@@ -88,7 +88,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         }
 
         // Check HP for blimps look
-        CheckHP();
+        //CheckHP();
     }
 
     public void AddBurst(int noBurst)

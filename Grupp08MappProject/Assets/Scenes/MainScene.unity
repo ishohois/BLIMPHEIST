@@ -8852,6 +8852,7 @@ GameObject:
   - component: {fileID: 2017525269}
   - component: {fileID: 2017525268}
   - component: {fileID: 2017525271}
+  - component: {fileID: 2017525272}
   m_Layer: 14
   m_Name: BG1_6scroll
   m_TagString: Untagged
@@ -8941,6 +8942,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.2
   meshRenderer: {fileID: 2017525268}
+--- !u!114 &2017525272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017525267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15724205d4c538343b00ab0c0e530ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plasters: []
 --- !u!1 &2024661146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9908,6 +9922,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5de17f4be891054aa0396bb22811a9c, type: 2}
+    - target: {fileID: 8889879540354050148, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8889879540354050148, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

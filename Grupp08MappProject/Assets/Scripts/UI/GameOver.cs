@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    [SerializeField] private Text enemiesKilledText; //Text som visas i GameOver(Mikita jobbat har sist)  SKA DET VISAS I GAMEOVER VY???
     [SerializeField] private Text survivedTimeText; //Text som visas i GameOver
     [SerializeField] private Text obstaclesAvoidedText; //Text som visas i GameOver
     [SerializeField] private Text scoreText; //Text som visas i GameOver
