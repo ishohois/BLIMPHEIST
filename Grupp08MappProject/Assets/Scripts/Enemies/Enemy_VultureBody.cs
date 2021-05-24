@@ -32,7 +32,9 @@ public class Enemy_VultureBody : MonoBehaviour, IKillable
 
         //Död Ljudeffekter + Partikeleffekter
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        gameObject.GetComponent<ParticleSystem>().Stop();
+        if(gameObject.GetComponent<ParticleSystem>() != null) {
+            gameObject.GetComponent<ParticleSystem>().Stop();
+        }
 
         foreach (Transform child in transform) {
 

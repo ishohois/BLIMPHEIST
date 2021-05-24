@@ -44,6 +44,7 @@ public class Enemy_Vulture : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") == true)
         {
+            playerState = null;
             colliding = false;
             timer = 0f;
         }

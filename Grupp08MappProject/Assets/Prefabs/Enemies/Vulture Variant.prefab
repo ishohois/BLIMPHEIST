@@ -91,7 +91,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7315143111843369930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -142,33 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -2
---- !u!114 &2110897213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7315143111843369930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af892091fcf971e48abe30b396ca96f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageDealer: 1
---- !u!114 &2110897217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7315143111843369930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3648c6ea7250a494781a6456ab278002, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 1
-  objectDeactivator: {fileID: 0}
 --- !u!95 &2110897211
 Animator:
   serializedVersion: 3
@@ -248,7 +221,7 @@ ParticleSystem:
   m_GameObject: {fileID: 7114406426591134625}
   serializedVersion: 7
   lengthInSec: 0.5
-  simulationSpeed: 0.2
+  simulationSpeed: 0.35
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
