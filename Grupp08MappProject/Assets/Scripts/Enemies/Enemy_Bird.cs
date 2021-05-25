@@ -37,6 +37,8 @@ public class Enemy_Bird : MonoBehaviour, IKillable
 
             if (child.GetComponent<ParticleSystem>()) {
 
+                //Transform collisionObject =  GameObject.FindObjectOfType<DeathZone>().transform;
+                //child.GetComponent<ParticleSystem>().collision.SetPlane(1, collisionObject);
                 child.GetComponent<ParticleSystem>().Play();
             }
             else {
