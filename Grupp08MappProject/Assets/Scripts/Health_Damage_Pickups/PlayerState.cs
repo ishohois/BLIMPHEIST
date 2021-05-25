@@ -97,7 +97,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         }
 
         // Check HP for blimps look
-        //CheckHP();
+        CheckHP();
     }
 
     public void AddBurst(int noBurst)
@@ -154,6 +154,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         }
         else if(hs.GetHealthPoints() == 1) {
 
+            hp2.SetActive(true);
+            hp2second.SetActive(true);
             hp1.SetActive(true);
             hp1second.SetActive(true);
         }

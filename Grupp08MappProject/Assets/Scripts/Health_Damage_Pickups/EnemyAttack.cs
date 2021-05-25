@@ -6,6 +6,11 @@ public class EnemyAttack : MonoBehaviour
 {
 
     [SerializeField] private int damageDealer = 1;
+    [SerializeField] private UIScoreCounter score;
+
+    private void Start() {
+        score = GameObject.FindObjectOfType<UIScoreCounter>();
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -16,6 +21,7 @@ public class EnemyAttack : MonoBehaviour
 
             IKillable enemy = gameObject.GetComponent<IKillable>();
             enemy.KillMe();
+            score.IncrementKillsCount();
         }
         else if (player != null)
         {

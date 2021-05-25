@@ -343,7 +343,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.684935
+  orthographic size: 6.40625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1859,7 +1859,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2206,7 +2206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3095,7 +3095,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5560,6 +5560,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1508715385}
     - target: {fileID: 7185591604246112237, guid: e87496b8ee2dc5949b75d8cf1ac33243, type: 3}
+      propertyPath: scoreCounter
+      value: 
+      objectReference: {fileID: 1828605236}
+    - target: {fileID: 7185591604246112237, guid: e87496b8ee2dc5949b75d8cf1ac33243, type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 0}
@@ -6495,7 +6499,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8812,6 +8816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7b2bb62fdae2940a152fdd6d8c2048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killsCount: 0
   scoreText: {fileID: 1828605234}
   timer: {fileID: 1361755269}
   objectDeactivator: {fileID: 2084828857}
@@ -9354,7 +9359,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 961250557856d64438a4fcc317dfaec2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
