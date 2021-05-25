@@ -37,7 +37,7 @@ public class GameOver : MonoBehaviour
         Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
         survivedTimeText.text = "Time survived: " + timer.EndTimer();
-        enemiesKilledText.text = "Enemies killed: " + scoreCounter.getKillsCount();
+        enemiesKilledText.text = "Enemies killed: " + scoreCounter.getKillsCount(); // Enemies killed utskriftet
         obstaclesAvoidedText.text = "Obstacles avoided: " + objectDeactivator.GetObjectCounter();
         score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter(); //GetTimeInSeconds ger alla sekunder som räknats sedan scenen startats (ex. 94 sekunder); multipliceras sedan med objectDeactivators counter.
         scoreText.text = "Score: " + score;
