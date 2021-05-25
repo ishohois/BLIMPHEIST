@@ -7,7 +7,6 @@ public class Enemy_Cloud : MonoBehaviour
     public GameObject lightning;
 
     [SerializeField] private bool hit = false;
-    [SerializeField] private bool colliding;
 
     [SerializeField] private float timer = 0f;
     [SerializeField] private float timeBefore = 1f;
