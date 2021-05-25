@@ -52,6 +52,7 @@ public class HandleResizing : MonoBehaviour
         x = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
         y = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
 
-
+        verticalLimiter.transform.position = new Vector3(0f, -(y) + offsetVertical, transform.position.z);
+        deathZone.transform.position = new Vector3(0f, y - offsetDeathZone, transform.position.z);
     }
 }
