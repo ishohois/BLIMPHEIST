@@ -62,7 +62,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     // Update is called once per frame
     void Update()
     {
-        if (hurt && hs.GetHealthPoints() != 0)
+        if (hurt)
         {
             counterGracePeriod -= Time.deltaTime;
             color.a = Mathf.Clamp(Mathf.PingPong(Time.time * pingPongMultplier, pingPongValue), 0, pingPongValue);
@@ -74,6 +74,15 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
                 hurt = false;
             }
             material.SetColor("_Color", color);
+
+            if(hs.GetHealthPoints() == 0)
+            {
+                material.SetColor("_Color", new Color(1, 1, 1, 0));
+            }
+        }
+        else
+        {
+            material.SetColor("_Color", new Color(1, 1, 1, 1));
         }
 
         //Low Health Smoke Effect
