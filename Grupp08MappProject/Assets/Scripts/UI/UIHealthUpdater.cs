@@ -20,18 +20,18 @@ public class UIHealthUpdater : MonoBehaviour
 
     private void DecreaseHealth(HealthSystem health)
     {
-        for (int i = health.GetHealthPoints(); i < plasters.Length; i++)
-        {
-            plasters[i].SetActive(false);
-        }
+        //for (int i = health.GetHealthPoints(); i < plasters.Length; i++)
+        //{
+        //    plasters[i].SetActive(false);
+        //}
     }
 
     private void IncreaseHealth(HealthSystem health)
     {
-        for (int i = 0; i < health.GetHealthPoints(); i++)
-        {
-            plasters[i].SetActive(true);
-        }
+        //for (int i = 0; i < health.GetHealthPoints(); i++)
+        //{
+        //    plasters[i].SetActive(true);
+        //}
     }
 
 }
