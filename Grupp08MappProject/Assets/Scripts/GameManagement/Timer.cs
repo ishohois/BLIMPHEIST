@@ -29,10 +29,22 @@ public class Timer : MonoBehaviour
     {
         timerActive = false;
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        String endTime = time.Minutes.ToString() + ":" + time.Seconds.ToString();
+        String endTime = time.Minutes.ToString();
+        if (time.Seconds < 10)
+        {
+            endTime += ":0" + time.Seconds.ToString();
+        }
+        else
+        {
+            endTime += ":" + time.Seconds.ToString();
+        }
         return endTime;
     }
 
+    public int GetSeconds()
+    {
+        return TimeSpan.FromSeconds(currentTime).Seconds;
+    }
     public int GetTimeInSeconds()
     {
         TimeSpan time = TimeSpan.FromSeconds(currentTime);

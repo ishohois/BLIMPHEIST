@@ -35,7 +35,7 @@ public class UIScoreCounter : MonoBehaviour
     void Update() {
         // score.text = scoreValue; 
 
-        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter();
+        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter() + killsCount * 100;
         scoreText.text = "" + score;
 
     }
@@ -48,5 +48,11 @@ public class UIScoreCounter : MonoBehaviour
     public int getKillsCount() {
 
         return killsCount;
+    }
+
+    public int getScore()
+    {
+
+        return score;
     }
 }

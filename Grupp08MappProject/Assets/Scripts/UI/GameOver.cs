@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private Text enemiesKilledText; //Text som visas i GameOver(Mikita jobbat har sist)
-    [SerializeField] private Text survivedTimeText; //Text som visas i GameOver
-    [SerializeField] private Text obstaclesAvoidedText; //Text som visas i GameOver
-    [SerializeField] private Text scoreText; //Text som visas i GameOver
+    [SerializeField] private TMP_Text enemiesKilledText; //Text som visas i GameOver(Mikita jobbat har sist)
+    [SerializeField] private TMP_Text survivedTimeText; //Text som visas i GameOver
+    [SerializeField] private TMP_Text obstaclesAvoidedText; //Text som visas i GameOver
+    [SerializeField] private TMP_Text scoreText; //Text som visas i GameOver
     [SerializeField] private Timer timer; //Timer-objekt från Game-Hirearkin (har en timer som startas när scenen spelas)
     [SerializeField] private ObjectDeactivator objectDeactivator; //Object-Deactivator från Game-Hireakin (har en counter för inaktiverade/undvikna fiender)
     public int score;
-    [SerializeField] private Text highScoreText;
+    [SerializeField] private TMP_Text highScoreText;
     public UIScoreCounter scoreCounter; // ScoreCounter scriptet för att hämta antalet kills 
     public int currentHighScore;
-    public string highScoreKey = "HighScore";
+    public string highScoreKey = "Highscore";
 
     public AudioSource deathSound; //Det ljud som spelas när man dör
 
@@ -37,9 +38,9 @@ public class GameOver : MonoBehaviour
         Debug.Log("Showing GameOver screen");
         gameObject.SetActive(true);
         survivedTimeText.text = "Time survived: " + timer.EndTimer();
-        enemiesKilledText.text = "Enemies killed: " + scoreCounter.getKillsCount(); // Enemies killed utskriftet
         obstaclesAvoidedText.text = "Obstacles avoided: " + objectDeactivator.GetObjectCounter();
-        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter(); //GetTimeInSeconds ger alla sekunder som räknats sedan scenen startats (ex. 94 sekunder); multipliceras sedan med objectDeactivators counter.
+        enemiesKilledText.text = "Enemies killed: " + scoreCounter.getKillsCount(); // Enemies killed utskriftet
+        score = scoreCounter.getScore();
         scoreText.text = "Score: " + score;
         Time.timeScale = 0f; //Stops time
         if (currentHighScore < score)
@@ -48,7 +49,7 @@ public class GameOver : MonoBehaviour
             PlayerPrefs.Save();
             currentHighScore = score;
         }
-        highScoreText.text = "HighScore: " + currentHighScore;
+        highScoreText.text = "Highscore: " + currentHighScore;
     }
 
     public void RestartGame()
