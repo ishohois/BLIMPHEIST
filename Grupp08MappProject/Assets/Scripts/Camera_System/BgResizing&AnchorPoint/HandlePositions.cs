@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandleResizing : MonoBehaviour
+public class HandlePositions : MonoBehaviour
 {
     private Camera main;
 
     public GameObject verticalLimiter;
     public GameObject deathZone;
+    public GameObject playerAnchorPoint;
     public float offsetVertical;
     public float offsetDeathZone;
+    public float offsetPlayerAnchorPoint;
 
     //public SpriteRenderer sr;
     //public Collider2D collider;
@@ -21,10 +23,6 @@ public class HandleResizing : MonoBehaviour
     private void Awake()
     {
         main = Camera.main;
-    }
-
-    void Start()
-    {
         RelocateColliders();
     }
 
@@ -54,5 +52,7 @@ public class HandleResizing : MonoBehaviour
 
         verticalLimiter.transform.position = new Vector3(0f, -(y) + offsetVertical, transform.position.z);
         deathZone.transform.position = new Vector3(0f, y - offsetDeathZone, transform.position.z);
+
+        playerAnchorPoint.transform.position = new Vector3(x + offsetPlayerAnchorPoint, 0, transform.position.z);
     }
 }

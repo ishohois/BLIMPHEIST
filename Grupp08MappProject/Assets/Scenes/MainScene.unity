@@ -299,7 +299,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.8482533
+  orthographic size: 4.878093
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -325,8 +325,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1385328081}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2987,7 +2986,7 @@ GameObject:
   - component: {fileID: 821694228}
   - component: {fileID: 821694227}
   m_Layer: 0
-  m_Name: RelocateColliders
+  m_Name: PositionerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3007,8 +3006,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalLimiter: {fileID: 1948518378}
   deathZone: {fileID: 1471849901}
+  playerAnchorPoint: {fileID: 1385328080}
   offsetVertical: 0.5
   offsetDeathZone: 1.1
+  offsetPlayerAnchorPoint: 2.3
   x: 0
   y: 0
 --- !u!4 &821694228
@@ -4511,11 +4512,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385328080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.01, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 48570733}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449006418
 GameObject:
@@ -7923,6 +7924,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5202988556679469361, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Size.y
+      value: 17.328415
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202988556679469361, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18790817
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611528, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: burstSound
       value: 
