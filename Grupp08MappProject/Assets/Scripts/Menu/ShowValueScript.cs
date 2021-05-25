@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShowValueScript : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ShowValueScript : MonoBehaviour
 
     //public Text BGpercentageText;
     //public Text SFXpercentageText;
-    public Text procentText;
+    public TMP_Text procentText;
     //[SerializeField] Slider slider;
     public Slider backgroundSlider, soundEffectsSlider; //Sliders för volymen
 
@@ -18,7 +19,7 @@ public class ShowValueScript : MonoBehaviour
     {
         //BGpercentageText = GetComponent<Text>();
         //SFXpercentageText = GetComponent<Text>();
-        procentText = GetComponent<Text>();
+        procentText = GetComponent<TMP_Text>();
         backgroundSlider.value = PlayerPrefs.GetFloat("BGProcentPref");
         soundEffectsSlider.value = PlayerPrefs.GetFloat("SFXProcentPref");
         //percentageText.text = Mathf.RoundToInt(int.Parse(percentageText.text) * 100) + "%";
