@@ -32,11 +32,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
 
-    public GameObject hp2;
-    public GameObject hp2second;
-    public GameObject hp1;
-    public GameObject hp1second;
-
     public AudioSource hitSound; //Sound when you get hit
     public AudioSource healSound; //Det ljud som spelas när man tar upp heal
     public AudioSource gracePeriodSound; //Varningssignal under grace period
@@ -54,17 +49,12 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         }
 
         material.SetColor("_Color", new Color(1, 1, 1, 1));
-
-        hp2.SetActive(false);
-        hp2second.SetActive(false);
-        hp1.SetActive(false);
-        hp1second.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hurt)
+        if (hurt && hs.GetHealthPoints() != 0)
         {
             counterGracePeriod -= Time.deltaTime;
             color.a = Mathf.Clamp(Mathf.PingPong(Time.time * pingPongMultplier, pingPongValue), 0, pingPongValue);
@@ -76,15 +66,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
                 hurt = false;
             }
             material.SetColor("_Color", color);
-
-            if(hs.GetHealthPoints() == 0)
-            {
-                material.SetColor("_Color", new Color(1, 1, 1, 0));
-            }
-        }
-        else
-        {
-            material.SetColor("_Color", new Color(1, 1, 1, 1));
         }
 
         //Low Health Smoke Effect
@@ -97,9 +78,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             emission.enabled = false;
         }
-
-        // Check HP for blimps look
-        CheckHP();
     }
 
     public void AddBurst(int noBurst)
@@ -139,31 +117,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         return noBursts;
     }
 
-    public void CheckHP() {
-
-        if(hs.GetHealthPoints() == 3) {
-
-            hp2.SetActive(false);
-            hp2second.SetActive(false);
-            hp1.SetActive(false);
-            hp1second.SetActive(false);
-        }
-        else if(hs.GetHealthPoints() == 2) {
-
-            hp2.SetActive(true);
-            hp2second.SetActive(true);
-            hp1.SetActive(false);
-            hp1second.SetActive(false);
-        }
-        else if(hs.GetHealthPoints() == 1) {
-
-            hp2.SetActive(true);
-            hp2second.SetActive(true);
-            hp1.SetActive(true);
-            hp1second.SetActive(true);
-        }
-    }
-
     public void Damage(int damagePoints)
     {
         if (!hurt)
@@ -184,7 +137,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         hs.HealEntity(healPoints);
 
-        healSound.pitch = UnityEngine.Random.Range(0.8f, 1.0f);
+        healSound.pitch = UnityEngine.Random.Range(0.8f,1.0f);
         healSound.Play();
     }
 
