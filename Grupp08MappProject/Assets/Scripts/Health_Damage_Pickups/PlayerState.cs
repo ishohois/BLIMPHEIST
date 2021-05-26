@@ -26,6 +26,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public GameOver gameover;
     [SerializeField] ParticleSystem lowHealthEffect;
     [SerializeField] ParticleSystem hurtEffect;
+    [SerializeField] ParticleSystem burstLost;
+    public ParticleSystem warning;
 
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
@@ -120,6 +122,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public void UseBurst() {
 
         noBursts -= 1;
+        burstLost.Play();
 
         if(noBursts < 0) {
 

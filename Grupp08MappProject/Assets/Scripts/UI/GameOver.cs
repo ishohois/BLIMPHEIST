@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] private TMP_Text highScoreText;
     public UIScoreCounter scoreCounter; // ScoreCounter scriptet för att hämta antalet kills 
     public int currentHighScore;
-    public string highScoreKey = "Highscore";
+    public string highScoreKey = "HighScore";
 
     public AudioSource deathSound; //Det ljud som spelas när man dör
 
