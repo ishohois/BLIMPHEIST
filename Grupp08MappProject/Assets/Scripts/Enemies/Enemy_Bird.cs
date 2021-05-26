@@ -8,9 +8,11 @@ public class Enemy_Bird : MonoBehaviour, IKillable
     public ObjectDeactivator objectDeactivator;
     public ParticleSystem smoke;
     public ParticleSystem death;
+    public AudioSource audio;
 
     private void Start() {
 
+        audio = GameObject.Find("Audio Source- Bird Death").GetComponent<AudioSource>();
         smoke.Play();
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
     }
@@ -38,6 +40,7 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         smoke.Stop();
         death.Play();
+        audio.Play();
 
         foreach (Transform child in transform) {
 

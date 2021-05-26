@@ -8,6 +8,7 @@ public class Lightning : MonoBehaviour
 
     private void OnEnable() {
 
+        audio = GameObject.Find("Audio Source- Thunder Sound").GetComponent<AudioSource>();
         audio.pitch = UnityEngine.Random.Range(1f, 1.3f);
         audio.Play();
     }
