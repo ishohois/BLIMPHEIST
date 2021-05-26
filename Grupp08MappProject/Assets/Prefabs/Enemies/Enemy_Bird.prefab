@@ -5881,8 +5881,6 @@ GameObject:
   - component: {fileID: -4201358259292070927}
   - component: {fileID: 8222474403497218755}
   - component: {fileID: 8889230868057828815}
-  - component: {fileID: -3458287563152586189}
-  - component: {fileID: -1853505415987544752}
   - component: {fileID: 7093237136227033102}
   m_Layer: 8
   m_Name: Enemy_Bird
@@ -5911,6 +5909,7 @@ Transform:
   - {fileID: 8988775982365157957}
   - {fileID: 4064733744391133511}
   - {fileID: 3311228553723819569}
+  - {fileID: 1299044168951978270}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6007,14 +6006,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 5
   objectDeactivator: {fileID: 0}
---- !u!199 &-3458287563152586189
+  smoke: {fileID: 5190573074733837474}
+  death: {fileID: 5782147929163084482}
+--- !u!114 &7093237136227033102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343561313432366525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af892091fcf971e48abe30b396ca96f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealer: 1
+  score: {fileID: 0}
+--- !u!1 &8736808949783820492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1299044168951978270}
+  - component: {fileID: 428395866033609716}
+  - component: {fileID: 5190573074733837474}
+  m_Layer: 0
+  m_Name: SmokeParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1299044168951978270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8736808949783820492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.065, y: 0.019, z: -16.242733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5756224469882964126}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!199 &428395866033609716
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343561313432366525}
+  m_GameObject: {fileID: 8736808949783820492}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -6073,13 +6120,13 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!198 &-1853505415987544752
+--- !u!198 &5190573074733837474
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343561313432366525}
+  m_GameObject: {fileID: 8736808949783820492}
   serializedVersion: 7
   lengthInSec: 5
   simulationSpeed: 1.5
@@ -6089,7 +6136,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10779,17 +10826,3 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &7093237136227033102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343561313432366525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af892091fcf971e48abe30b396ca96f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageDealer: 1
-  score: {fileID: 0}
