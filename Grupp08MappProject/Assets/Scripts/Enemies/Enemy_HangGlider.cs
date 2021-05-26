@@ -8,6 +8,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     public ObjectDeactivator objectDeactivator;
     public float groundedDistance = 0f;
     public Animator animator;
+    public AudioSource audio;
 
     [SerializeField] private float minAirForce = 3f;
     [SerializeField] private float maxAirForce = 5f;
@@ -37,6 +38,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     // Start is called before the first frame update
     void Start()
     {
+        audio = GameObject.Find("Audio Source- EnemyDeath").GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         objectDeactivator = GameObject.FindObjectOfType<ObjectDeactivator>();
 
@@ -52,7 +54,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     private void OnEnable()
     {
         Invoke(nameof(SetGroundedDistance), 0.1f);
-
+        
         foreach (Transform child in transform)
         {
 
@@ -136,6 +138,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     {
         //Död Ljudeffekter + Partikeleffekter
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        audio.Play();
         //gameObject.GetComponent<ParticleSystem>().Stop();
 
         foreach (Transform child in transform)
