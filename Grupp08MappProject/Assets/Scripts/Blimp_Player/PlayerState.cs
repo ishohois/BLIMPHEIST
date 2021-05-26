@@ -36,6 +36,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public AudioSource healSound; //Det ljud som spelas när man tar upp heal
     public AudioSource gracePeriodSound; //Varningssignal under grace period
 
+    public GameObject hp2;
+    public GameObject hp2second;
+    public GameObject hp1;
+    public GameObject hp1second;
+
     void Start()
     {
         hs = new HealthSystem(maxHealth);
@@ -78,6 +83,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             emission.enabled = false;
         }
+
+        CheckHPsprites();
     }
 
     public void AddBurst(int noBurst)
@@ -130,6 +137,31 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
             hurtEffect.Play();
             hs.DamageEntity(damagePoints);
             hurt = true;
+        }
+    }
+
+    public void CheckHPsprites() {
+
+        if(hs.GetHealthPoints() == 3) {
+
+            hp2.SetActive(false);
+            hp2second.SetActive(false);
+            hp1.SetActive(false);
+            hp1second.SetActive(false);
+        }
+        else if(hs.GetHealthPoints() == 2) {
+
+            hp2.SetActive(true);
+            hp2second.SetActive(true);
+            hp1.SetActive(false);
+            hp1second.SetActive(false);
+        }
+        else if(hs.GetHealthPoints() == 1) {
+
+            hp2.SetActive(true);
+            hp2second.SetActive(true);
+            hp1.SetActive(true);
+            hp1second.SetActive(true);
         }
     }
 
