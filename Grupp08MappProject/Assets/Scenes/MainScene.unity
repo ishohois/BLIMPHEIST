@@ -309,7 +309,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.4035416
+  orthographic size: 5.7665467
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7958,6 +7958,10 @@ PrefabInstance:
       propertyPath: healSound
       value: 
       objectReference: {fileID: 959214644}
+    - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: startNoBurst
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: gracePeriodSound
       value: 

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: Wave2
   m_EditorClassIdentifier: 
-  minRandomTime: 3
-  maxRandomTime: 5
+  minRandomTime: 2
+  maxRandomTime: 4
   listOfPools:
   - tag: Vulture
     prefab: {fileID: 7315143111843369930, guid: 2787a8814b5611f45a4a01f0fbb956b3, type: 3}
-    size: 5
+    size: 10
   hasNewPools: 1

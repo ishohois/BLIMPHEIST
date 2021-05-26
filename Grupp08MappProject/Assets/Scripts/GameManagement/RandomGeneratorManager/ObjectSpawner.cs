@@ -23,6 +23,7 @@ public class ObjectSpawner : MonoBehaviour
     private bool hasNextPos;
     private Vector3 oldPos;
     private Vector3 newPos;
+    private string oldTag;
 
 
     private void Start()
@@ -64,7 +65,6 @@ public class ObjectSpawner : MonoBehaviour
         Camera camera = Camera.main;
         yMin = camera.ViewportToWorldPoint(new Vector3(0, 0 + yPadding, 0)).y;
         yMax = camera.ViewportToWorldPoint(new Vector3(0, 1f - yPadding, 0)).y;
-
         xMax = camera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
     }
 
@@ -108,6 +108,12 @@ public class ObjectSpawner : MonoBehaviour
     {
         string poolTag = objectTypes[Random.Range(0, objectTypes.Count)];
 
+        if (poolTag.Equals(oldTag) && objectTypes.Count < 2)
+        {
+            AppearRandomOnScreen();
+            return;
+        }
+
         // Clouds Check
         if(poolTag == "Cloud" && PreventOverlappingPosition()) {
 
@@ -117,6 +123,8 @@ public class ObjectSpawner : MonoBehaviour
         {
             PoolManager.Instance.SpawnFromPool(poolTag, newPos, Quaternion.identity);
         }
+
+        oldTag = poolTag;
     }
 
     public void SetUpWaves(WaveConfig config)
@@ -132,6 +140,5 @@ public class ObjectSpawner : MonoBehaviour
         timeMin = config.MinRandomTime;
         timeMax = config.MaxRandomTime;
     }
-
     
 }
