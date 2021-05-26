@@ -80,5 +80,9 @@ public class PoolManager : MonoBehaviour
         return objectToSpawn;
     }
 
+    public struct PoolObject{
+        string tag;
+        GameObject gameObject;
+    }
 }
 

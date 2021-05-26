@@ -998,11 +998,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectDeactivator: {fileID: 0}
-  minAirForce: 9.8
+  groundedDistance: 0
+  animator: {fileID: 5088765096414332718}
+  minAirForce: 8
   maxAirForce: 13
   groundedMin: 2
   groundedMax: 7.5
-  groundedDistance: 0
   airbornDistance: 1.41
   hitWallDistance: 1
   horizontalFactor: 0
@@ -1014,8 +1015,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   timer: 1
-  animator: {fileID: 5088765096414332718}
-  yVel: 0
 --- !u!114 &5088765096414332716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dd211b88a8a1443ab1f77081005fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -1
+  scrollSpeed: -3
 --- !u!114 &-6138617525041950008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,6 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealer: 1
+  score: {fileID: 0}
 --- !u!1 &6971433454365385556
 GameObject:
   m_ObjectHideFlags: 0

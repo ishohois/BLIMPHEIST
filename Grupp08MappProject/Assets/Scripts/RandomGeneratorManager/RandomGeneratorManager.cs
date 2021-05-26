@@ -12,6 +12,7 @@ public class RandomGeneratorManager : MonoBehaviour
     [Header("EnemySpawner")]
     public WaveConfig[] enemyConfigs;
     public ObjectSpawner enemySpawner;
+    //public ObjectSpawnerLaines enemySpawner;
 
     [Header("PickupSpawner")]
     public WaveConfig[] pickupConfigs;
