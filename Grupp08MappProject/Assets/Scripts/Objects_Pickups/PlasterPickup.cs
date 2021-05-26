@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plaster : Pickup
+public class PlasterPickup : Pickup
 {
 
     [SerializeField] private int amountHealth = 1;
