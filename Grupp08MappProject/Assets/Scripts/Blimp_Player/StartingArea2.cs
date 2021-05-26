@@ -12,7 +12,6 @@ public class StartingArea2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true) {
 
             blimp.SetHasLeftAreaToFalse();
-            playerState.AddBurst(1);
         }
     }
 

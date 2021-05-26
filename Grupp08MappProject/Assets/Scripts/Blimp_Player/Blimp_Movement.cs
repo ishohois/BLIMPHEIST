@@ -54,7 +54,6 @@ public class Blimp_Movement : MonoBehaviour
         if (touchActivated) {
 
             CheckTouchInput();
-
         }
         else {
 
@@ -63,27 +62,30 @@ public class Blimp_Movement : MonoBehaviour
 
         if (playerState.GetBursts() > 0)
         {
-
             isBurstAvailable = true;
         }
         else
         {
-
             isBurstAvailable = false;
         }
-        if (hasLeftArea == false && playerState.GetBursts() == 0)
-        {
 
-            timer2 += Time.deltaTime;
+        //if (hasLeftArea == false && playerState.GetBursts() == 0)
+        //{
 
-            if (timer2 >= timerBeforeAddBurst)
-            {
+        //    timer2 += Time.deltaTime;
 
-                playerState.AddBurst(1);
-                timer2 = 0f;
-            }
+        //    if (timer2 >= timerBeforeAddBurst)
+        //    {
 
-        }
+        //        playerState.AddBurst(1);
+        //        timer2 = 0f;
+        //    }
+
+        //}
+
+        //DEFAULT BURST CHECK
+        CheckDefaultBurst();
+
 
         CheckAnimations();
 
@@ -209,7 +211,6 @@ public class Blimp_Movement : MonoBehaviour
 
     private void CheckInput()
     {
-
         if (Input.GetKey(KeyCode.Space) == true)
         {
 
@@ -217,7 +218,6 @@ public class Blimp_Movement : MonoBehaviour
             //{
             //    jumpsound.Play(); //Spela ljud när man hoppar
             //}
-            
 
             flying = true;
         }
@@ -302,29 +302,31 @@ public class Blimp_Movement : MonoBehaviour
 
     public void SetHasLeftAreaToTrue()
     {
-
         hasLeftArea = true;
     }
 
     public void SetHasLeftAreaToFalse()
     {
-
         hasLeftArea = false;
         ResetTimer();
     }
 
     private void ReturnToStartingArea()
     {
-
         rb2.velocity = Vector3.SmoothDamp(rb2.velocity, new Vector2(returningSpeed, rb2.velocity.y), ref velocityForReturning, smoothTime);
-
     }
 
     private void ResetTimer()
     {
-
         timer = 0f;
         timerOut = false;
     }
     
+    public void CheckDefaultBurst() {
+
+        if(burstUsed && playerState.defaultBurstUsed == false) {
+
+            playerState.defaultBurstUsed = true;
+        }
+    }
 }

@@ -6,12 +6,13 @@ using System;
 public class PlayerState : MonoBehaviour, IDamageable<int>
 {
     [SerializeField] private int maxHealth = 3;
-    [SerializeField] private bool weightPickedUp = false;
     [SerializeField] private float gracePeriod = 1f;
     [SerializeField] private float pingPongMultplier = 1f;
     [SerializeField] private int startNoBurst = 1;
-    [SerializeField] private int startNoWeights = 1;
     [SerializeField] private int noBursts;
+    public bool defaultBurstUsed;
+    [SerializeField] private float defaultBurstCooldown = 0f;
+    [SerializeField] private float defaultBurstTimer;
 
     private float pingPongValue = 1f;
     private Color color;
@@ -21,7 +22,6 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     private int maxNoBurst = 3;
 
     public Material material;
-    public bool startBurstUsed;
     public HealthSystem hs;
     public GameOver gameover;
     [SerializeField] ParticleSystem lowHealthEffect;
@@ -47,6 +47,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         color = material.color;
         counterGracePeriod = gracePeriod;
         noBursts = startNoBurst;
+        defaultBurstTimer = defaultBurstCooldown;
 
         if(updateBurst != null)
         {
@@ -54,6 +55,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         }
 
         material.SetColor("_Color", new Color(1, 1, 1, 1));
+
+        hp2.SetActive(false);
+        hp2second.SetActive(false);
+        hp1.SetActive(false);
+        hp1second.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,6 +89,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             emission.enabled = false;
         }
+
+        CheckDefaultBurstAvailability();
 
         CheckHPsprites();
     }
@@ -122,6 +130,21 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public int GetBursts() {
 
         return noBursts;
+    }
+
+    public void CheckDefaultBurstAvailability() {
+
+        if (defaultBurstUsed) {
+
+            defaultBurstTimer -= Time.deltaTime;
+
+            if(defaultBurstTimer <= 0) {
+
+                defaultBurstUsed = false;
+                AddBurst(1);
+                defaultBurstTimer = defaultBurstCooldown;
+            }
+        }
     }
 
     public void Damage(int damagePoints)
