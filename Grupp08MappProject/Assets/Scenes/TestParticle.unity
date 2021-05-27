@@ -261,17 +261,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 177426453217237089, guid: 061b1ebb01ff75c48aa4bb36d537f0a7, type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 66
-      objectReference: {fileID: 0}
-    - target: {fileID: 177426453217237089, guid: 061b1ebb01ff75c48aa4bb36d537f0a7, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 177426453217237089, guid: 061b1ebb01ff75c48aa4bb36d537f0a7, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061b1ebb01ff75c48aa4bb36d537f0a7, type: 3}

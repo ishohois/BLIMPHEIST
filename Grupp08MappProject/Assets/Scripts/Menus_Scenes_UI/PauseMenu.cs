@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
             burstButton.gameObject.SetActive(false);
             settingsMenuPanel.SetActive(true);
             Time.timeScale = 0f; //time stop
-            //AudioListener.pause = false;
+            //AudioListener.pause = false; //Om detta används så hör man steam sound i settings paus menyn
             GameIsPaused = true;
             pauseButton.gameObject.SetActive(false);
         }
@@ -61,12 +61,14 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioListener.pause = false;
         SceneManager.LoadScene("MainScene");
         Time.timeScale = 1f; //Start time again
     }
 
     public void MainMenu()
     {
+        AudioListener.pause = false;
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f; //Start time again
     }
