@@ -37,11 +37,9 @@ public class RandomGeneratorManager : MonoBehaviour
 
             if (timeCounter <= 0)
             {
-                Debug.Log("Wave " + index + 1);
                 if (index <= timeStamps.Length - 1)
                 {
                     timeCounter = timeStamps[index];
-                    Debug.Log("index is : " + index);
                 }
                 else { run = false; }
 
@@ -53,7 +51,6 @@ public class RandomGeneratorManager : MonoBehaviour
                     pickupSpawner.SetUpWaves(pickupConfigs[index]);
                 }
                 index++;
-                Debug.Log(index);
             }
         }
     }

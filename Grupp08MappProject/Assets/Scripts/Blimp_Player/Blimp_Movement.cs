@@ -185,23 +185,18 @@ public class Blimp_Movement : MonoBehaviour
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    Debug.Log("Touch began");
                     flying = true;
                     break;
                 case TouchPhase.Moved:
-                    Debug.Log("Touch moved");
                     flying = true;
                     break;
                 case TouchPhase.Stationary:
-                    Debug.Log("Touch stationary");
                     flying = true;
                     break;
                 case TouchPhase.Ended:
-                    Debug.Log("Touch ended");
                     flying = false;
                     break;
                 case TouchPhase.Canceled:
-                    Debug.Log("Touch canceled");
                     flying = false;
                     break;
             }

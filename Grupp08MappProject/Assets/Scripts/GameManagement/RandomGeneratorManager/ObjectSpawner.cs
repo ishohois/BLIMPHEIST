@@ -110,7 +110,6 @@ public class ObjectSpawner : MonoBehaviour
 
         if (objectTypes.Count > 1 && poolTag == oldTag)
         {
-            Debug.Log("Number of object types aka enemies " + objectTypes.Count);
             AppearRandomOnScreen();
             return;
         }
@@ -144,11 +143,6 @@ public class ObjectSpawner : MonoBehaviour
         }
         timeMin = config.MinRandomTime;
         timeMax = config.MaxRandomTime;
-
-        foreach (string s in objectTypes)
-        {
-            Debug.Log("Object types: " + s);
-        }
     }
 
 }

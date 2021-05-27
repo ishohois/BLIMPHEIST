@@ -15,13 +15,14 @@ MonoBehaviour:
   minRandomTime: 2
   maxRandomTime: 4
   listOfPools:
-  - tag: HangGlider
+  - hasParameterChanges: 0
+    tag: HangGlider
     prefab: {fileID: 6262497213409356395, guid: 511132915903bd84c841e06c2d48cb49, type: 3}
     size: 20
-    scrollSpeedMultiplier: 2
-  - tag: Bird
+    scrollSpeedMultiplier: 1
+  - hasParameterChanges: 0
+    tag: Bird
     prefab: {fileID: 8343561313432366525, guid: b5ba8fe9d43e0e64bbdcabaf11e92d47, type: 3}
     size: 30
     scrollSpeedMultiplier: 1
   hasNewPools: 1
-  hasParameterChanges: 0
