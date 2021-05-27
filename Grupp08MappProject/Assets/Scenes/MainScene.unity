@@ -1263,7 +1263,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dc51503d16d0fb74ba70fcb2ede031f5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7133,7 +7133,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e060a860fd222aa48950a906aa90b105, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8080,6 +8080,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1810244127}
     m_Modifications:
+    - target: {fileID: 2004643157328543490, guid: 40ae7b750b1f48b4fb73e82cd5e1a657, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2004643157328543492, guid: 40ae7b750b1f48b4fb73e82cd5e1a657, type: 3}
       propertyPath: m_Name
       value: Warning
@@ -8406,6 +8410,10 @@ PrefabInstance:
       propertyPath: flyingSound
       value: 
       objectReference: {fileID: 438215848}
+    - target: {fileID: 5202988557933611528, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
+      propertyPath: touchActivated
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5202988557933611529, guid: 9394549677b283b4c8821243c92a4ed2, type: 3}
       propertyPath: explode
       value: 
