@@ -33,15 +33,6 @@ public class PoolManager : MonoBehaviour
                 poolDictionary[pool.tag].Enqueue(obj);
             }
 
-            //if (waveConfig.HasParameterChanges && poolDictionary.ContainsKey(pool.tag))
-            //{
-            //    Queue<GameObject> objs = poolDictionary[pool.tag];
-
-            //    foreach (GameObject obj in objs)
-            //    {
-            //        obj.GetComponent<ScrollingObjects>().scrollSpeedMultiplier = pool.scrollSpeedMultiplier;
-            //    }
-            //}
         }
     }
 
@@ -77,7 +68,7 @@ public class PoolManager : MonoBehaviour
 
                 foreach(GameObject obj in objs)
                 {
-                    obj.GetComponent<ScrollingObjects>().scrollSpeedMultiplier = pool.scrollSpeedMultiplier;
+                    obj.GetComponent<ScrollingObjects>().scrollSpeed += pool.scrollSpeedIncrement;
                 }
             }
         }
