@@ -32,6 +32,16 @@ public class PoolManager : MonoBehaviour
                 obj.SetActive(false);
                 poolDictionary[pool.tag].Enqueue(obj);
             }
+
+            //if (waveConfig.HasParameterChanges && poolDictionary.ContainsKey(pool.tag))
+            //{
+            //    Queue<GameObject> objs = poolDictionary[pool.tag];
+
+            //    foreach (GameObject obj in objs)
+            //    {
+            //        obj.GetComponent<ScrollingObjects>().scrollSpeedMultiplier = pool.scrollSpeedMultiplier;
+            //    }
+            //}
         }
     }
 
@@ -60,6 +70,16 @@ public class PoolManager : MonoBehaviour
                     poolDictionary[pool.tag].Enqueue(obj);
                 }
             }
+
+            if (pool.hasParameterChanges)
+            {
+                Queue<GameObject> objs = poolDictionary[pool.tag];
+
+                foreach(GameObject obj in objs)
+                {
+                    obj.GetComponent<ScrollingObjects>().scrollSpeedMultiplier = pool.scrollSpeedMultiplier;
+                }
+            }
         }
     }
 
@@ -80,9 +100,5 @@ public class PoolManager : MonoBehaviour
         return objectToSpawn;
     }
 
-    public struct PoolObject{
-        string tag;
-        GameObject gameObject;
-    }
 }
 

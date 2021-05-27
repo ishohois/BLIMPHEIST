@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -3
+  scrollSpeedMultiplier: 1
 --- !u!50 &6153360172669154261
 Rigidbody2D:
   serializedVersion: 4

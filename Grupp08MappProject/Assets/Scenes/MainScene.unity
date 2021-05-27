@@ -309,7 +309,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.4035416
+  orthographic size: 5.7638507
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2040,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992662679069750096, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.29
+      value: -6.99
       objectReference: {fileID: 0}
     - target: {fileID: 8992662679069750096, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3057,7 +3057,7 @@ MonoBehaviour:
   offsetVertical: 0.3
   offsetDeathZone: 1.1
   offsetPlayerAnchorPoint: 2.3
-  x: 0
+  xMinPos: 0
   y: 0
 --- !u!4 &821694228
 Transform:
@@ -11534,6 +11534,18 @@ PrefabInstance:
     - target: {fileID: 8882041814915601817, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: m_Name
       value: RandomGeneratorManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: timeStamps.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882041815776472116, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: yPadding
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882041815825980942, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: yPadding
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}

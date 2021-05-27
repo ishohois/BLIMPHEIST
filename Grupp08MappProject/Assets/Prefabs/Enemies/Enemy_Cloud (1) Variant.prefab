@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7983545813534271731, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
+      propertyPath: scrollSpeedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f03e4dc184a3e4a884c1c89719e2dc, type: 3}
 --- !u!1 &5838255614325532762 stripped

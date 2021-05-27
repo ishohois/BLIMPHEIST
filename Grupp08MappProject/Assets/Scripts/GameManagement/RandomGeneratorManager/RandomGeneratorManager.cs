@@ -12,7 +12,6 @@ public class RandomGeneratorManager : MonoBehaviour
     [Header("EnemySpawner")]
     public WaveConfig[] enemyConfigs;
     public ObjectSpawner enemySpawner;
-    //public ObjectSpawnerLaines enemySpawner;
 
     [Header("PickupSpawner")]
     public WaveConfig[] pickupConfigs;
@@ -49,6 +48,7 @@ public class RandomGeneratorManager : MonoBehaviour
                 if (index != 0)
                 {
                     PoolManager.Instance.ChangePools(enemyConfigs[index]);
+                    PoolManager.Instance.ChangePools(pickupConfigs[index]);
                     enemySpawner.SetUpWaves(enemyConfigs[index]);
                     pickupSpawner.SetUpWaves(pickupConfigs[index]);
                 }

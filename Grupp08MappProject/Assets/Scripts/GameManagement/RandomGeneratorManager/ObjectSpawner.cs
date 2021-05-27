@@ -108,7 +108,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         string poolTag = objectTypes[Random.Range(0, objectTypes.Count)];
 
-        if (poolTag == oldTag && objectTypes.Count > 2)
+        if (objectTypes.Count > 1 && poolTag == oldTag)
         {
             Debug.Log("Number of object types aka enemies " + objectTypes.Count);
             AppearRandomOnScreen();
@@ -136,11 +136,19 @@ public class ObjectSpawner : MonoBehaviour
         {
             for (int i = 0; i < config.ListOfPools.Count; i++)
             {
-                objectTypes.Add(config.ListOfPools[i].tag);
+                if (!objectTypes.Contains(config.ListOfPools[i].tag))
+                {
+                    objectTypes.Add(config.ListOfPools[i].tag);
+                }
             }
         }
         timeMin = config.MinRandomTime;
         timeMax = config.MaxRandomTime;
+
+        foreach (string s in objectTypes)
+        {
+            Debug.Log("Object types: " + s);
+        }
     }
 
 }

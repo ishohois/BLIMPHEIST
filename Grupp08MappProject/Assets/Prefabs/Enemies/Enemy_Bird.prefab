@@ -5992,6 +5992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -2
+  scrollSpeedMultiplier: 1
 --- !u!114 &8889230868057828815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6008,6 +6009,7 @@ MonoBehaviour:
   objectDeactivator: {fileID: 0}
   smoke: {fileID: 5190573074733837474}
   death: {fileID: 5782147929163084482}
+  audio: {fileID: 0}
 --- !u!114 &7093237136227033102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,11 +15,14 @@ public class WaveConfig : ScriptableObject
     public List<ObjectPool> ListOfPools { get => listOfPools; }
     public bool HasNewPools { get => hasNewPools; }
 
+
     [System.Serializable]
     public class ObjectPool
     {
+        public bool hasParameterChanges;
         public string tag;
         public GameObject prefab;
         public int size;
+        public float scrollSpeedMultiplier = 1f;
     }
 }

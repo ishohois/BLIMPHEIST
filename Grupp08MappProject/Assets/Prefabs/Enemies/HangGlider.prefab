@@ -1000,6 +1000,7 @@ MonoBehaviour:
   objectDeactivator: {fileID: 0}
   groundedDistance: 0
   animator: {fileID: 5088765096414332718}
+  audio: {fileID: 0}
   minAirForce: 9.8
   maxAirForce: 13
   groundedMin: 2
@@ -1028,6 +1029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -3
+  scrollSpeedMultiplier: 1
 --- !u!114 &-6138617525041950008
 MonoBehaviour:
   m_ObjectHideFlags: 0
