@@ -28,6 +28,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     [SerializeField] ParticleSystem hurtEffect;
     [SerializeField] ParticleSystem burstLost;
     public ParticleSystem warning;
+    public ParticleSystem explode;
 
     public delegate void UpdateBurst(PlayerState player);
     public static event UpdateBurst updateBurst;
@@ -200,6 +201,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     {
         material.SetColor("_Color", new Color(1, 1, 1, 0));
         hs.Die();
+        explode.Play();
         gameover.ShowGameOverScreen();
     }
 
