@@ -39,6 +39,7 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public AudioSource hitSound; //Sound when you get hit
     public AudioSource healSound; //Det ljud som spelas när man tar upp heal
     public AudioSource gracePeriodSound; //Varningssignal under grace period
+    //public AudioSource warningSound; //Varningssignal under kollision med varning-collidern
 
     public GameObject hp2;
     public GameObject hp2second;

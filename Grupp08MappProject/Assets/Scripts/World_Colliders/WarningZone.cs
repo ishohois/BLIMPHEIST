@@ -9,6 +9,7 @@ public class WarningZone : MonoBehaviour
         if (collision.CompareTag("Player") == true)
         {
             collision.GetComponent<PlayerState>().warning.Play();
+            //collision.GetComponent<PlayerState>().warningSound.Play();
         }
     }
 
@@ -17,6 +18,7 @@ public class WarningZone : MonoBehaviour
         if (collision.CompareTag("Player") == true)
         {
             collision.GetComponent<PlayerState>().warning.Stop();
+            //collision.GetComponent<PlayerState>().warningSound.Stop();
         }
     }
 }
