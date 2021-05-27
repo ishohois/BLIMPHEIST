@@ -17,7 +17,7 @@ public class HandlePositions : MonoBehaviour
     //public Collider2D collider;
     //public bool usingSRBounds;
 
-    public float x;
+    public float xMinPos;
     public float y;
 
     private void Awake()
@@ -47,12 +47,12 @@ public class HandlePositions : MonoBehaviour
 
     private void RelocateColliders()
     {
-        x = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
+        xMinPos = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
         y = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
 
         verticalLimiter.transform.position = new Vector3(0f, -(y) + offsetVertical, transform.position.z);
         deathZone.transform.position = new Vector3(0f, y - offsetDeathZone, transform.position.z);
 
-        playerAnchorPoint.transform.position = new Vector3(x + offsetPlayerAnchorPoint, 0, transform.position.z);
+        playerAnchorPoint.transform.position = new Vector3(xMinPos + offsetPlayerAnchorPoint, 0, transform.position.z);
     }
 }

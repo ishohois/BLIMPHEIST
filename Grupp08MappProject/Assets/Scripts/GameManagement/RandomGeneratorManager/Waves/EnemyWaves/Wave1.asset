@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: Wave1
   m_EditorClassIdentifier: 
-  minRandomTime: 3
-  maxRandomTime: 6
+  minRandomTime: 2
+  maxRandomTime: 4
   listOfPools:
   - tag: HangGlider
     prefab: {fileID: 6262497213409356395, guid: 511132915903bd84c841e06c2d48cb49, type: 3}
-    size: 4
+    size: 20
   - tag: Bird
     prefab: {fileID: 8343561313432366525, guid: b5ba8fe9d43e0e64bbdcabaf11e92d47, type: 3}
-    size: 6
+    size: 30
   hasNewPools: 1

@@ -1000,7 +1000,7 @@ MonoBehaviour:
   objectDeactivator: {fileID: 0}
   groundedDistance: 0
   animator: {fileID: 5088765096414332718}
-  minAirForce: 8
+  minAirForce: 9.8
   maxAirForce: 13
   groundedMin: 2
   groundedMax: 7.5

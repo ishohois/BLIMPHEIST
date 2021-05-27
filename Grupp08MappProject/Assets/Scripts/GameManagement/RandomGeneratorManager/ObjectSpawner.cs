@@ -70,7 +70,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private void GetRandomPos()
     {
-       
+
         int tries = 0;
         var newYPos = 0f;
         newYPos = Random.Range(yMin, yMax);
@@ -108,14 +108,17 @@ public class ObjectSpawner : MonoBehaviour
     {
         string poolTag = objectTypes[Random.Range(0, objectTypes.Count)];
 
-        if (poolTag.Equals(oldTag) && objectTypes.Count < 2)
+        if (poolTag == oldTag && objectTypes.Count > 2)
         {
+            Debug.Log("Number of object types aka enemies " + objectTypes.Count);
             AppearRandomOnScreen();
             return;
         }
 
+
         // Clouds Check
-        if(poolTag == "Cloud" && PreventOverlappingPosition()) {
+        if (poolTag == "Cloud" && PreventOverlappingPosition())
+        {
 
             PoolManager.Instance.SpawnFromPool(poolTag, new Vector2(xMax, yMax), Quaternion.identity);
         }
@@ -136,9 +139,8 @@ public class ObjectSpawner : MonoBehaviour
                 objectTypes.Add(config.ListOfPools[i].tag);
             }
         }
-
         timeMin = config.MinRandomTime;
         timeMax = config.MaxRandomTime;
     }
-    
+
 }
