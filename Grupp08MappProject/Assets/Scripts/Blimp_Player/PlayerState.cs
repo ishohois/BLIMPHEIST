@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class PlayerState : MonoBehaviour, IDamageable<int>
@@ -13,6 +14,8 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
     public bool defaultBurstUsed;
     [SerializeField] private float defaultBurstCooldown = 0f;
     [SerializeField] private float defaultBurstTimer;
+    [SerializeField] private Image burstOnCooldownImage;
+    [SerializeField] private Image burstOffCooldownImage;
 
     private float pingPongValue = 1f;
     private Color color;
@@ -49,8 +52,10 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         counterGracePeriod = gracePeriod;
         noBursts = startNoBurst;
         defaultBurstTimer = defaultBurstCooldown;
+        burstOnCooldownImage.enabled = false;
+        burstOffCooldownImage.fillAmount = 0.0f;
 
-        if(updateBurst != null)
+        if (updateBurst != null)
         {
             updateBurst(this);
         }
@@ -137,13 +142,17 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
         if (defaultBurstUsed) {
 
+            burstOnCooldownImage.enabled = true;
             defaultBurstTimer -= Time.deltaTime;
+            burstOffCooldownImage.fillAmount += 1.0f / defaultBurstCooldown * Time.deltaTime;
 
             if(defaultBurstTimer <= 0) {
 
                 defaultBurstUsed = false;
                 AddBurst(1);
                 defaultBurstTimer = defaultBurstCooldown;
+                burstOnCooldownImage.enabled = false;
+                burstOffCooldownImage.fillAmount = 0.0f;
             }
         }
     }
