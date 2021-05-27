@@ -319,7 +319,7 @@ public class Blimp_Movement : MonoBehaviour
     
     public void CheckDefaultBurst() {
 
-        if(burstUsed && playerState.defaultBurstUsed == false) {
+        if(burstUsed && playerState.GetBursts() < 2 && playerState.defaultBurstUsed == false) {
 
             playerState.defaultBurstUsed = true;
         }

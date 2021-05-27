@@ -31,5 +31,4 @@ public class UIBurstUpdater : MonoBehaviour
             bursts[i].SetActive(true);
         }
     }
-
 }

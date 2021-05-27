@@ -108,6 +108,11 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
         {
             noBursts = maxNoBurst;
         }
+        else if (defaultBurstUsed)
+        {
+            ResetDefaultBurst();
+            noBursts += noBurst;
+        }
         else
         {
             noBursts += noBurst;
@@ -149,13 +154,18 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
             if(defaultBurstTimer <= 0) {
 
-                defaultBurstUsed = false;
+                ResetDefaultBurst();
                 AddBurst(1);
-                defaultBurstTimer = defaultBurstCooldown;
-                burstOnCooldownImage.enabled = false;
-                burstOffCooldownImage.fillAmount = 0.0f;
             }
         }
+    }
+
+    public void ResetDefaultBurst()
+    {
+        defaultBurstUsed = false;
+        burstOnCooldownImage.enabled = false;
+        burstOffCooldownImage.fillAmount = 0.0f;
+        defaultBurstTimer = defaultBurstCooldown;
     }
 
     public void Damage(int damagePoints)
