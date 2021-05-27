@@ -30,8 +30,6 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         yield return new WaitForSeconds(timer);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.transform.position = objectDeactivator.transform.position;
-        smoke.gameObject.SetActive(false);
-        death.gameObject.SetActive(false);
     }
 
     public void KillMe() {
@@ -45,7 +43,7 @@ public class Enemy_Bird : MonoBehaviour, IKillable
         foreach (Transform child in transform) {
 
             if (child.GetComponent<ParticleSystem>()) {
-
+                continue;
             }
             else {
 

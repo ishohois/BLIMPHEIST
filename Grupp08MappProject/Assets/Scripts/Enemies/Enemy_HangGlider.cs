@@ -132,8 +132,6 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     {
         yield return new WaitForSeconds(timer);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        //death.gameObject.SetActive(false);
-        //smoke.gameObject.SetActive(false);
         gameObject.transform.position = objectDeactivator.transform.position;
     }
 
@@ -149,7 +147,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
         {
             if (child.GetComponent<ParticleSystem>())
             {
-
+                continue;
             }
             else
             {
