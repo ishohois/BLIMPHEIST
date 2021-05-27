@@ -12,18 +12,25 @@ public class HandlePositions : MonoBehaviour
     public float offsetVertical;
     public float offsetDeathZone;
     public float offsetPlayerAnchorPoint;
+    public GameObject[] backgroundLayers;
+    public bool doRescaleBackground;
 
     //public SpriteRenderer sr;
     //public Collider2D collider;
     //public bool usingSRBounds;
 
     public float xMinPos;
-    public float y;
+    public float yMinPos;
 
     private void Awake()
     {
         main = Camera.main;
         RelocateColliders();
+
+        if (doRescaleBackground)
+        {
+            RescaleBackground();
+        }
     }
 
     //private void ResizingBackground()
@@ -48,11 +55,23 @@ public class HandlePositions : MonoBehaviour
     private void RelocateColliders()
     {
         xMinPos = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
-        y = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
+        yMinPos = main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
 
-        verticalLimiter.transform.position = new Vector3(0f, -(y) + offsetVertical, transform.position.z);
-        deathZone.transform.position = new Vector3(0f, y - offsetDeathZone, transform.position.z);
+        verticalLimiter.transform.position = new Vector3(0f, -(yMinPos) + offsetVertical, transform.position.z);
+        deathZone.transform.position = new Vector3(0f, yMinPos - offsetDeathZone, transform.position.z);
 
         playerAnchorPoint.transform.position = new Vector3(xMinPos + offsetPlayerAnchorPoint, 0, transform.position.z);
+    }
+
+
+    private void RescaleBackground()
+    {
+        float xMaxViewPort = main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x * 2f;
+        float yMaxViewPort = main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y * 2f;
+
+        foreach (GameObject obj in backgroundLayers)
+        {
+            obj.transform.localScale = new Vector3(xMaxViewPort, obj.transform.localScale.y, obj.transform.localScale.z);
+        }
     }
 }
