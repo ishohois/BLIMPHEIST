@@ -147,7 +147,7 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
             if (child.GetComponent<ParticleSystem>())
             {
 
-                child.GetComponent<ParticleSystem>().Play();
+                child.GetComponent<ParticleSystem>().Stop();
             }
             else
             {
