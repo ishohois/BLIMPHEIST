@@ -6,6 +6,8 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
 {
 
     public ObjectDeactivator objectDeactivator;
+    public ParticleSystem smoke;
+    public ParticleSystem death;
     public float groundedDistance = 0f;
     public Animator animator;
     public AudioSource audio;
@@ -130,28 +132,27 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     {
         yield return new WaitForSeconds(timer);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        //gameObject.SetActive(false);
+        //death.gameObject.SetActive(false);
+        //smoke.gameObject.SetActive(false);
         gameObject.transform.position = objectDeactivator.transform.position;
     }
 
     public void KillMe()
     {
         //Död Ljudeffekter + Partikeleffekter
-        gameObject.GetComponent<ParticleSystem>().Stop();
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        smoke.Stop();
+        death.Play();
         audio.Play();
 
         foreach (Transform child in transform)
         {
-
             if (child.GetComponent<ParticleSystem>())
             {
 
-                child.GetComponent<ParticleSystem>().Stop();
             }
             else
             {
-
                 child.gameObject.SetActive(false);
             }
         }
