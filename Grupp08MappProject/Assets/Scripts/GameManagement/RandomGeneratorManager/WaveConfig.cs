@@ -23,6 +23,6 @@ public class WaveConfig : ScriptableObject
         public string tag;
         public GameObject prefab;
         public int size;
-        public float scrollSpeedMultiplier = 1f;
+        public float scrollSpeedIncrement = 1f;
     }
 }

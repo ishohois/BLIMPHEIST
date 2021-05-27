@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ScrollingObjects : MonoBehaviour
 {
-    public float scrollSpeed;
-    public float scrollSpeedMultiplier;   
+    public float scrollSpeed; 
     
     private Rigidbody2D rd2d;
 
@@ -21,7 +20,7 @@ public class ScrollingObjects : MonoBehaviour
 
     private void OnEnable()
     {
-        rd2d.velocity = new Vector2(scrollSpeed * scrollSpeedMultiplier, 0);
+        rd2d.velocity = new Vector2(scrollSpeed, 0);
     }
 
 }
