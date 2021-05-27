@@ -137,9 +137,9 @@ public class Enemy_HangGlider : MonoBehaviour, IKillable
     public void KillMe()
     {
         //Död Ljudeffekter + Partikeleffekter
+        gameObject.GetComponent<ParticleSystem>().Stop();
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         audio.Play();
-        //gameObject.GetComponent<ParticleSystem>().Stop();
 
         foreach (Transform child in transform)
         {
