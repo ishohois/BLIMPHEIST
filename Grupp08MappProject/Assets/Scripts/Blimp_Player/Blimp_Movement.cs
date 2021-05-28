@@ -120,7 +120,7 @@ public class Blimp_Movement : MonoBehaviour
         }
 
         //FlyingSound control
-        if (flying == true && flyingSound.mute == true)
+        if (flying == true && flyingSound.mute == true && Time.timeScale > 0.1f)
         {
             flyingSound.mute = false;
             flyingSound.pitch = Random.Range(0.6f, 0.9f);
