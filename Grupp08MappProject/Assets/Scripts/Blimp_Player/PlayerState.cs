@@ -126,12 +126,17 @@ public class PlayerState : MonoBehaviour, IDamageable<int>
 
     public void UseBurst() {
 
-        noBursts -= 1;
-        burstLost.Play();
+        if (noBursts > 0) {
+            noBursts -= 1;
+            burstLost.Play();
+        }
 
-        if(noBursts < 0) {
+        if(noBursts == 0) {
 
-            noBursts = 0;
+            defaultBurstUsed = true;
+            defaultBurstTimer = defaultBurstCooldown;
+            burstOffCooldownImage.fillAmount = 0.0f;
+
         }
         if(updateBurst != null)
         {
