@@ -15,7 +15,7 @@ MonoBehaviour:
   minRandomTime: 2
   maxRandomTime: 3.25
   listOfPools:
-  - hasParameterChanges: 1
+  - hasParameterChanges: 0
     tag: HangGlider
     prefab: {fileID: 6262497213409356395, guid: 511132915903bd84c841e06c2d48cb49, type: 3}
     size: 15

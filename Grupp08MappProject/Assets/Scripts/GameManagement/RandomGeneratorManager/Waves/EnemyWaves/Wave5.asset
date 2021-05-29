@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: Wave5
   m_EditorClassIdentifier: 
-  minRandomTime: 1.5
-  maxRandomTime: 2.25
+  minRandomTime: 0.8
+  maxRandomTime: 1.2
   listOfPools:
   - hasParameterChanges: 1
     tag: Bird
     prefab: {fileID: 0}
     size: 0
-    scrollSpeedIncrement: 1
+    scrollSpeedIncrement: 0.5
   - hasParameterChanges: 1
     tag: HangGlider
     prefab: {fileID: 0}
     size: 0
-    scrollSpeedIncrement: 1
+    scrollSpeedIncrement: 0.2
   hasNewPools: 0
   hasChangedPools: 0
