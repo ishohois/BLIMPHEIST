@@ -17,18 +17,26 @@ public class ObjectSpawner : MonoBehaviour
 
     [SerializeField] private bool run = true;
 
-    private float timeMax = 10f;
-    private float timeMin = 5f;
+    private float timeMax = 1f;
+    private float timeMin = 1f;
     private float timeCounter;
     private bool hasNextPos;
     private Vector3 oldPos;
     private Vector3 newPos;
     private string oldTag;
 
+    [SerializeField] private float timeCloudMax;
+    [SerializeField] private float timeCloudMin;
+    [SerializeField] private float cloudTimeCounter;
+    [SerializeField] private float cloudPosOffset;
+    private string cloudTag;
+    private float yPosCloud;
+
 
     private void Start()
     {
         SetUpAppearBoundariesOnScreen();
+        cloudTimeCounter = Random.Range(timeCloudMin, timeCloudMax);
     }
 
     // Update is called once per frame
@@ -58,6 +66,12 @@ public class ObjectSpawner : MonoBehaviour
             }
         }
 
+        cloudTimeCounter -= Time.deltaTime;
+        if (cloudTimeCounter <= 0)
+        {
+            cloudTimeCounter = Random.Range(timeCloudMin, timeCloudMax);
+            CloudSpawning();
+        }
     }
 
     private void SetUpAppearBoundariesOnScreen()
@@ -66,11 +80,11 @@ public class ObjectSpawner : MonoBehaviour
         yMin = camera.ViewportToWorldPoint(new Vector3(0, 0 + yPadding, 0)).y;
         yMax = camera.ViewportToWorldPoint(new Vector3(0, 1f - yPadding, 0)).y;
         xMax = camera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
-    }
+        yPosCloud = camera.ViewportToWorldPoint(new Vector3(0, 1f - cloudPosOffset, 0)).y;
+     }
 
     private void GetRandomPos()
     {
-
         int tries = 0;
         var newYPos = 0f;
         newYPos = Random.Range(yMin, yMax);
@@ -104,24 +118,30 @@ public class ObjectSpawner : MonoBehaviour
         return colliders.Length == 0;
     }
 
+    private void CloudSpawning()
+    {
+        if (cloudTag != null)
+        {
+            PoolManager.Instance.SpawnFromPool(cloudTag, new Vector2(xMax, yPosCloud), Quaternion.identity);
+        }
+        else
+        {
+            return;
+        }
+
+    }
+
     public void AppearRandomOnScreen()
     {
         string poolTag = objectTypes[Random.Range(0, objectTypes.Count)];
 
-        if (objectTypes.Count > 1 && poolTag == oldTag)
+        if (objectTypes.Count > 1 && poolTag == oldTag && poolTag == "Cloud")
         {
             AppearRandomOnScreen();
             return;
         }
 
-
-        // Clouds Check
-        if (poolTag == "Cloud" && PreventOverlappingPosition())
-        {
-
-            PoolManager.Instance.SpawnFromPool(poolTag, new Vector2(xMax, yMax), Quaternion.identity);
-        }
-        else if (PreventOverlappingPosition())
+        if (PreventOverlappingPosition())
         {
             PoolManager.Instance.SpawnFromPool(poolTag, newPos, Quaternion.identity);
         }
@@ -135,9 +155,14 @@ public class ObjectSpawner : MonoBehaviour
         {
             for (int i = 0; i < config.ListOfPools.Count; i++)
             {
-                if (!objectTypes.Contains(config.ListOfPools[i].tag))
+                if (!objectTypes.Contains(config.ListOfPools[i].tag) && config.ListOfPools[i].tag != "Cloud")
                 {
                     objectTypes.Add(config.ListOfPools[i].tag);
+                }
+
+                if (config.ListOfPools[i].tag == "Cloud")
+                {
+                    cloudTag = config.ListOfPools[i].tag;
                 }
             }
         }
@@ -146,7 +171,8 @@ public class ObjectSpawner : MonoBehaviour
 
         Debug.Log("TimeMin " + timeMin + " TimeMax " + timeMax);
 
-        foreach (string s in objectTypes){
+        foreach (string s in objectTypes)
+        {
             Debug.Log("ObjectTypes in pool " + s);
         }
     }

@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
-  m_Name: Wave8
+  m_Name: Wave7AddCloud
   m_EditorClassIdentifier: 
-  minRandomTime: 0
-  maxRandomTime: 0
-  listOfPools: []
-  hasNewPools: 0
+  minRandomTime: 0.7
+  maxRandomTime: 1
+  listOfPools:
+  - hasParameterChanges: 0
+    tag: Cloud
+    prefab: {fileID: 5838255613087502410, guid: b2b2a6142573a67448d0e0834482f64e, type: 3}
+    size: 5
+    scrollSpeedIncrement: 0
+  hasNewPools: 1
   hasChangedPools: 0
