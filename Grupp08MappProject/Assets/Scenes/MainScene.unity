@@ -11888,7 +11888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[3]
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[4]
