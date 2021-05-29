@@ -8036,29 +8036,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomGeneratorManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: timeStamps.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: enemyConfigs.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: pickupConfigs.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: timeStamps.Array.data[4]
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: enemyConfigs.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: ee377ab9e9a79bd418f78441b2ac1b18, type: 2}
-    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
-      propertyPath: pickupConfigs.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
