@@ -3231,7 +3231,14 @@ MonoBehaviour:
   offsetVertical: 0.3
   offsetDeathZone: 1.1
   offsetPlayerAnchorPoint: 2.3
-  backgroundLayers: []
+  backgroundLayers:
+  - {fileID: 330529871}
+  - {fileID: 1360300344}
+  - {fileID: 832146379}
+  - {fileID: 814025117}
+  - {fileID: 742862926}
+  - {fileID: 2017525267}
+  - {fileID: 1252545942}
   doRescaleBackground: 0
   xMinPos: 0
   yMinPos: 0
@@ -3728,9 +3735,9 @@ MonoBehaviour:
   - {fileID: 2017525271}
   - {fileID: 169916715}
   timeStampsBG:
-  - 10
-  - 15
-  - 20
+  - 1
+  - 2
+  - 3
   speedIncrement: 0.1
 --- !u!4 &1009176836
 Transform:
