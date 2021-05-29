@@ -19,10 +19,10 @@ MonoBehaviour:
     tag: Bird
     prefab: {fileID: 0}
     size: 0
-    scrollSpeedIncrement: 0.5
+    scrollSpeedIncrement: 1
   - hasParameterChanges: 1
     tag: HangGlider
     prefab: {fileID: 0}
     size: 0
-    scrollSpeedIncrement: 0.5
+    scrollSpeedIncrement: 1
   hasNewPools: 0
