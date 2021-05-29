@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
-  m_Name: Wave2
+  m_Name: Wave7
   m_EditorClassIdentifier: 
-  minRandomTime: 2
-  maxRandomTime: 3.25
-  listOfPools:
-  - hasParameterChanges: 0
-    tag: HangGlider
-    prefab: {fileID: 6262497213409356395, guid: 511132915903bd84c841e06c2d48cb49, type: 3}
-    size: 15
-    scrollSpeedIncrement: 0
-  hasNewPools: 1
+  minRandomTime: 0
+  maxRandomTime: 0
+  listOfPools: []
+  hasNewPools: 0
   hasChangedPools: 0
