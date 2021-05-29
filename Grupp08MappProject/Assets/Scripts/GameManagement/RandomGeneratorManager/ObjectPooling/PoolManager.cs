@@ -40,25 +40,27 @@ public class PoolManager : MonoBehaviour
     {
         foreach (var pool in waveConfig.ListOfPools)
         {
-
-            if (poolDictionary.ContainsKey(pool.tag) && poolDictionary[pool.tag].Count != pool.size)
+            if (waveConfig.HasNewPools)
             {
-                for (int i = 0; i < pool.size; i++)
+                if (poolDictionary.ContainsKey(pool.tag) && poolDictionary[pool.tag].Count != pool.size)
                 {
-                    GameObject obj = Instantiate(pool.prefab);
-                    obj.SetActive(false);
-                    poolDictionary[pool.tag].Enqueue(obj);
+                    for (int i = 0; i < pool.size; i++)
+                    {
+                        GameObject obj = Instantiate(pool.prefab);
+                        obj.SetActive(false);
+                        poolDictionary[pool.tag].Enqueue(obj);
+                    }
                 }
-            }
 
-            if (!poolDictionary.ContainsKey(pool.tag))
-            {
-                poolDictionary.Add(pool.tag, new Queue<GameObject>());
-                for (int i = 0; i < pool.size; i++)
+                if (!poolDictionary.ContainsKey(pool.tag))
                 {
-                    GameObject obj = Instantiate(pool.prefab);
-                    obj.SetActive(false);
-                    poolDictionary[pool.tag].Enqueue(obj);
+                    poolDictionary.Add(pool.tag, new Queue<GameObject>());
+                    for (int i = 0; i < pool.size; i++)
+                    {
+                        GameObject obj = Instantiate(pool.prefab);
+                        obj.SetActive(false);
+                        poolDictionary[pool.tag].Enqueue(obj);
+                    }
                 }
             }
 
@@ -66,9 +68,9 @@ public class PoolManager : MonoBehaviour
             {
                 Queue<GameObject> objs = poolDictionary[pool.tag];
 
-                foreach(GameObject obj in objs)
+                foreach (GameObject obj in objs)
                 {
-                    obj.GetComponent<ScrollingObjects>().scrollSpeed += pool.scrollSpeedIncrement;
+                    obj.GetComponent<ScrollingObjects>().scrollSpeed -= pool.scrollSpeedIncrement;
                 }
             }
         }
