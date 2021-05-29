@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enemy_Cloud : MonoBehaviour
 {
     public GameObject lightning;
-
-    [SerializeField] private bool hit = false;
+    private BoxCollider2D bx;
 
     [SerializeField] private float timer = 0f;
     [SerializeField] private float timeBefore = 1f;
@@ -15,6 +14,8 @@ public class Enemy_Cloud : MonoBehaviour
     private void Start() {
 
         lightning.SetActive(false);
+        bx = GetComponent<BoxCollider2D>();
+        bx.enabled = false;
     }
 
     // Update is called once per frame
@@ -24,12 +25,12 @@ public class Enemy_Cloud : MonoBehaviour
 
         if (timer >= timeBefore) {
 
-            hit = true;
+            bx.enabled = true;
             lightning.SetActive(true);
         }
-        if(timer >= timeBefore + 0.2f) {
+        if(timer >= timeBefore + 0.1f) {
 
-            hit = false;
+            bx.enabled = false;
             lightning.SetActive(false);
             timer = 0f;
         }
@@ -38,7 +39,7 @@ public class Enemy_Cloud : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) {
         
-        if(hit == true && collision.gameObject.CompareTag("Player") == true) {
+        if(collision.gameObject.CompareTag("Player") == true) {
 
             collision.gameObject.GetComponent<PlayerState>().UseBurst();
         }
