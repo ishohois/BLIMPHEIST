@@ -40,38 +40,56 @@ public class PoolManager : MonoBehaviour
     {
         foreach (var pool in waveConfig.ListOfPools)
         {
-            if (waveConfig.HasNewPools)
-            {
-                if (poolDictionary.ContainsKey(pool.tag) && poolDictionary[pool.tag].Count != pool.size)
-                {
-                    for (int i = 0; i < pool.size; i++)
-                    {
-                        GameObject obj = Instantiate(pool.prefab);
-                        obj.SetActive(false);
-                        poolDictionary[pool.tag].Enqueue(obj);
-                    }
-                }
+            ChangedPools(waveConfig, pool);
 
-                if (!poolDictionary.ContainsKey(pool.tag))
+            NewPools(waveConfig, pool);
+
+            ParameterChanges(pool);
+        }
+    }
+
+    private void ChangedPools(WaveConfig waveConfig, WaveConfig.ObjectPool pool)
+    {
+        if (waveConfig.HasChangedPools)
+        {
+            if (poolDictionary.ContainsKey(pool.tag) && poolDictionary[pool.tag].Count != pool.size)
+            {
+                for (int i = 0; i < pool.size; i++)
                 {
-                    poolDictionary.Add(pool.tag, new Queue<GameObject>());
-                    for (int i = 0; i < pool.size; i++)
-                    {
-                        GameObject obj = Instantiate(pool.prefab);
-                        obj.SetActive(false);
-                        poolDictionary[pool.tag].Enqueue(obj);
-                    }
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    poolDictionary[pool.tag].Enqueue(obj);
                 }
             }
+        }
+    }
 
-            if (pool.hasParameterChanges)
+    private void NewPools(WaveConfig waveConfig, WaveConfig.ObjectPool pool)
+    {
+        if (waveConfig.HasNewPools)
+        {
+            if (!poolDictionary.ContainsKey(pool.tag))
             {
-                Queue<GameObject> objs = poolDictionary[pool.tag];
-
-                foreach (GameObject obj in objs)
+                poolDictionary.Add(pool.tag, new Queue<GameObject>());
+                for (int i = 0; i < pool.size; i++)
                 {
-                    obj.GetComponent<ScrollingObjects>().scrollSpeed -= pool.scrollSpeedIncrement;
+                    GameObject obj = Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    poolDictionary[pool.tag].Enqueue(obj);
                 }
+            }
+        }
+    }
+
+    private void ParameterChanges(WaveConfig.ObjectPool pool)
+    {
+        if (pool.hasParameterChanges)
+        {
+            Queue<GameObject> objs = poolDictionary[pool.tag];
+
+            foreach (GameObject obj in objs)
+            {
+                obj.GetComponent<ScrollingObjects>().scrollSpeed -= pool.scrollSpeedIncrement;
             }
         }
     }

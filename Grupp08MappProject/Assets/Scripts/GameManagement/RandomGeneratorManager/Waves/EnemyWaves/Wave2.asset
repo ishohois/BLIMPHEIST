@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave2
   m_EditorClassIdentifier: 
   minRandomTime: 2
-  maxRandomTime: 4
+  maxRandomTime: 3.25
   listOfPools:
   - hasParameterChanges: 1
     tag: HangGlider
@@ -21,3 +21,4 @@ MonoBehaviour:
     size: 15
     scrollSpeedIncrement: 0
   hasNewPools: 1
+  hasChangedPools: 0

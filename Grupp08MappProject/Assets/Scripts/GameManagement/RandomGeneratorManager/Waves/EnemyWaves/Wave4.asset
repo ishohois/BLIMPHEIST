@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: Wave4
   m_EditorClassIdentifier: 
-  minRandomTime: 2
-  maxRandomTime: 3.25
+  minRandomTime: 1.5
+  maxRandomTime: 2.75
   listOfPools:
   - hasParameterChanges: 0
     tag: Vulture
@@ -21,3 +21,4 @@ MonoBehaviour:
     size: 10
     scrollSpeedIncrement: 0
   hasNewPools: 1
+  hasChangedPools: 0

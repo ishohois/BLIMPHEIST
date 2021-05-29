@@ -9,11 +9,13 @@ public class WaveConfig : ScriptableObject
     [SerializeField] private float maxRandomTime;
     [SerializeField] private List<ObjectPool> listOfPools;
     [SerializeField] private bool hasNewPools;
+    [SerializeField] private bool hasChangedPools;
 
     public float MinRandomTime { get => minRandomTime; }
     public float MaxRandomTime { get => maxRandomTime; }
     public List<ObjectPool> ListOfPools { get => listOfPools; }
     public bool HasNewPools { get => hasNewPools; }
+    public bool HasChangedPools { get => hasChangedPools; }
 
 
     [System.Serializable]

@@ -49,10 +49,15 @@ public class RandomGeneratorManager : MonoBehaviour
                     PoolManager.Instance.ChangePools(pickupConfigs[index]);
                     enemySpawner.SetUpWaves(enemyConfigs[index]);
                     pickupSpawner.SetUpWaves(pickupConfigs[index]);
+
+                    //Debug.Log("Index of timeStamps " + index);
+                    //Debug.Log("Run is " + run);
                 }
                 index++;
             }
         }
+
+        
     }
 
     private void RunTime()
