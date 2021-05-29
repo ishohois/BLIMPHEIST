@@ -11864,7 +11864,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.size
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: enemyConfigs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: pickupConfigs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[0]
@@ -11876,11 +11884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[2]
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[3]
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: timeStamps.Array.data[4]
@@ -11902,6 +11910,14 @@ PrefabInstance:
       propertyPath: timeStamps.Array.data[8]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: enemyConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: dc8192c7bca1f7d4bb0f1d7b6ec1ff0c, type: 2}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: pickupConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
     - target: {fileID: 8882041815776472116, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: yPadding
       value: 0.15
