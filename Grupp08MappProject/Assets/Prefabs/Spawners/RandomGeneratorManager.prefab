@@ -52,6 +52,8 @@ MonoBehaviour:
   - 20
   - 20
   - 25
+  - 30
+  - 30
   enemyConfigs:
   - {fileID: 11400000, guid: 5b5b5251e07645d4e80008cb13b733a3, type: 2}
   - {fileID: 11400000, guid: b66e0cc471aefcf46b37f37b60f07d7b, type: 2}
@@ -59,11 +61,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b54466ebadbd45841b13a175d51d3f5c, type: 2}
   - {fileID: 11400000, guid: dc8192c7bca1f7d4bb0f1d7b6ec1ff0c, type: 2}
   - {fileID: 11400000, guid: ee377ab9e9a79bd418f78441b2ac1b18, type: 2}
+  - {fileID: 11400000, guid: 3bc9468675cd261439d0080a38292b56, type: 2}
+  - {fileID: 11400000, guid: 61a58dcd88d51e34eb39feb6328939d9, type: 2}
   enemySpawner: {fileID: 8882041815776472116}
   pickupConfigs:
   - {fileID: 11400000, guid: 70ca16bb8c295f843b1e317f89c06fbd, type: 2}
   - {fileID: 11400000, guid: 6e5a0b04e5f55bc4d80704030e9f1da2, type: 2}
   - {fileID: 11400000, guid: a344bafe38ba38245b6e5456ca9e2c23, type: 2}
+  - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
+  - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
   - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
   - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
   - {fileID: 11400000, guid: 4a3428f67390d1742b259ed1b7d77875, type: 2}
@@ -165,6 +171,10 @@ MonoBehaviour:
   spawnRadius: 1
   newPosLimit: 1
   run: 1
+  timeCloudMax: 20
+  timeCloudMin: 15
+  cloudTimeCounter: 0
+  cloudPosOffset: 0.06
 --- !u!1 &8882041815825980928
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,3 +229,7 @@ MonoBehaviour:
   spawnRadius: 1
   newPosLimit: 1
   run: 1
+  timeCloudMax: 0
+  timeCloudMin: 0
+  cloudTimeCounter: 0
+  cloudPosOffset: 0

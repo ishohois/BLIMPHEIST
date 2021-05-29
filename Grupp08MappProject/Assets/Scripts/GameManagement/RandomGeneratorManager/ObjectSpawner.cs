@@ -168,13 +168,6 @@ public class ObjectSpawner : MonoBehaviour
         }
         timeMin = config.MinRandomTime;
         timeMax = config.MaxRandomTime;
-
-        Debug.Log("TimeMin " + timeMin + " TimeMax " + timeMax);
-
-        foreach (string s in objectTypes)
-        {
-            Debug.Log("ObjectTypes in pool " + s);
-        }
     }
 
 }
