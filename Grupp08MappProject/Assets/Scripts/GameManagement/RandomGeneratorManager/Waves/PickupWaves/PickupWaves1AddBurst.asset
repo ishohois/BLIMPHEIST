@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
+  m_Name: PickupWaves1AddBurst
+  m_EditorClassIdentifier: 
+  minRandomTime: 10
+  maxRandomTime: 15
+  listOfPools:
+  - hasParameterChanges: 0
+    tag: Burst
+    prefab: {fileID: 1691740253764875900, guid: 3ade23362808ed44ba1c189f6a5f41c3, type: 3}
+    size: 10
+    scrollSpeedIncrement: 0
+  hasNewPools: 1
+  hasChangedPools: 0
