@@ -20,5 +20,5 @@ MonoBehaviour:
     prefab: {fileID: 2920785517315257453, guid: fbc0ce98f5d21c946987d9152d18a255, type: 3}
     size: 10
     scrollSpeedIncrement: 0
-  hasNewPools: 0
+  hasNewPools: 1
   hasChangedPools: 0

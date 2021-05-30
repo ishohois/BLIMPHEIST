@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PickupWaves3Empty
   m_EditorClassIdentifier: 
   minRandomTime: 10
-  maxRandomTime: 15
+  maxRandomTime: 12
   listOfPools: []
   hasNewPools: 0
   hasChangedPools: 0

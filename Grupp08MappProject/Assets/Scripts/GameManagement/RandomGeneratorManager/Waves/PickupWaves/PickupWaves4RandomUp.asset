@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: PickupWaves4RandomUp
   m_EditorClassIdentifier: 
-  minRandomTime: 6
-  maxRandomTime: 10
+  minRandomTime: 3
+  maxRandomTime: 8
   listOfPools: []
   hasNewPools: 0
   hasChangedPools: 0
