@@ -5,10 +5,15 @@ using UnityEngine;
 public class Enemy_Vulture : MonoBehaviour
 {
     private PlayerState playerState;
+    private AudioSource audio;
 
     [SerializeField] private bool colliding;
     [SerializeField] private float timer = 0f;
     [SerializeField] private float timeBeforeReset = 1f;
+
+    private void Start() {
+        audio = GameObject.Find("Audio Source- VultureShockSound").GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +28,8 @@ public class Enemy_Vulture : MonoBehaviour
 
                 if (playerState != null)
                 {
+                    audio.pitch = UnityEngine.Random.Range(0.7f, 1f);
+                    audio.Play();
                     playerState.UseBurst();
                 }
                 timer = 0f;

@@ -6273,6 +6273,14 @@ PrefabInstance:
       propertyPath: soundEffectsSlider
       value: 
       objectReference: {fileID: 8217791425482753027}
+    - target: {fileID: 1980651080167938124, guid: 7b1621543172c5d4ebe8fdb64f9f5b8c, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692577839844200941, guid: 7b1621543172c5d4ebe8fdb64f9f5b8c, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b1621543172c5d4ebe8fdb64f9f5b8c, type: 3}
 --- !u!1001 &4575581346590775759

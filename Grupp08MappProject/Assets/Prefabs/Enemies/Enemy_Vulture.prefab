@@ -5155,7 +5155,7 @@ GameObject:
   - component: {fileID: 2110897212}
   - component: {fileID: 5365705099182520430}
   m_Layer: 8
-  m_Name: Vulture Variant
+  m_Name: Enemy_Vulture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5265,7 +5265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliding: 0
   timer: 0
-  timeBeforeReset: 1
+  timeBeforeReset: 0.7
 --- !u!1 &8654157806423133561
 GameObject:
   m_ObjectHideFlags: 0
