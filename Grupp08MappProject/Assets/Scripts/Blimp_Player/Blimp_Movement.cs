@@ -69,20 +69,6 @@ public class Blimp_Movement : MonoBehaviour
             isBurstAvailable = false;
         }
 
-        //if (hasLeftArea == false && playerState.GetBursts() == 0)
-        //{
-
-        //    timer2 += Time.deltaTime;
-
-        //    if (timer2 >= timerBeforeAddBurst)
-        //    {
-
-        //        playerState.AddBurst(1);
-        //        timer2 = 0f;
-        //    }
-
-        //}
-
         //DEFAULT BURST CHECK
         CheckDefaultBurst();
 
