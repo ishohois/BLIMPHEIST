@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
-  m_Name: PickupWaves4AddPlaster
+  m_Name: PickupWaves4RandomUp
   m_EditorClassIdentifier: 
   minRandomTime: 6
   maxRandomTime: 10
-  listOfPools:
-  - hasParameterChanges: 0
-    tag: Plaster
-    prefab: {fileID: 2920785517315257453, guid: fbc0ce98f5d21c946987d9152d18a255, type: 3}
-    size: 10
-    scrollSpeedIncrement: 0
-  hasNewPools: 1
+  listOfPools: []
+  hasNewPools: 0
   hasChangedPools: 0

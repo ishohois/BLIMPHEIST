@@ -8519,6 +8519,14 @@ PrefabInstance:
       value: RandomGeneratorManager
       objectReference: {fileID: 0}
     - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: pickupConfigs.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a344bafe38ba38245b6e5456ca9e2c23, type: 2}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
+      propertyPath: pickupConfigs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e5a0b04e5f55bc4d80704030e9f1da2, type: 2}
+    - target: {fileID: 8882041814915601895, guid: 5d3714a9550db5a48b0c7b400b56226a, type: 3}
       propertyPath: pickupConfigs.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 26181faa38d86d54f968175146a0b6db, type: 2}
