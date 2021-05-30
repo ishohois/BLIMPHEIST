@@ -32,7 +32,6 @@ public class BGScrollHandler : MonoBehaviour
                 {
                     timeCounter = timeStampsBG[index];
                     updateBGScrollSpeed();
-                    Debug.Log("Updated speed " + index);
                 }
                 else { run = false; }
 
