@@ -17,7 +17,7 @@ public class EnemyAttack : MonoBehaviour
         IDamageable<int> player = collision.gameObject.GetComponent<IDamageable<int>>();
         Blimp_Movement blimp = collision.gameObject.GetComponent<Blimp_Movement>();
 
-        if (player != null && blimp.canAttack == true) {
+        if (player != null && blimp.canAttack == true && !gameObject.transform.CompareTag("Cloud")) {
 
             IKillable enemy = gameObject.GetComponent<IKillable>();
             enemy.KillMe();

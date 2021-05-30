@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5859424069001454859}
   m_Layer: 8
   m_Name: Enemy_Cloud
-  m_TagString: Untagged
+  m_TagString: Cloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
