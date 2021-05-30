@@ -5,15 +5,12 @@ using UnityEngine.UI;
 using TMPro;
 
 
-// SCORE IS DETERMINED AS: score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter();
-
+// SCORE IS DETERMINED AS: score = (timer.GetTimeInSeconds() * (objectDeactivator.GetObjectCounter() + killsCount) + killsCount * 100) / 2
 
 
 public class UIScoreCounter : MonoBehaviour
 {
 
-    // [SerializeField] private Text survivedTimeText;
-    // [SerializeField] private Text obstaclesAvoidedText;
     [SerializeField] private int killsCount = 0;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private Timer timer;
@@ -22,20 +19,10 @@ public class UIScoreCounter : MonoBehaviour
    
 
 
-
-    // Start is called before the first frame update
-    //void Start() {
-    //    //score = GetComponent<text>;
-
-    //}
-
-
-
     // Update is called once per frame
     void Update() {
-        // score.text = scoreValue; 
 
-        score = timer.GetTimeInSeconds() * objectDeactivator.GetObjectCounter() + killsCount * 100;
+        score = (timer.GetTimeInSeconds() * (objectDeactivator.GetObjectCounter() + killsCount) + killsCount * 100) / 2;
         scoreText.text = "" + score;
 
     }
