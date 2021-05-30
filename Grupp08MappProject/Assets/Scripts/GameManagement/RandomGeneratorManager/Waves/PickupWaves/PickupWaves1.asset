@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087ac6684dfafd6489e71d346fdb4f2c, type: 3}
   m_Name: PickupWaves1
   m_EditorClassIdentifier: 
-  minRandomTime: 5
-  maxRandomTime: 10
+  minRandomTime: 10
+  maxRandomTime: 15
   listOfPools:
-  - tag: Burst
+  - hasParameterChanges: 0
+    tag: Burst
     prefab: {fileID: 1691740253764875900, guid: 3ade23362808ed44ba1c189f6a5f41c3, type: 3}
-    size: 4
-  - tag: Plaster
-    prefab: {fileID: 2920785517315257453, guid: fbc0ce98f5d21c946987d9152d18a255, type: 3}
-    size: 3
+    size: 10
+    scrollSpeedIncrement: 1
   hasNewPools: 1
+  hasChangedPools: 0
