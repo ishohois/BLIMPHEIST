@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PickupWaves8
   m_EditorClassIdentifier: 
   minRandomTime: 1
-  maxRandomTime: 4
+  maxRandomTime: 2
   listOfPools: []
   hasNewPools: 0
   hasChangedPools: 0
