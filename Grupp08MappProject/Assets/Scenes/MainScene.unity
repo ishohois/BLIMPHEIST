@@ -1712,7 +1712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992662679069750096, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.99
+      value: -7.12
       objectReference: {fileID: 0}
     - target: {fileID: 8992662679069750096, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1749,6 +1749,14 @@ PrefabInstance:
     - target: {fileID: 8992662679069750098, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
       propertyPath: m_Name
       value: GroundLayer For HangGliders
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992662679069750099, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
+      propertyPath: m_Size.x
+      value: 48.143234
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992662679069750099, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.40812016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 720d0f1b234092844a53f236a3d3a28a, type: 3}
@@ -2989,7 +2997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1009176835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,10 +3019,15 @@ MonoBehaviour:
   - {fileID: 2017525271}
   - {fileID: 169916715}
   timeStampsBG:
-  - 1
-  - 2
-  - 3
-  speedIncrement: 0.1
+  - 10
+  - 20
+  - 10
+  - 15
+  - 10
+  - 20
+  - 10
+  - 15
+  speedIncrement: 0.01
 --- !u!4 &1009176836
 Transform:
   m_ObjectHideFlags: 0
