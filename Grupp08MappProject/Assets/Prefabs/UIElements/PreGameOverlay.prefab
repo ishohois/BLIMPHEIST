@@ -149,6 +149,9 @@ MonoBehaviour:
     Tap The Lower Left Corner To
     Burst
 
+
+    Bursting into certain enemies will kill them
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b759cd1aeb022e642a070cc96d2f99fb, type: 2}
